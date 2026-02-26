@@ -37,7 +37,7 @@ export default function Navbar() {
         <div className="">
           <Link
             href="#contact"
-            className="text-base font-medium text-slate-600 border-b-2 border-violet-800 pb-1 hover:opacity-70 transition-opacity"
+            className="text-base font-medium text-slate-600 border-b-3 border-violet-800 pb-1 hover:opacity-70 transition-opacity"
           >
             Get In Touch
           </Link>
