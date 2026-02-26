@@ -47,6 +47,7 @@ export default function Hero() {
         {/* Top Text Cluster */}
         <div className="max-w-4xl relative">
           <motion.div variants={itemVariants} className="relative z-20">
+            <OrganicBlob className="absolute -top-50 -left-20 w-50 h-50" color="#D836E0" />
             <p className="text-4xl font-medium text-black/80 tracking-tight leading-[0.8]">
               <span>a safe</span>
               <br />
