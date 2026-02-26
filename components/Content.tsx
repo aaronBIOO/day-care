@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { useRef } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import { OrganicBlob, SlantedLinesDoodle } from "./Doodles";
 
 interface Program {
   title: string;
@@ -41,9 +42,15 @@ const programs: Program[] = [
   },
   {
     title: "Summer Camp",
-    description: "Seasonal adventures, outdoor play, and special workshops...",
+    description: "Seasonal adventures, outdoor play, and special workshops to keep...",
     image: "https://images.unsplash.com/photo-1473496169904-658ba7c44d8a?q=80&w=800&auto=format&fit=crop",
     hoverColor: "hover:bg-rose-100",
+  },
+  {
+    title: "Special Events",
+    description: "Themed parties, holiday celebrations, and...",
+    image: "https://images.unsplash.com/photo-1606092195730-5d7b9af1efc5?q=80&w=800&auto=format&fit=crop",
+    hoverColor: "hover:bg-cyan-100",
   }
 ];
 
@@ -66,78 +73,55 @@ export default function Content() {
           <p className="text-md font-semibold text-amber-800 uppercase font-poppins tracking-widest">
             Our Programs
           </p>
-          <h2 className="text-4xl md:text-5xl font-poppins text-black/80 max-w-3xl mx-auto leading-tight">
+          <h2 className="text-4xl md:text-4xl font-poppins text-black/80 max-w-3xl mx-auto leading-tight">
             Curated paths for every <br /> stage of growth
           </h2>
-          <p className="text-lg font-poppins text-slate-600 max-w-xl mx-auto">
-            Discover a variety of programs tailored to nurture your child&apos;s curiosity and development through play and learning.
+          <p className="text-md font-poppins text-slate-600 max-w-xl mx-auto">
+            Discover a variety of programs tailored to nurture your child&apos;s
+            curiosity and development through play and learning.
           </p>
-
-          {/* Navigation Buttons */}
-          <div className="flex justify-center gap-4 pt-8">
-            <button
-              onClick={() => scroll("left")}
-              className="p-4 rounded-full border border-slate-300 hover:bg-white hover:shadow-lg transition-all"
-              aria-label="Scroll left"
-            >
-              <ChevronLeft className="w-6 h-6 text-slate-700" />
-            </button>
-            <button
-              onClick={() => scroll("right")}
-              className="p-4 rounded-full border border-slate-300 hover:bg-white hover:shadow-lg transition-all"
-              aria-label="Scroll right"
-            >
-              <ChevronRight className="w-6 h-6 text-slate-700" />
-            </button>
-          </div>
         </div>
+        <div className="absolute right-15 w-24 h-24 md:w-40 md:h-16 bg-[#a78bfa] rounded-full rotate-45" />
 
-        {/* Horizontal Scrollable Container */}
-        <div
-          ref={scrollContainerRef}
-          className="flex overflow-x-auto gap-8 pb-12 no-scrollbar snap-x snap-mandatory cursor-grab active:cursor-grabbing"
-          style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
-        >
+        {/** Experimenting the Programs card */}
+        <div className="mt-20 grid grid-cols-1 lg:grid-cols-2 gap-x-2 gap-y-12 mx-auto px-5 items-center justify-center w-[75%]">
+           <OrganicBlob className="absolute -left-10 w-50 h-50" color="#D836E0" />
           {programs.map((program, index) => (
-            <div
-              key={index}
-              className={`shrink-0 w-[300px] md:w-[350px] snap-center rounded-3xl transition-colors duration-300 ${program.hoverColor} group shadow-sm hover:shadow-xl bg-slate-100`}
-            >
-              {/* Image Container */}
-              <div className="relative aspect-5/3 w-full rounded-2xl overflow-hidden mb-3 border border-slate-50">
+            <div key={index} className="flex flex-row items-center gap-6 group hover:scale-105">
+              {/* Image on the left */}
+              <div className="relative w-30 h-30 md:w-30 md:h-30 shrink-0 rounded-[30px] overflow-hidden">
                 <Image
                   src={program.image}
                   alt={program.title}
                   fill
                   className="object-cover group-hover:scale-105 transition-transform duration-500"
                 />
-                {program.badge && (
-                  <div className="absolute top-4 right-4 bg-[#f8d057] text-[10px] font-bold px-3 py-1.5 rounded-full shadow-sm">
-                    {program.badge}
-                  </div>
-                )}
               </div>
 
-              {/* Text Content */}
-              <div className="space-y-3 px-4">
+              {/* Descriptions on the right */}
+              <div className="flex flex-col gap-1">
                 <h3 className="text-lg font-poppins font-medium text-slate-900 leading-tight">
                   {program.title}
                 </h3>
-                <p className="text-slate-600 text-[15px] leading-relaxed font-poppins">
+                <p className="text-slate-600 text-[12px] md:text-sm leading-relaxed font-poppins line-clamp-2 md:line-clamp-3 w-[75%]">
                   {program.description}
                 </p>
-              </div>
 
-              {/* Action Button */}
-              <div className="pt-2 p-2">
-                <button className="px-6 py-2 rounded-full border-2 border-slate-200 text-sm font-regular text-slate-700 hover:bg-white transition-colors">
-                  Learn More
-                </button>
+                {/* Button below descriptions */}
+                <div className="pt-2">
+                  <button className="flex items-center gap-2 group/btn">
+                    <span className="text-sm font-regular font-poppins text-black/70 hover:border-b-2 hover:border-black/50 pb-0.5 group-hover/btn:opacity-60 transition-opacity">
+                      Learn More
+                    </span>
+                    <ChevronRight className="w-4 h-4 text-black/70 group-hover/btn:translate-x-1 transition-transform" />
+                  </button>
+                </div>
               </div>
             </div>
           ))}
         </div>
       </div>
+      <SlantedLinesDoodle className="absolute right-15 w-20 h-20 opacity-60" color="#92400E" />
     </section>
   );
 }
