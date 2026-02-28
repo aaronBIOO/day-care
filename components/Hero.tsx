@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { StarDoodle, HandDrawnArrow, ConnectedBubbles, OrganicBlob, LeafShape } from "./Doodles";
+import { StarDoodle, HandDrawnArrow, ConnectedBubbles, OrganicBlob, LeafShape } from "./general/Doodles";
 
 export default function Hero() {
   const containerVariants = {
@@ -41,7 +41,7 @@ export default function Hero() {
         variants={containerVariants}
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: true }}
+        viewport={{ once: false }}
         className="container mx-auto px-6 relative z-10 flex flex-col justify-between h-full min-h-[80vh] mt-8"
       >
         {/* Top Text Cluster */}
