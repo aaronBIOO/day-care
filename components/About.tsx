@@ -1,11 +1,17 @@
 "use client";
 
+import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { CurlyDoodle } from "./Doodles";
+import { CurlyDoodle } from "./general/Doodles";
+import ContactModal from "./main/ContactModal";
+import LearnMoreModal from "./main/LearnMoreModal";
 
 export default function About() {
+  const [isContactOpen, setIsContactOpen] = useState(false);
+  const [isLearnMoreOpen, setIsLearnMoreOpen] = useState(false);
+
   const containerVariants = {
     hidden: { opacity: 0, y: 50 },
     visible: {
@@ -29,7 +35,7 @@ export default function About() {
   };
 
   return (
-    <section id="about" className="bg-[#FDF5E6] py-24 min-h-[700px] flex items-center overflow-hidden">
+    <section id="about" className="hidden md:flex bg-[#FDF5E6] py-24 min-h-[700px]  items-center overflow-hidden">
       <motion.div
         className="container mx-auto px-6"
         initial="hidden"
@@ -56,7 +62,7 @@ export default function About() {
               transition={{ delay: 0.4, type: "spring", stiffness: 100 }}
             >
               <CurlyDoodle
-                className="absolute -bottom-12 -right-12 w-48 h-48 text-slate-900"
+                className="absolute -bottom-12 -right-12 xl:w-48 xl:h-48 md:w-36 md:h-36 text-slate-900"
                 color="#92400E"
               />
             </motion.div>
@@ -73,29 +79,32 @@ export default function About() {
               </motion.p>
               <motion.h2
                 variants={itemVariants}
-                className="text-3xl font-poppins text-black/70 max-w-xl"
+                className="md:text-2xl xl:text-3xl font-poppins text-black/70 max-w-xl"
               >
                 We&apos;re a daycare on a mission to empower parents to raise a happy, healthy and conscious generation.
               </motion.h2>
             </div>
 
             <motion.div variants={itemVariants} className="flex flex-wrap gap-4 pt-4">
-              <Link
-                href="#contact"
-                className="px-6 py-3 bg-[#f8bbd0] text-black/80 rounded-full shadow-[0_8px_30px_rgb(0,0,0,0.09)] font-regular hover:bg-[#f48fb1] transition-colors"
+              <button
+                onClick={() => setIsContactOpen(true)}
+                className="px-6 py-3 bg-[#f8bbd0] text-black/80 font-poppins rounded-full shadow-[0_8px_30px_rgb(0,0,0,0.09)] font-regular hover:bg-[#f48fb1] transition-colors cursor-pointer"
               >
                 Get In Touch
-              </Link>
-              <Link
-                href="#nurseries"
-                className="px-6 py-3 bg-white text-black/80 rounded-full shadow-[0_8px_30px_rgb(0,0,0,0.09)] font-regular hover:bg-slate-50 transition-colors"
+              </button>
+              <button
+                onClick={() => setIsLearnMoreOpen(false)}
+                className="px-6 py-3 bg-white text-black/80 rounded-full font-poppins shadow-[0_8px_30px_rgb(0,0,0,0.09)] font-regular hover:bg-slate-50 transition-colors cursor-pointer"
               >
-                Read More
-              </Link>
+                Learn More
+              </button>
             </motion.div>
           </div>
         </div>
       </motion.div>
+
+      <ContactModal isOpen={isContactOpen} onClose={() => setIsContactOpen(false)} />
+      <LearnMoreModal isOpen={isLearnMoreOpen} onClose={() => setIsLearnMoreOpen(false)} />
     </section>
   );
 }
