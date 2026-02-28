@@ -36,12 +36,12 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
-        className="fixed inset-0 z-110 flex items-center justify-center bg-white/80 backdrop-blur-xl p-4 md:p-6"
+        className="fixed inset-0 z-110 flex items-center justify-center bg-white/30 backdrop-blur-xl p-4 md:p-6"
       >
         {/* Back Button */}
           <button
             onClick={onClose}
-            className="absolute top-4 left-8 p-3 px-4 bg-black/10 hover:bg-black/15 
+            className="absolute top-4 left-8 p-3 px-4 bg-black/20 hover:bg-black/15 
             rounded-full transition-colors z-10 group flex items-center shadow-[0px_5px_10px_rgba(0,0,0,0.05)"
           >
             <ArrowLeft className="w-4 h-4 text-black/50 group-hover:text-black transition-colors" />
