@@ -36,7 +36,7 @@ export default function Hero() {
   };
 
   return (
-    <section className="relative min-h-screen pt-40 pb-20 overflow-hidden bg-[#f8d057]">
+    <section id="home" className="hidden md:flex relative min-h-screen md:pt-40 pt-20 pb-20 overflow-hidden bg-[#f8d057]">
       <motion.div
         variants={containerVariants}
         initial="hidden"
@@ -45,28 +45,37 @@ export default function Hero() {
         className="container mx-auto px-6 relative z-10 flex flex-col justify-between h-full min-h-[80vh] mt-8"
       >
         {/* Top Text Cluster */}
-        <div className="max-w-4xl relative">
+        <div className="lg:max-w-4xl relative md:max-w-2xl">
           <motion.div variants={itemVariants} className="relative z-20">
             <OrganicBlob className="absolute -top-50 -left-20 w-50 h-50" color="#D836E0" />
-            <p className="text-4xl font-medium text-black/80 tracking-tight leading-[0.8]">
+            <p className="lg:text-4xl md:text-3xl text-2xl font-medium text-black/80 tracking-tight leading-[0.8]">
               <span>a safe</span>
               <br />
-              <span className="text-6xl mt-2">loving place</span>
+              <span className="lg:text-6xl md:text-5xl text-4xl mt-2">loving place</span>
             </p>
           </motion.div>
 
-          <motion.div variants={doodleVariants} className="absolute top-20 left-0 pointer-events-none">
-            <HandDrawnArrow className="w-80 h-40" color="#15803D" />
+          <motion.div variants={doodleVariants}
+            className="absolute top-20 left-0 pointer-events-none md:-left-20
+          ">
+            <HandDrawnArrow className="md:w-60 md:h-35 xl:w-80 xl:h-40" color="#15803D" />
           </motion.div>
 
-          <motion.div variants={doodleVariants} className="absolute top-20 right-40 pointer-events-none">
-            <ConnectedBubbles className="w-80 h-50" color="#a78bfa" />
+          <motion.div variants={doodleVariants}
+            className="absolute top-20 right-40 pointer-events-none
+             lg:right-70 md:right-55
+          ">
+            <ConnectedBubbles className="md:w-70 md:h-45 lg:w-80 lg:h-50" color="#a78bfa" />
           </motion.div>
 
           {/* Image overlapping 'love' */}
           <motion.div
             variants={itemVariants}
-            className="absolute -top-10 -right-80 w-[550px] h-[250px] shadow-3xl rounded-sm overflow-hidden shadow-2xl border-4 border-white z-10"
+            className="
+            absolute xl:-top-10 xl:-right-80 xl:w-[550px] xl:h-[250px]
+            lg:-top-3 lg:-right-20 lg:w-[400px] lg:h-[200px]  
+            md:-top-3 md:-right-20 md:w-[400px] md:h-[200px] 
+            w-[300px] h-[150px] shadow-3xl rounded-sm overflow-hidden shadow-2xl border-4 border-white z-10"
           >
             <Image
               src="/images/kid-smile-2.jpg"
@@ -78,10 +87,12 @@ export default function Hero() {
 
           <motion.div
             variants={doodleVariants}
-            className="absolute -top-24 -right-50 w-12 h-12 bg-green-700 rounded-full"
+            className="absolute xl:top-10 xl:right-50 lg:w-12 lg:h-12 bg-green-700 rounded-full
+             md:-top-20 md:-left-60
+            "
           />
 
-          <motion.div variants={doodleVariants} className="absolute top-0 -right-50 pointer-events-none">
+          <motion.div variants={doodleVariants} className="absolute top-0 -right-50 pointer-events-none z-20">
             <OrganicBlob className="w-50 h-50" color="#D836E0" />
           </motion.div>
         </div>
@@ -90,7 +101,7 @@ export default function Hero() {
         <div className="mt-10 flex flex-col md:flex-row items-center gap-12 relative pb-10">
           <motion.div
             variants={itemVariants}
-            className="relative w-[500px] h-[230px] shrink-0"
+            className="relative w-[500px] h-[230px] shrink-0 md:w-[400px] md:h-[200px]"
           >
             <div className="absolute inset-0 -rotate-2 shadow-2xl rounded-sm overflow-hidden border-4 border-white">
               <Image
@@ -111,15 +122,23 @@ export default function Hero() {
           <div className="flex flex-col gap-4 -translate-y-4">
             <motion.div
               variants={itemVariants}
-              className="relative w-24 h-24 rounded-2xl overflow-hidden border-4 border-white shadow-xl rotate-3"
+              className="relative w-24 h-24 rounded-2xl overflow-hidden border-4 border-white shadow-xl rotate-3 md:right-8 lg:right-0"
             >
-              <Image src="/images/kid-smile.jpg" alt="Child" fill className="object-cover" />
+              <Image
+                src="/images/kid-smile.jpg"
+                alt="Child"
+                fill
+                className="object-cover" />
             </motion.div>
             <motion.div
               variants={itemVariants}
-              className="relative w-24 h-24 rounded-2xl overflow-hidden border-4 border-white shadow-xl -rotate-6"
+              className="relative w-24 h-24 rounded-2xl overflow-hidden border-4 border-white shadow-xl -rotate-6 md:right-20 top-14 lg:right-0 lg:top-0"
             >
-              <Image src="/images/kid-calm.jpg" alt="Child" fill className="object-cover" />
+              <Image
+                src="/images/kid-calm.jpg"
+                alt="Child"
+                fill
+                className="object-cover" />
             </motion.div>
           </div>
 
