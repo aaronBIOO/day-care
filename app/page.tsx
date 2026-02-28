@@ -12,6 +12,9 @@ export default function Home() {
       <Hero />
       <About />
       <Content />
+      <section id="contact" className="bg-[#FAF9F6] py-12 px-6 text-center border-t border-slate-100">
+        <p className="text-slate-500 font-poppins">© 2026 DayCare. All rights reserved.</p>
+      </section>
     </main>
   );
 }
