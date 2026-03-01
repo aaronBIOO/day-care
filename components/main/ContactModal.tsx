@@ -39,16 +39,16 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
         className="fixed inset-0 z-110 flex items-center justify-center bg-white/30 backdrop-blur-xl p-4 md:p-6"
       >
         {/* Back Button */}
-          <button
-            onClick={onClose}
-            className="absolute top-4 left-8 p-3 px-4 bg-black/20 hover:bg-black/15 
+        <button
+          onClick={onClose}
+          className="absolute top-4 left-8 p-3 px-4 bg-black/20 hover:bg-black/15 
             rounded-full transition-colors z-10 group flex items-center shadow-[0px_5px_10px_rgba(0,0,0,0.05)"
-          >
-            <ArrowLeft className="w-4 h-4 text-black/50 group-hover:text-black transition-colors" />
-            <span className="text-black/50 group-hover:text-black/80 font-poppins text-sm font-medium ml-2">
-              Back
-            </span>
-          </button>
+        >
+          <ArrowLeft className="w-4 h-4 text-black/50 group-hover:text-black transition-colors" />
+          <span className="text-black/50 group-hover:text-black/80 font-poppins text-sm font-medium ml-2">
+            Back
+          </span>
+        </button>
         <div className="relative w-150 h-150 bg-white/70 rounded-[40px] shadow-2xl overflow-hidden p-8 md:p-10 md:pt-5">
 
           <div className="mt-2 text-center">
@@ -139,7 +139,7 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
               <div className="w-full font-poppins rounded-full flex items-center justify-center group-hover:bg-amber-200 transition-colors">
                 <Phone className="w-5 h-5 mr-2 text-amber-800" />
                 <p className="text-amber-800 text-sm">+1 (555) 123-4567</p>
-              </div> 
+              </div>
             </div>
           </div>
         </div>
