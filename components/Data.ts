@@ -1,6 +1,8 @@
 import { Program } from "./main/ProgramExpansion";
+import { GalleryStack } from "@/types/types";
 
 
+{/** Program data */}
 export const programs: Program[] = [
   {
     title: "Infant Care",
@@ -34,4 +36,30 @@ export const programs: Program[] = [
     description: "Themed parties, holiday celebrations, and...",
     image: "/images/kids-celebrate.jpg",
   }
+];
+
+
+{/** Gallery data */}
+export const galleryData: GalleryStack[] = [
+  {
+    title: "Learning & Play",
+    images: ["/images/kids-learning.jpg", "/images/kids-playing-1.jpg", "/images/kids-teacher-1.jpg"],
+  },
+  {
+    title: "Daily Smiles",
+    images: ["/images/kids-teacher-3.jpg", "/images/kid-playing.jpg"],
+  },
+  {
+    title: "Teacher Moments",
+    images: ["/images/kid-smile-2.jpg", "/images/teacher-play.jpg", "/images/kids-teacher-2.jpg"],
+  },
+];
+
+
+{/** Video data */}
+export const videos = [
+  "/vids/daycare-2.mp4",
+  "/vids/daycare-3.mp4",
+  "/vids/daycare-2.mp4",
+  "/vids/daycare-3.mp4",
 ];
