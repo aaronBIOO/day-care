@@ -8,7 +8,7 @@ export interface Program {
   title: string;
   description: string;
   image: string;
-  hoverColor: string;
+
   badge?: string;
 }
 
@@ -28,15 +28,6 @@ export default function ProgramExpansion({ programs, expandedIndex, onClose }: P
           exit={{ opacity: 0 }}
           className="absolute inset-0 flex items-center justify-center py-5 md:py-10"
         >
-          {/* Backdrop blur layer */}
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            className="absolute inset-0 bg-[#FAF9F6]/40 backdrop-blur-xl rounded-[40px] cursor-pointer"
-            onClick={onClose}
-          />
-
           {/* Expanded Card */}
           <motion.div
             initial={{ scale: 0.9, opacity: 0, y: 20 }}
