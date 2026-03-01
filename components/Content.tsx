@@ -166,7 +166,7 @@ export default function Content() {
                         onClick={() => setExpandedIndex(index)}
                         className="flex items-center gap-2 group/btn"
                       >
-                        <span className="text-sm font-regular font-poppins text-black/60 hover:border-b-2
+                        <span className="text-sm font-regular font-poppins text-black/60 hover:border-b-2 cursor-pointer
                       hover:border-amber-800 pb-0.5 group-hover/btn:opacity-60 transition-opacity hover:text-amber-800
                     ">
                           Learn More
