@@ -11,7 +11,7 @@ export default function Hero() {
       opacity: 1,
       transition: {
         staggerChildren: 0.2,
-        delayChildren: 0.5,
+        delayChildren: 0.2,
       },
     },
   };
@@ -36,17 +36,17 @@ export default function Hero() {
   };
 
   return (
-    <section id="home" className="hidden md:flex relative min-h-screen md:pt-40 pt-20 pb-20 overflow-hidden bg-[#f8d057]">
+    <section id="home" className="hidden md:flex min-h-screen md:pt-40 pt-20 pb-20 overflow-hidden bg-[#f8d057]">
       <motion.div
         variants={containerVariants}
         initial="hidden"
         whileInView="visible"
         viewport={{ once: false }}
-        className="container mx-auto px-6 relative z-10 flex flex-col justify-between h-full min-h-[80vh] mt-8"
+        className="container mx-auto px-6 relative flex flex-col justify-between h-full min-h-[80vh] mt-8"
       >
         {/* Top Text Cluster */}
         <div className="lg:max-w-4xl relative md:max-w-2xl">
-          <motion.div variants={itemVariants} className="relative z-20">
+          <motion.div variants={itemVariants} className="relative">
             <OrganicBlob className="absolute -top-50 -left-20 w-50 h-50" color="#D836E0" />
             <p className="lg:text-4xl md:text-3xl text-2xl font-medium text-black/80 tracking-tight leading-[0.8]">
               <span>a safe</span>
@@ -75,7 +75,7 @@ export default function Hero() {
             absolute xl:-top-10 xl:-right-80 xl:w-[550px] xl:h-[250px]
             lg:-top-3 lg:-right-20 lg:w-[400px] lg:h-[200px]  
             md:-top-3 md:-right-20 md:w-[400px] md:h-[200px] 
-            w-[300px] h-[150px] shadow-3xl rounded-sm overflow-hidden shadow-2xl border-4 border-white z-10"
+            w-[300px] h-[150px] shadow-3xl rounded-sm overflow-hidden shadow-2xl border-4 border-white"
           >
             <Image
               src="/images/kid-smile-2.jpg"
@@ -88,7 +88,7 @@ export default function Hero() {
           <motion.div
             variants={doodleVariants}
             className="absolute xl:top-10 xl:right-50 lg:w-12 lg:h-12 bg-green-700 rounded-full
-             md:-top-20 md:-left-60
+             md:-top-20 md:right-1 md:z-20
             "
           />
 
