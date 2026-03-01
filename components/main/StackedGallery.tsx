@@ -4,26 +4,7 @@ import { useState, useEffect } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { X, ChevronLeft, ChevronRight, Maximize2, ArrowLeft } from "lucide-react";
-
-interface GalleryStack {
-  images: string[];
-  title: string;
-}
-
-const galleryData: GalleryStack[] = [
-  {
-    title: "Learning & Play",
-    images: ["/images/kids-learning.jpg", "/images/kids-playing-1.jpg", "/images/kids-teacher-1.jpg"],
-  },
-  {
-    title: "Daily Smiles",
-    images: ["/images/kids-teacher-3.jpg", "/images/kid-playing.jpg"],
-  },
-  {
-    title: "Teacher Moments",
-    images: ["/images/kid-smile-2.jpg", "/images/teacher-play.jpg", "/images/kids-teacher-2.jpg"],
-  },
-];
+import { galleryData } from "@/components/Data";
 
 export default function StackedGallery() {
   const [expandedStack, setExpandedStack] = useState<number | null>(null);
@@ -98,8 +79,8 @@ export default function StackedGallery() {
                   scale: isExpanded ? 1.05 : 1,
                   zIndex: isExpanded ? 50 : 10,
                 }}
-                className={`relative cursor-pointer transition-all duration-700 ${isExpanded ? "w-full" : "w-64 h-64 lg:w-52 lg:h-52"
-                  }`}
+                className={`relative cursor-pointer transition-all duration-700 
+                  ${isExpanded ? "w-full" : "w-64 h-64 lg:w-52 lg:h-52" }`}
                 onClick={() => handleStackClick(sIdx)}
               >
                 {/* Horizontal Spread (Expanded) */}
@@ -116,7 +97,8 @@ export default function StackedGallery() {
                         initial={{ opacity: 0, scale: 0.5 }}
                         animate={{ opacity: 1, scale: 1 }}
                         onClick={handleClose}
-                        className="fixed top-0 right-0 p-4 bg-black/30 backdrop-blur-xl rounded-full shadow-2xl  hover:scale-110 active:scale-95 transition-all text-slate-800"
+                        className="fixed top-0 right-0 p-4 bg-black/30 backdrop-blur-xl 
+                        rounded-full shadow-2xl  hover:scale-110 active:scale-95 transition-all text-slate-800"
                       >
                         <X className="w-4 h-4 text-white" />
                       </motion.button>
@@ -125,7 +107,8 @@ export default function StackedGallery() {
                         <motion.div
                           key={iIdx}
                           layoutId={`stack-${sIdx}-image-${iIdx}`}
-                          className="relative w-42 h-42 md:w-32 md:h-36 rounded-[15px] overflow-hidden shadow-2xl group border-4 border-white"
+                          className="relative w-42 h-42 md:w-32 md:h-36 rounded-[15px] 
+                          overflow-hidden shadow-2xl group border-4 border-white"
                           onClick={(e) => handleImageClick(iIdx, e)}
                         >
                           <Image
@@ -134,8 +117,10 @@ export default function StackedGallery() {
                             fill
                             className="object-cover group-hover:scale-110 transition-transform duration-700"
                           />
-                          <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-all duration-500 flex items-center justify-center">
-                            <div className="bg-white/20 backdrop-blur-md p-4 rounded-full opacity-0 group-hover:opacity-100 scale-50 group-hover:scale-100 transition-all duration-500">
+                          <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 
+                            transition-all duration-500 flex items-center justify-center">
+                            <div className="bg-white/20 backdrop-blur-md p-4 rounded-full opacity-0 
+                              group-hover:opacity-100 scale-50 group-hover:scale-100 transition-all duration-500">
                               <Maximize2 className="text-white w-4 h-4" />
                             </div>
                           </div>
@@ -171,7 +156,8 @@ export default function StackedGallery() {
                             layoutId={`stack-${sIdx}-image-${iIdx}`}
                             initial={false}
                             animate={{ rotate: rotation }}
-                            className="absolute inset-0 rounded-[30px] overflow-hidden shadow-lg border-4 border-white bg-slate-200 items-center justify-center"
+                            className="absolute inset-0 rounded-[30px] overflow-hidden shadow-lg border-4 
+                            border-white bg-slate-200 items-center justify-center"
                             style={{ zIndex }}
                           >
                             <Image
@@ -180,13 +166,15 @@ export default function StackedGallery() {
                               fill
                               className="object-cover"
                             />
-                            <div className="absolute inset-0 bg-amber-900/0 group-hover:bg-amber-900/5 transition-colors duration-500" />
+                            <div className="absolute inset-0 bg-amber-900/0 
+                              group-hover:bg-amber-900/5 transition-colors duration-500" />
                           </motion.div>
                         );
                       })}
 
                       {/* Interaction Clue */}
-                      <div className="absolute -bottom-16 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-all duration-500 transform translate-y-2 group-hover:translate-y-0">
+                      <div className="absolute -bottom-16 left-1/2 -translate-x-1/2 opacity-0 
+                        group-hover:opacity-100 transition-all duration-500 transform translate-y-2 group-hover:translate-y-0">
                         <div className="bg-[#FDF5E6] px-4 py-3 rounded-full shadow-[0_8px_30px_rgb(0,0,0,0.09)]">
                           <p className="text-[14px] font-medium text-black/70 whitespace-nowrap">
                             Click To Expand
@@ -214,17 +202,21 @@ export default function StackedGallery() {
           >
             {/* Navigation buttons inside Lightbox */}
             <button
-              className="absolute inset-y-0 left-0 w-24 md:w-40 lg:w-64 flex items-center justify-center transition-all outline-none cursor-pointer z-110 group"
+              className="absolute inset-y-0 left-0 w-24 md:w-40 lg:w-64 flex items-center 
+                justify-center transition-all outline-none cursor-pointer z-110 group"
               onClick={(e) => { e.stopPropagation(); navigate(-1); }}
             >
-              <ChevronLeft className="w-8 h-8 md:w-16 md:h-16 text-black/50 group-hover:text-black/80 group-hover:scale-125 transition-all" />
+              <ChevronLeft className="w-8 h-8 md:w-16 md:h-16 text-black/50 
+                group-hover:text-black/80 group-hover:scale-125 transition-all" />
             </button>
 
             <button
-              className="absolute inset-y-0 right-0 w-24 md:w-40 lg:w-64 flex items-center justify-center transition-all outline-none cursor-pointer z-110 group"
+              className="absolute inset-y-0 right-0 w-24 md:w-40 lg:w-64 flex items-center 
+                justify-center transition-all outline-none cursor-pointer z-110 group"
               onClick={(e) => { e.stopPropagation(); navigate(1); }}
             >
-              <ChevronRight className="w-8 h-8 md:w-16 md:h-16 text-black/50 group-hover:text-black/80 group-hover:scale-125 transition-all" />
+              <ChevronRight className="w-8 h-8 md:w-16 md:h-16 text-black/50 
+                group-hover:text-black/80 group-hover:scale-125 transition-all" />
             </button>
 
             <motion.button
@@ -232,10 +224,13 @@ export default function StackedGallery() {
               animate={{ opacity: 1, x: 0 }}
               exit={{ opacity: 0, x: -20 }}
               onClick={(e) => { e.stopPropagation(); setSelectedIndex(null); }}
-              className="absolute top-8 left-10 p-3 bg-black/5 hover:bg-black/10 rounded-full transition-colors z-120 group flex items-center gap-2"
+              className="absolute top-8 left-10 p-3 bg-black/5 hover:bg-black/10 
+                rounded-full transition-colors z-120 group flex items-center gap-2"
             >
               <ArrowLeft className="w-6 h-6 text-black/50 group-hover:text-black transition-colors" />
-              <span className="text-black/50 group-hover:text-black/80 font-poppins text-sm font-medium pr-2">Back</span>
+              <span className="text-black/50 group-hover:text-black/80 font-poppins text-sm font-medium pr-2">
+                Back
+              </span>
             </motion.button>
 
             {/* Top Right Close Button (Returns to Main View) */}
@@ -244,7 +239,8 @@ export default function StackedGallery() {
               animate={{ opacity: 1, x: 0 }}
               exit={{ opacity: 0, x: 20 }}
               onClick={(e) => { e.stopPropagation(); setExpandedStack(null); setSelectedIndex(null); }}
-              className="absolute top-8 right-10 p-3 bg-black/5 hover:bg-black/10 rounded-full transition-colors z-120"
+              className="absolute top-8 right-10 p-3 bg-black/5 hover:bg-black/10 
+                rounded-full transition-colors z-120"
             >
               <X className="w-6 h-6 text-black/50" />
             </motion.button>
@@ -267,13 +263,14 @@ export default function StackedGallery() {
               />
 
               {/* Pagination Dots (Inside Image Container, at the bottom) */}
-              <div className="absolute bottom-5 left-1/2 -translate-x-1/2 flex gap-3 px-4 py-2 bg-white/10 backdrop-blur-xl rounded-full border border-white/20 z-120">
+              <div className="absolute bottom-5 left-1/2 -translate-x-1/2 flex gap-3 px-4 
+                py-2 bg-white/10 backdrop-blur-xl rounded-full border border-white/20 z-120">
                 {galleryData[expandedStack].images.map((_, idx) => (
                   <button
                     key={idx}
                     onClick={(e) => { e.stopPropagation(); setSelectedIndex(idx); }}
-                    className={`w-2 h-2 rounded-full transition-all duration-300 ${selectedIndex === idx ? "bg-white w-6" : "bg-white/30 hover:bg-white/50"
-                      }`}
+                    className={`w-2 h-2 rounded-full transition-all duration-300 
+                      ${selectedIndex === idx ? "bg-white w-6" : "bg-white/30 hover:bg-white/50"}`}
                   />
                 ))}
               </div>

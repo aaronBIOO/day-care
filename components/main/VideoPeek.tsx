@@ -3,18 +3,12 @@
 import { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { X, ChevronLeft, ChevronRight, Play, Pause, ArrowLeft } from "lucide-react";
+import { videos } from "@/components/Data";
 
 interface VideoPeekProps {
   isOpen: boolean;
   onClose: () => void;
 }
-
-const videos = [
-  "/vids/daycare-2.mp4",
-  "/vids/daycare-3.mp4",
-  "/vids/daycare-2.mp4",
-  "/vids/daycare-3.mp4",
-];
 
 export default function VideoPeek({ isOpen, onClose }: VideoPeekProps) {
   const [view, setView] = useState<"thumbnails" | "video">("thumbnails");
