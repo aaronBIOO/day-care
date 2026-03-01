@@ -108,7 +108,7 @@ export default function Content() {
         />
 
         {/** Programs section */}
-        <div className="mt-20 mx-auto px-5 w-[75%] relative min-h-[400px]">
+        <div className="relative mt-20 mx-auto px-5 w-[75%]  min-h-[400px]">
           <motion.div
             variants={doodleVariants}
             custom={{ delay: 2, opacity: 0.6 }}
@@ -120,6 +120,7 @@ export default function Content() {
             <SlantedLinesDoodle className="w-20 h-20" color="#92400E" />
           </motion.div>
 
+          {/** Programs grid */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-2 gap-y-12 items-center justify-center">
             {programs.map((program, index) => {
               const isOtherExpanded = expandedIndex !== null && expandedIndex !== index;
@@ -128,9 +129,7 @@ export default function Content() {
                   key={index}
                   variants={itemVariants}
                   animate={{
-                    filter: isOtherExpanded ? "blur(5px)" : "blur(0px)",
-                    opacity: isOtherExpanded ? 0.3 : 1,
-                    scale: expandedIndex === index ? 1.05 : 1,
+                    filter: isOtherExpanded ? "blur(8px)" : "blur(0px)",
                   }}
                   className={`flex flex-row items-center gap-6 group transition-all duration-500 
                     ${expandedIndex === null ? "hover:scale-105" : "" }`}
@@ -182,7 +181,8 @@ export default function Content() {
               )
             })}
           </div>
-
+          
+          {/** Expanded program card */}
           <ProgramExpansion
             programs={programs}
             expandedIndex={expandedIndex}
