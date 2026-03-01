@@ -11,46 +11,39 @@ import VideoPeek from "./main/VideoPeek";
 import ProgramExpansion, { Program } from "./main/ProgramExpansion";
 import BookTourModal from "./main/BookTourModal";
 
-// Removed local Program interface, now imported from ProgramExpansion
 
 const programs: Program[] = [
   {
     title: "Infant Care",
     description: "A nurturing environment focused on sensory exploration...",
     image: "/images/kids-learning.jpg",
-    hoverColor: "hover:bg-blue-100",
     badge: "0-18 MONTHS"
   },
   {
     title: "Toddler Program",
     description: "Encouraging independence and social skills through...",
     image: "/images/kids-teacher-6.jpg",
-    hoverColor: "hover:bg-green-100",
   },
   {
     title: "Preschool",
     description: "Preparing children for school with a focus on literacy...",
     image: "https://images.unsplash.com/photo-1606092195730-5d7b9af1efc5?q=80&w=800&auto=format&fit=crop",
-    hoverColor: "hover:bg-amber-100",
     badge: "READY FOR SCHOOL"
   },
   {
     title: "After School",
     description: "Fun and educational activities that provide a...",
     image: "/images/kids-playing-2.jpg",
-    hoverColor: "hover:bg-purple-100",
   },
   {
     title: "Summer Camp",
     description: "Seasonal adventures, outdoor play, and special workshops to keep...",
     image: "https://images.unsplash.com/photo-1473496169904-658ba7c44d8a?q=80&w=800&auto=format&fit=crop",
-    hoverColor: "hover:bg-rose-100",
   },
   {
     title: "Special Events",
     description: "Themed parties, holiday celebrations, and...",
     image: "/images/kids-celebrate.jpg",
-    hoverColor: "hover:bg-cyan-100",
   }
 ];
 
@@ -169,12 +162,12 @@ export default function Content() {
                   key={index}
                   variants={itemVariants}
                   animate={{
-                    filter: isOtherExpanded ? "blur(8px)" : "blur(0px)",
+                    filter: isOtherExpanded ? "blur(5px)" : "blur(0px)",
                     opacity: isOtherExpanded ? 0.3 : 1,
                     scale: expandedIndex === index ? 1.05 : 1,
                   }}
-                  className={`flex flex-row items-center gap-6 group transition-all duration-500 ${expandedIndex === null ? "hover:scale-105" : ""
-                    }`}
+                  className={`flex flex-row items-center gap-6 group transition-all duration-500 
+                    ${expandedIndex === null ? "hover:scale-105" : "" }`}
                 >
                   {/* Image on the left */}
                   <motion.div
@@ -242,7 +235,7 @@ export default function Content() {
           <OrganicBlob className="w-48 h-56" color="#D836E0" />
         </motion.div>
 
-        {/* Enroll and Learn More buttons */}
+        {/* Enroll button */}
         <motion.div
           variants={itemVariants}
           className="flex flex-wrap gap-4 pt-15 mx-auto justify-center items-center mb-30"
