@@ -25,6 +25,7 @@ export default function ProgramExpansion({ programs, expandedIndex, onClose }: P
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
+          onClick={onClose}
           className="absolute inset-0 flex items-center justify-center py-5 md:py-10"
         >
           {/* Expanded Card */}
@@ -33,6 +34,7 @@ export default function ProgramExpansion({ programs, expandedIndex, onClose }: P
             animate={{ scale: 1, opacity: 1, y: 0 }}
             exit={{ scale: 0.9, opacity: 0, y: 20 }}
             transition={{ type: "spring", damping: 25, stiffness: 200 }}
+            onClick={(e) => e.stopPropagation()}
             className="relative bg-white/95 backdrop-blur-3xl p-6 md:p-12 rounded-[40px] shadow-[0_32px_64px_-12px_rgba(0,0,0,0.14)] w-full max-w-3xl mx-4 z-10 flex flex-col md:flex-row gap-4 md:gap-10 border border-white/40"
           >
             {/* Close button */}
