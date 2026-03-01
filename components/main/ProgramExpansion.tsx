@@ -2,13 +2,12 @@
 
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
-import { X, ArrowLeft } from "lucide-react";
+import { X } from "lucide-react";
 
 export interface Program {
   title: string;
   description: string;
   image: string;
-
   badge?: string;
 }
 
