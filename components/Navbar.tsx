@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import ContactModal from "./main/ContactModal";
 
 const navLinks = [
   { name: "Home", href: "#home" },
@@ -13,6 +14,7 @@ const navLinks = [
 
 export default function Navbar() {
   const [activeSection, setActiveSection] = useState("Home");
+  const [isContactOpen, setIsContactOpen] = useState(false);
 
   useEffect(() => {
     const observerOptions = {
@@ -48,7 +50,8 @@ export default function Navbar() {
 
   return (
     <nav className="fixed top-8 left-0 right-0 z-50 flex justify-center px-6">
-      <div className="w-full max-w-3xl bg-white/40 backdrop-blur-sm px-8 py-5 flex items-center justify-between shadow-[0_8px_30px_rgb(0,0,0,0.05)] rounded-full">
+      <div className="w-full max-w-3xl bg-white/40 backdrop-blur-sm px-8 py-5 
+        flex items-center justify-between shadow-[0_8px_30px_rgb(0,0,0,0.05)] rounded-full">
         {/* Logo */}
         <div className="">
           <Link href="/" className="font-playfair text-3xl text-violet-800 leading-none">
@@ -62,7 +65,8 @@ export default function Navbar() {
             <Link
               key={link.name}
               href={link.href}
-              className={`relative text-base font-regular transition-colors duration-300 ${activeSection === link.name ? "text-violet-800" : "text-slate-700 hover:text-slate-900"
+              className={`relative text-base font-regular transition-colors duration-300 
+                ${activeSection === link.name ? "text-violet-800" : "text-slate-700 hover:text-slate-900"
                 }`}
               onClick={() => setActiveSection(link.name)}
             >
@@ -80,15 +84,24 @@ export default function Navbar() {
 
         {/* Get In Touch */}
         <div className="">
-          <Link
-            href="#contact"
-            className="text-base font-medium text-black/70 pb-1 hover:opacity-70 transition-opacity font-poppins"
-            onClick={() => setActiveSection("Contact")}
+          <button
+            className="text-base font-medium text-black/70 pb-1 hover:opacity-70 
+            transition-opacity font-poppins cursor-pointer"
+            onClick={() => setIsContactOpen(true)}
           >
             Get In Touch
-          </Link>
+          </button>
         </div>
       </div>
+
+      <AnimatePresence>
+        {isContactOpen && (
+          <ContactModal
+            isOpen={isContactOpen}
+            onClose={() => setIsContactOpen(false)}
+          />
+        )}
+      </AnimatePresence>
     </nav>
   );
 }
