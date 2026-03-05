@@ -11,7 +11,7 @@ interface EnrollModalProps {
 
 export default function EnrollModal({ isOpen, onClose }: EnrollModalProps) {
   const [step, setStep] = useState(0);
-  const [direction, setDirection] = useState(0); // 1 for next, -1 for back
+  const [direction, setDirection] = useState(0); 
 
   // Lock body scroll when modal is open
   useEffect(() => {
@@ -79,13 +79,15 @@ export default function EnrollModal({ isOpen, onClose }: EnrollModalProps) {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          className="fixed inset-0 z-110 flex items-center justify-center bg-white/30 backdrop-blur-xl p-4 md:p-6 overscroll-contain"
+          className="fixed inset-0 z-110 flex items-center justify-center bg-white/30 
+          backdrop-blur-xl p-4 md:p-6 overscroll-contain"
         >
           {/* Main Close Button */}
           <button
             onClick={onClose}
             className="absolute top-4 left-8 p-3 px-4 bg-black/10 hover:bg-black/15 
-              rounded-full transition-colors z-120 group flex items-center shadow-[0px_5px_10px_rgba(0,0,0,0.05)]"
+              rounded-full transition-colors z-120 group flex items-center 
+              shadow-[0px_5px_10px_rgba(0,0,0,0.05)]"
           >
             <ArrowLeft className="w-4 h-4 text-black/50 group-hover:text-black transition-colors" />
             <span className="text-black/50 group-hover:text-black/80 font-poppins text-sm font-medium ml-2">
@@ -99,7 +101,7 @@ export default function EnrollModal({ isOpen, onClose }: EnrollModalProps) {
             exit={{ scale: 0.95, opacity: 0, y: 20 }}
             transition={{ type: "spring", damping: 25, stiffness: 200 }}
             className="relative w-full max-w-xl bg-white/80 rounded-[40px] shadow-2xl 
-            overflow-hidden p-8 md:p-12 md:pt-10 md:w-[60%] mx-auto"
+            overflow-hidden p-8 md:p-12 md:pt-10 md:w-120 mx-auto"
           >
             <div className="text-center mb-8">
               <h2 className="text-lg font-semibold text-amber-800 font-poppins mb-2">
@@ -141,7 +143,8 @@ export default function EnrollModal({ isOpen, onClose }: EnrollModalProps) {
                         required
                         placeholder="John Doe"
                         className="px-6 py-4 bg-slate-50 border-none rounded-[20px] focus:ring-2
-                        focus:ring-amber-200 outline-none transition-all font-poppins text-sm ring-amber-800/20 ring-1"
+                        focus:ring-amber-200 outline-none transition-all font-poppins text-sm 
+                        ring-amber-800/20 ring-1"
                       />
                     </div>
                     <div className="flex flex-col gap-2">
@@ -153,7 +156,8 @@ export default function EnrollModal({ isOpen, onClose }: EnrollModalProps) {
                         required
                         placeholder="john@example.com"
                         className="px-6 py-4 bg-slate-50 border-none rounded-[20px] focus:ring-2
-                        focus:ring-amber-200 outline-none transition-all font-poppins text-sm ring-amber-800/20 ring-1"
+                        focus:ring-amber-200 outline-none transition-all font-poppins text-sm 
+                        ring-amber-800/20 ring-1"
                       />
                     </div>
                     <div className="flex flex-col gap-2">
@@ -165,7 +169,8 @@ export default function EnrollModal({ isOpen, onClose }: EnrollModalProps) {
                         required
                         placeholder="(555) 000-0000"
                         className="px-6 py-4 bg-slate-50 border-none rounded-[20px] focus:ring-2
-                        focus:ring-amber-200 outline-none transition-all font-poppins text-sm ring-amber-800/20 ring-1"
+                        focus:ring-amber-200 outline-none transition-all font-poppins text-sm 
+                        ring-amber-800/20 ring-1"
                       />
                     </div>
                     <button
@@ -203,7 +208,8 @@ export default function EnrollModal({ isOpen, onClose }: EnrollModalProps) {
                         required
                         placeholder="Jane Doe"
                         className="px-6 py-4 bg-slate-50 border-none rounded-[20px] focus:ring-2
-                        focus:ring-amber-200 outline-none transition-all font-poppins text-sm ring-amber-800/20 ring-1"
+                        focus:ring-amber-200 outline-none transition-all font-poppins text-sm 
+                        ring-amber-800/20 ring-1"
                       />
                     </div>
                     <div className="flex flex-col gap-2">
@@ -214,7 +220,8 @@ export default function EnrollModal({ isOpen, onClose }: EnrollModalProps) {
                         type="date"
                         required
                         className="px-6 py-4 bg-slate-50 border-none rounded-[20px] focus:ring-2 
-                        focus:ring-amber-200 outline-none transition-all font-poppins text-sm ring-amber-800/20 ring-1 h-14"
+                        focus:ring-amber-200 outline-none transition-all font-poppins text-sm 
+                        ring-amber-800/20 ring-1 h-14"
                       />
                     </div>
                     <div className="flex flex-col gap-2">
@@ -225,7 +232,8 @@ export default function EnrollModal({ isOpen, onClose }: EnrollModalProps) {
                         type="date"
                         required
                         className="px-6 py-4 bg-slate-50 border-none rounded-[20px] focus:ring-2
-                        focus:ring-amber-200 outline-none transition-all font-poppins text-sm ring-amber-800/20 ring-1 h-14"
+                        focus:ring-amber-200 outline-none transition-all font-poppins text-sm 
+                        ring-amber-800/20 ring-1 h-14"
                       />
                     </div>
                     <div className="flex gap-4 mt-4">
@@ -272,8 +280,9 @@ export default function EnrollModal({ isOpen, onClose }: EnrollModalProps) {
                       <textarea
                         rows={5}
                         placeholder="Anything we should know about your child?"
-                        className="px-6 py-4 bg-slate-50 border-none rounded-[25px] focus:ring-2 shadow-[0px_3px_8px_rgba(0,0,0,0.03)]
-                        focus:ring-amber-200 outline-none transition-all font-poppins resize-none text-sm ring-amber-800/20 ring-1"
+                        className="px-6 py-4 bg-slate-50 border-none rounded-[25px] focus:ring-2 
+                        shadow-[0px_3px_8px_rgba(0,0,0,0.03)] font-poppins resize-none text-sm ring-amber-800/20 
+                        focus:ring-amber-200 outline-none transition-all ring-1"
                       />
                     </div>
                     <div className="flex gap-4 mt-4">
@@ -296,8 +305,11 @@ export default function EnrollModal({ isOpen, onClose }: EnrollModalProps) {
                         Submit 
                       </button>
                     </div>
-                    <p className="mt-4 text-[12px] text-black/60 font-poppins text-center max-w-sm mx-auto leading-relaxed">
-                      Our team will contact you within one business day to confirm availability and guide you through the next steps.
+                    <p className="mt-4 text-[12px] text-black/60 font-poppins text-center 
+                      max-w-sm mx-auto leading-relaxed"
+                    >
+                      Our team will contact you within one business day to confirm 
+                      availability and guide you through the next steps.
                     </p>
                   </motion.div>
                 )}
