@@ -92,7 +92,7 @@ export default function About() {
                 Get In Touch
               </button>
               <button
-                onClick={() => setIsLearnMoreOpen(false)}
+                onClick={() => setIsLearnMoreOpen(true)}
                 className="px-6 py-3 bg-white text-black/80 rounded-full font-poppins shadow-[0_8px_30px_rgb(0,0,0,0.09)] font-regular hover:bg-slate-50 transition-colors cursor-pointer"
               >
                 Learn More
