@@ -10,6 +10,7 @@ import StackedGallery from "./main/StackedGallery";
 import VideoPeek from "./main/VideoPeek";
 import ProgramExpansion from "./main/ProgramExpansion";
 import BookTourModal from "./main/BookTourModal";
+import EnrollModal from "./main/EnrollModal";
 import { programs } from "./Data";
 
 
@@ -56,6 +57,7 @@ export default function Content() {
   const [isVideoPeekOpen, setIsVideoPeekOpen] = useState(false);
   const [expandedIndex, setExpandedIndex] = useState<number | null>(null);
   const [isBookTourOpen, setIsBookTourOpen] = useState(false);
+  const [isEnrollOpen, setIsEnrollOpen] = useState(false);
 
   const scroll = (direction: "left" | "right") => {
     if (scrollContainerRef.current) {
@@ -132,7 +134,7 @@ export default function Content() {
                     filter: isOtherExpanded ? "blur(8px)" : "blur(0px)",
                   }}
                   className={`flex flex-row items-center gap-6 group transition-all duration-500 
-                    ${expandedIndex === null ? "hover:scale-105" : "" }`}
+                    ${expandedIndex === null ? "hover:scale-105" : ""}`}
                 >
                   {/* Image on the left */}
                   <motion.div
@@ -181,7 +183,7 @@ export default function Content() {
               )
             })}
           </div>
-          
+
           {/** Expanded program card */}
           <ProgramExpansion
             programs={programs}
@@ -206,13 +208,13 @@ export default function Content() {
           variants={itemVariants}
           className="flex flex-wrap gap-4 pt-15 mx-auto justify-center items-center mb-30"
         >
-          <Link
-            href=""
+          <button
+            onClick={() => setIsEnrollOpen(true)}
             className="px-6 py-3 bg-[#f8bbd0] text-black/80 rounded-full font-poppins
             shadow-[0_8px_30px_rgb(0,0,0,0.09)] font-regular hover:bg-[#f48fb1] transition-colors"
           >
             Enroll Now
-          </Link>
+          </button>
         </motion.div>
       </motion.div>
 
@@ -265,16 +267,26 @@ export default function Content() {
         <div className="text-2xl text-black/80 font-poppins text-center mb-5">
           Want to see it in person?
         </div>
+       <div className="flex flex-wrap gap-4">
         <button
-          onClick={() => setIsBookTourOpen(true)}
+          onClick={() => setIsEnrollOpen(true)}
           className="px-6 py-3 bg-[#f8bbd0] text-black/80 rounded-full font-poppins
+          shadow-[0_8px_30px_rgb(0,0,0,0.09)] font-regular hover:bg-[#f48fb1] transition-colors"
+        >
+          Enroll Now
+        </button>
+         <button
+          onClick={() => setIsBookTourOpen(true)}
+          className="px-6 py-3 bg-white text-black/80 rounded-full font-poppins
           shadow-[0_8px_30px_rgb(0,0,0,0.09)] font-regular hover:bg-[#f48fb1] transition-colors"
         >
           Book a Tour
         </button>
+       </div>
       </div>
 
       <BookTourModal isOpen={isBookTourOpen} onClose={() => setIsBookTourOpen(false)} />
+      <EnrollModal isOpen={isEnrollOpen} onClose={() => setIsEnrollOpen(false)} />
 
       {/* Gallery */}
       <motion.div
