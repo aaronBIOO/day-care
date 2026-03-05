@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { X, Phone, Send, Calendar } from "lucide-react";
 
@@ -51,10 +51,11 @@ export default function BookTourModal({ isOpen, onClose }: BookTourModalProps) {
             className="relative bg-white/95 backdrop-blur-xl w-full max-w-md rounded-[40px] shadow-2xl overflow-hidden border border-white/40"
           >
             {/* Header / Call Section */}
-            <div className="bg-amber-50/50 p-8 pt-4 text-center border-b border-amber-100/50">
+            <div className="bg-amber-50/50 p-8 pt-4 pb-4 text-center border-b border-amber-100/50">
               <button
                 onClick={onClose}
-                className="absolute top-6 right-6 p-2 bg-black/5 hover:bg-black/10 rounded-full transition-all text-slate-400 hover:text-slate-600"
+                className="absolute top-6 right-6 p-2 bg-black/5 hover:bg-black/10 
+                rounded-full transition-all text-slate-400 hover:text-slate-600 cursor-pointer"
               >
                 <X className="w-4 h-4" />
               </button>
@@ -67,7 +68,7 @@ export default function BookTourModal({ isOpen, onClose }: BookTourModalProps) {
                 Book a Tour
               </h2>
 
-              <div className="flex flex-col items-center gap-1 mt-4">
+              <div className="flex flex-col items-center gap-1 mt-2">
                 <p className="text-sm text-black/70 font-poppins">Call us to book now</p>
                 <a
                   href="tel:+15551234567"
@@ -81,8 +82,11 @@ export default function BookTourModal({ isOpen, onClose }: BookTourModalProps) {
 
             {/* Form Section */}
             <div className="p-8">
-              <p className="text-center text-sm text-black/80 font-poppins mb-4">
-                OR message us and we'll schedule it for you
+              <p className="text-center text-sm text-black/80 font-poppins mb-2">
+                OR
+              </p>
+              <p className="text-center text-sm text-black/80 font-poppins mb-2">
+                message us and we'll schedule it for you
               </p>
 
               <form onSubmit={handleSubmit} className="space-y-4">
@@ -91,7 +95,8 @@ export default function BookTourModal({ isOpen, onClose }: BookTourModalProps) {
                     type="text"
                     required
                     placeholder="Your Name"
-                    className="w-full px-5 py-3 bg-slate-50 border border-slate-100 rounded-2xl focus:ring-2 focus:ring-amber-200 outline-none transition-all font-poppins text-sm ring-amber-800 ring-1"
+                    className="w-full px-5 py-3 bg-slate-50 border border-slate-100 rounded-2xl 
+                    focus:ring-2 focus:ring-amber-200 outline-none transition-all font-poppins text-sm ring-amber-800/20 ring-1"
                   />
                 </div>
                 <div>
@@ -99,7 +104,8 @@ export default function BookTourModal({ isOpen, onClose }: BookTourModalProps) {
                     type="email"
                     required
                     placeholder="Email Address"
-                    className="w-full px-5 py-3 bg-slate-50 border border-slate-100 rounded-2xl focus:ring-2 focus:ring-amber-200 outline-none transition-all font-poppins text-sm ring-amber-800 ring-1"
+                    className="w-full px-5 py-3 bg-slate-50 border border-slate-100 rounded-2xl 
+                    focus:ring-2 focus:ring-amber-200 outline-none transition-all font-poppins text-sm ring-amber-800/20 ring-1"
                   />
                 </div>
                 <div>
@@ -107,13 +113,15 @@ export default function BookTourModal({ isOpen, onClose }: BookTourModalProps) {
                     rows={3}
                     required
                     placeholder="Preferred date or special requests..."
-                    className="w-full px-5 py-3 bg-slate-50 border border-slate-100 rounded-2xl focus:ring-2 focus:ring-amber-200 outline-none transition-all font-poppins text-sm resize-none"
+                    className="w-full px-5 py-3 bg-slate-50 ring-amber-800/20 ring-1 rounded-2xl 
+                    focus:ring-2 focus:ring-amber-200 outline-none transition-all font-poppins text-sm resize-none"
                   />
                 </div>
 
                 <button
                   type="submit"
-                  className="w-full py-4 bg-[#f8bbd0] text-black/80 rounded-2xl font-poppins font-regular hover:bg-[#f48fb1] transition-all flex items-center justify-center gap-2 shadow-lg active:scale-[0.98]"
+                  className="w-full py-4 bg-[#f8bbd0] text-black/80 rounded-2xl font-poppins font-regular 
+                  hover:bg-[#f48fb1] transition-all flex items-center justify-center gap-2 shadow-lg active:scale-[0.98]"
                 >
                   <Send className="w-4 h-4 text-black/70" />
                   Request Tour
