@@ -66,7 +66,7 @@ export default function Navbar() {
               key={link.name}
               href={link.href}
               className={`relative text-base font-regular transition-colors duration-300 
-                ${activeSection === link.name ? "text-violet-800" : "text-slate-700 hover:text-slate-900"
+                ${activeSection === link.name ? "text-violet-800" : "text-black/70 hover:opacity-70"
                 }`}
               onClick={() => setActiveSection(link.name)}
             >
