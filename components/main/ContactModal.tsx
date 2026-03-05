@@ -50,30 +50,30 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
             Back
           </span>
         </button>
-        <div className="relative w-150 h-150 bg-white/70 rounded-[40px] shadow-2xl overflow-hidden p-8 md:p-10 md:pt-5">
+        <div className="relative w-120 h-150 bg-white/70 rounded-[40px] shadow-2xl overflow-hidden p-8 md:p-10 md:pt-5">
 
           <div className="mt-2 text-center">
-            <h2 className="text-lg semi-bold text-amber-900 font-poppins">
+            <h2 className="text-lg semi-bold text-amber-800 font-poppins">
               Get In Touch With Us
             </h2>
             <p className="text-[13px] text-black/70 font-poppins max-w-sm mx-auto mb-10">
-              We'd love to answer your questions. Fill out the form below and we'll get back to you within 24 hours.
+              We'd love to answer your questions. Fill out the form below and we'll get back to you within 24 hours
             </p>
 
-            <form onSubmit={handleSubmit} className="grid grid-cols-1 md:grid-cols-2 gap-5 text-left">
-              <div className="flex flex-col gap-2 ml-6">
+            <form onSubmit={handleSubmit} className="grid grid-cols-1 gap-5 text-left">
+              <div className="flex flex-col gap-2">
                 <label className="text-sm font-medium text-black/60 ml-4 font-poppins">
-                  Parent Name
+                  Parent / Guardian Name
                 </label>
                 <input
                   type="text"
                   required
                   placeholder="John Doe"
                   className="px-4 py-3 bg-slate-50 border-none rounded-[15px] focus:ring-2
-                   focus:ring-amber-200 outline-none transition-all font-poppins text-sm ring-amber-800/50 ring-1"
+                   focus:ring-amber-200 outline-none transition-all font-poppins text-sm ring-amber-800/20 ring-1"
                 />
               </div>
-              <div className="flex flex-col gap-2 mr-6">
+              <div className="flex flex-col gap-2">
                 <label className="text-sm font-medium text-black/60 ml-4 font-poppins">
                   Email Address
                 </label>
@@ -81,33 +81,11 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
                   type="email"
                   required
                   placeholder="john@example.com"
-                  className="px-4 py-3 bg-slate-50 border-none rounded-[15px] focus:ring-2 ring-amber-800/50 ring-1
+                  className="px-4 py-3 bg-slate-50 border-none rounded-[15px] focus:ring-2 ring-amber-800/20 ring-1
                     focus:ring-amber-200 outline-none transition-all font-poppins text-sm"
                 />
               </div>
-              <div className="flex flex-col gap-2 ml-6">
-                <label className="text-sm font-medium text-black/60 ml-4 font-poppins">
-                  Child's Age
-                </label>
-                <input
-                  type="text"
-                  placeholder="e.g. 3 years old"
-                  className="px-4 py-3 bg-slate-50 border-none rounded-[15px] focus:ring-2 transition-all ring-amber-800/50 ring-1
-                   focus:ring-amber-200 outline-none font-poppins text-sm shadow-[0px_3px_8px_rgba(0,0,0,0.03)"
-                />
-              </div>
-              <div className="flex flex-col gap-2 mr-6">
-                <label className="text-sm font-medium text-black/60 ml-4 font-poppins">
-                  Child's Sex
-                </label>
-                <input
-                  type="text"
-                  placeholder="e.g. Male"
-                  className="px-4 py-3 bg-slate-50 border-none rounded-[15px] focus:ring-2 transition-all ring-amber-800/50 ring-1
-                   focus:ring-amber-200 outline-none font-poppins text-sm shadow-[0px_3px_8px_rgba(0,0,0,0.03)"
-                />
-              </div>
-              <div className="flex flex-col gap-2 md:col-span-2">
+              <div className="flex flex-col gap-2">
                 <label className="text-sm font-medium text-black/60 ml-4 font-poppins">
                   Message
                 </label>
@@ -116,14 +94,14 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
                   required
                   placeholder="How can we help you?"
                   className="px-6 py-4 bg-slate-50 border-none rounded-3xl focus:ring-2 shadow-[0px_3px_8px_rgba(0,0,0,0.03)]
-                  focus:ring-amber-200 outline-none transition-all font-poppins resize-none text-sm ring-amber-800/50 ring-[1.5px]"
+                  focus:ring-amber-200 outline-none transition-all font-poppins resize-none text-sm ring-amber-800/20 ring-1"
                 />
               </div>
 
-              <div className="md:col-span-2">
+              <div>
                 <button
                   type="submit"
-                  className="w-[30%] py-3 bg-[#f8bbd0] text-black/80 rounded-full 
+                  className="w-[35%] py-3 bg-[#f8bbd0] text-black/80 rounded-full 
                   text-sm hover:bg-[#f48fb1] transition-all flex items-center font-poppins
                   justify-center gap-3 active:scale-[0.98] shadow-lg font-regular mx-auto"
                 >
