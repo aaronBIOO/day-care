@@ -210,7 +210,7 @@ export default function Content() {
         >
           <button
             onClick={() => setIsEnrollOpen(true)}
-            className="px-6 py-3 bg-[#f8bbd0] text-black/80 rounded-full font-poppins
+            className="px-6 py-3 bg-[#f8bbd0] text-black/80 rounded-full font-poppins cursor-pointer
             shadow-[0_8px_30px_rgb(0,0,0,0.09)] font-regular hover:bg-[#f48fb1] transition-colors"
           >
             Enroll Now
@@ -219,8 +219,8 @@ export default function Content() {
       </motion.div>
 
       {/* A Video Peek section */}
-      <div className="flex flex-cols-2 mx-10 h-140 bg-[#FDF5E6] rounded-[30px] 
-        shadow-[0_8px_30px_rgb(0,0,0,0.09)] items-center justify-center mb-20
+      <div className="flex flex-cols-2 h-140 bg-[#FDF5E6] rounded-[30px] 
+        shadow-[0_8px_30px_rgb(0,0,0,0.09)] items-center justify-center mb-20 md:w-220 xl:w-250 mx-auto
       ">
         <div className="text-black/60 font-poppins text-lg m-4 ml-6 h-60 w-[40%]">
           <p className="text-amber-800 text-2xl">
@@ -270,14 +270,14 @@ export default function Content() {
        <div className="flex flex-wrap gap-4">
         <button
           onClick={() => setIsEnrollOpen(true)}
-          className="px-6 py-3 bg-[#f8bbd0] text-black/80 rounded-full font-poppins
+          className="px-6 py-3 bg-[#f8bbd0] text-black/80 rounded-full font-poppins cursor-pointer
           shadow-[0_8px_30px_rgb(0,0,0,0.09)] font-regular hover:bg-[#f48fb1] transition-colors"
         >
           Enroll Now
         </button>
          <button
           onClick={() => setIsBookTourOpen(true)}
-          className="px-6 py-3 bg-white text-black/80 rounded-full font-poppins
+          className="px-6 py-3 bg-white text-black/80 rounded-full font-poppins cursor-pointer
           shadow-[0_8px_30px_rgb(0,0,0,0.09)] font-regular hover:bg-[#f48fb1] transition-colors"
         >
           Book a Tour
