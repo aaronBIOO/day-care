@@ -35,12 +35,15 @@ export default function ProgramExpansion({ programs, expandedIndex, onClose }: P
             exit={{ scale: 0.9, opacity: 0, y: 20 }}
             transition={{ type: "spring", damping: 25, stiffness: 200 }}
             onClick={(e) => e.stopPropagation()}
-            className="relative bg-white/95 backdrop-blur-3xl p-6 md:p-12 rounded-[40px] shadow-[0_32px_64px_-12px_rgba(0,0,0,0.14)] w-full max-w-3xl mx-4 z-10 flex flex-col md:flex-row gap-4 md:gap-10 border border-white/40"
+            className="relative bg-white/95 backdrop-blur-3xl p-6 md:p-12 rounded-[40px] 
+            shadow-[0_32px_64px_-12px_rgba(0,0,0,0.14)] w-full max-w-3xl mx-4 z-10 flex flex-col 
+            md:flex-row gap-4 md:gap-10 border border-white/40"
           >
             {/* Close button */}
             <button
               onClick={onClose}
-              className="absolute top-8 right-5 p-3 bg-black/5 hover:bg-black/10 rounded-full transition-all hover:rotate-90 text-slate-500 hover:text-slate-800"
+              className="absolute top-8 right-5 p-3 bg-black/5 hover:bg-black/10 rounded-full 
+              transition-all hover:rotate-90 text-slate-500 hover:text-slate-800 cursor-pointer"
             >
               <X className="w-6 h-6" />
             </button>
@@ -48,7 +51,8 @@ export default function ProgramExpansion({ programs, expandedIndex, onClose }: P
             {/* Image side */}
             <motion.div
               layoutId={`program-image-${expandedIndex}`}
-              className="relative w-full md:w-[45%] aspect-video md:aspect-auto md:h-[300px] rounded-[35px] overflow-hidden shadow-lg border-4 border-white"
+              className="relative w-full md:w-[45%] aspect-video md:aspect-auto md:h-[300px] 
+              rounded-[35px] overflow-hidden shadow-lg border-4 border-white"
             >
               <Image
                 src={programs[expandedIndex].image}
@@ -64,13 +68,15 @@ export default function ProgramExpansion({ programs, expandedIndex, onClose }: P
                 initial={{ opacity: 0, x: 20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: 0.2 }}
-                className="text-amber-800 font-poppins font-semibold tracking-widest text-xs uppercase mb-3"
+                className="text-amber-800 font-poppins font-semibold 
+                tracking-widest text-xs uppercase mb-3"
               >
                 {programs[expandedIndex].badge || "Curated Program"}
               </motion.p>
               <motion.h3
                 layoutId={`program-title-${expandedIndex}`}
-                className="text-2xl md:text-3xl font-poppins font-medium text-black/80 mb-6 leading-tight"
+                className="text-2xl md:text-3xl font-poppins font-medium 
+                text-black/80 mb-6 leading-tight"
               >
                 {programs[expandedIndex].title}
               </motion.h3>

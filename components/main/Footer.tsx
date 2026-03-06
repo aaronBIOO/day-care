@@ -31,7 +31,7 @@ export default function Footer() {
   };
 
   return (
-    <footer className="bg-[#FDF5E6] py-20 border-t border-amber-900/10">
+    <footer className="hidden md:block bg-[#FDF5E6] py-20 border-t border-amber-900/10">
       <motion.div
         className="container mx-auto px-6"
         initial="hidden"
@@ -56,14 +56,16 @@ export default function Footer() {
               </Link>
             </div>
             <p className="text-black/60 font-poppins text-sm leading-relaxed max-w-xs">
-              Nurturing tomorrow&apos;s leaders in a safe, joyful environment where every child feels seen, loved, and encouraged.
+              Nurturing tomorrow&apos;s leaders in a safe, joyful environment where every child feels seen, 
+              loved, and encouraged.
             </p>
             <div className="flex gap-4">
               {[Instagram, Facebook, Twitter].map((Icon, i) => (
                 <a
                   key={i}
                   href="#"
-                  className="p-2 bg-white rounded-full shadow-sm text-amber-800 hover:bg-[#f8bbd0] hover:text-black/80 transition-all active:scale-95"
+                  className="p-2 bg-white rounded-full shadow-sm text-amber-800 hover:bg-[#f8bbd0] 
+                  hover:text-black/80 transition-all active:scale-95"
                 >
                   <Icon className="w-4 h-4" />
                 </a>
@@ -120,7 +122,8 @@ export default function Footer() {
               Stay updated with our latest activities and parenting tips.
             </p>
             <div className="flex flex-col gap-3">
-              <button className="px-6 py-3 bg-[#f8bbd0] text-black/80 rounded-full font-poppins text-sm font-medium shadow-sm hover:bg-[#f48fb1] transition-colors active:scale-[0.98]">
+              <button className="px-6 py-3 bg-[#f8bbd0] text-black/80 rounded-full font-poppins text-sm 
+                font-medium shadow-sm hover:bg-[#f48fb1] transition-colors active:scale-[0.98]">
                 Join Our Newsletter
               </button>
             </div>
