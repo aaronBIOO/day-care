@@ -68,7 +68,7 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
                 <input
                   type="text"
                   required
-                  placeholder="John Doe"
+                  placeholder="Chris Pratt"
                   className="px-4 py-3 bg-slate-50 border-none rounded-[15px] focus:ring-2
                    focus:ring-amber-200 outline-none transition-all font-poppins text-sm ring-amber-800/20 ring-1"
                 />
@@ -80,7 +80,7 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
                 <input
                   type="email"
                   required
-                  placeholder="john@example.com"
+                  placeholder="chris@example.com"
                   className="px-4 py-3 bg-slate-50 border-none rounded-[15px] focus:ring-2 ring-amber-800/20 ring-1
                     focus:ring-amber-200 outline-none transition-all font-poppins text-sm"
                 />
@@ -103,7 +103,7 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
                   type="submit"
                   className="w-[35%] py-3 bg-[#f8bbd0] text-black/80 rounded-full 
                   text-sm hover:bg-[#f48fb1] transition-all flex items-center font-poppins
-                  justify-center gap-3 active:scale-[0.98] shadow-lg font-regular mx-auto"
+                  justify-center gap-3 active:scale-[0.98] shadow-lg font-regular mx-auto cursor-pointer"
                 >
                   <Send className="w-4 h-4 text-black/60" />
                   Submit
