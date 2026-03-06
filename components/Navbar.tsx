@@ -49,7 +49,7 @@ export default function Navbar() {
   }, []);
 
   return (
-    <nav className="fixed top-8 left-0 right-0 z-50 flex justify-center px-6">
+    <nav className="hidden md:flex fixed top-8 left-0 right-0 z-50 justify-center px-6">
       <div className="w-full max-w-3xl bg-white/40 backdrop-blur-sm px-8 py-5 
         flex items-center justify-between shadow-[0_8px_30px_rgb(0,0,0,0.05)] rounded-full">
         {/* Logo */}
