@@ -15,13 +15,6 @@ export default function Home() {
       <Content />
       <Footer />
 
-      {/* Mobile Navbar */}
-      <div className="md:hidden inset-0 flex justify-center text-center px-6 mt-50">
-        <p className="text-black/70 font-poppins text-md">
-          Open the website on your laptop. Mobile view is not available yet, sorry. 
-          A mobile-friendly version is coming soon.
-        </p>
-      </div>
     </main>
   );
 }
