@@ -87,14 +87,14 @@ export default function About() {
             <motion.div variants={itemVariants} className="flex flex-wrap gap-4 pt-4 md:justify-start justify-center">
               <button
                 onClick={() => setIsContactOpen(true)}
-                className="md:px-6 md:py-3 px-4 py-3 w-30 md:w-auto bg-[#f8bbd0] text-black/80 rounded-full font-poppins hover:bg-[#f48fb1] 
+                className="md:px-6 md:py-3 px-4 py-4 w-30 md:w-auto bg-[#f8bbd0] text-black/80 rounded-full font-poppins hover:bg-[#f48fb1] 
                 font-regular transition-colors cursor-pointer md:text-base text-sm shadow-[0_8px_30px_rgb(0,0,0,0.09)]"
               >
                 Get In Touch
               </button>
               <button
                 onClick={() => setIsLearnMoreOpen(true)}
-                className="md:px-6 md:py-3 px-4 py-3 w-30 md:w-auto bg-white text-black/80 rounded-full font-poppins hover:bg-[#f48fb1] 
+                className="md:px-6 md:py-3 px-4 py-4 w-30 md:w-auto bg-white text-black/80 rounded-full font-poppins hover:bg-[#f48fb1] 
                 font-regular transition-colors cursor-pointer md:text-base text-sm shadow-[0_8px_30px_rgb(0,0,0,0.09)]"
               >
                 Learn More

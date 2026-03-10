@@ -63,9 +63,9 @@ export default function Hero() {
 
           <motion.div variants={doodleVariants}
             className="absolute md:top-20 pointer-events-none
-             lg:right-70 md:right-55 top-25 -right-4
+             lg:right-70 md:right-55 top-20 -right-4
           ">
-            <ConnectedBubbles className="w-40 md:w-70 md:h-45 lg:w-80 lg:h-50" color="#a78bfa" />
+            <ConnectedBubbles className="w-50 md:w-70 md:h-45 lg:w-80 lg:h-50" color="#a78bfa" />
           </motion.div>
 
           {/* Image overlapping 'love' */}
@@ -101,7 +101,7 @@ export default function Hero() {
         <div className="mt-10 flex flex-col md:flex-row items-center gap-12 relative pb-10">
           <motion.div
             variants={itemVariants}
-            className="relative z-20 w-[415px] h-[300px] shrink-0 md:w-[400px] md:h-[200px]"
+            className="relative z-20 w-[380px] h-[300px] shrink-0 md:w-[400px] md:h-[200px]"
           >
             <div className="absolute inset-0 top-35 right-30 md:left-none md:top-none md:inset-0 -rotate-2 shadow-2xl rounded-sm overflow-hidden border-4 border-white">
               <Image
@@ -111,7 +111,7 @@ export default function Hero() {
                 className="object-cover"
               />
             </div>
-            <div className="absolute -bottom-10 -left-10 w-30 h-10 md:w-40 md:h-16 bg-[#a78bfa] rounded-full rotate-45" />
+            <div className="absolute md:-bottom-10 md:-left-10 -bottom-8 -left-5 w-24 h-10 md:w-40 md:h-16 bg-[#a78bfa] rounded-full rotate-45" />
           </motion.div>
 
           <motion.p variants={itemVariants} className="text-2xl md:text-3xl text-black/80 font-medium whitespace-nowrap text-shadow-lg leading-[0.9] md:leading-none">
