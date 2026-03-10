@@ -68,9 +68,9 @@ export default function Content() {
   };
 
   return (
-    <section id="programs" className=" bg-[#FAF9F6] py-24 px-6 overflow-hidden relative">
+    <section id="programs" className=" bg-[#FAF9F6] py-24 md:px-6 overflow-hidden relative">
       <motion.div
-        className="container mx-auto relative"
+        className="container mx-auto relative px-2 md:px-0"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: false, amount: 0.2 }}
@@ -220,7 +220,7 @@ export default function Content() {
 
       
       {/* A Video Peek section */}
-      <div className="flex flex-cols-2 h-110 md:h-140 bg-[#FDF5E6] rounded-[30px] 
+      <div className="flex flex-cols-2 w-full h-110 md:h-140 bg-[#FDF5E6] rounded-[30px] 
         shadow-[0_8px_30px_rgb(0,0,0,0.09)] items-center justify-center mb-20 md:w-220 xl:w-250 mx-auto
       ">
         <div className="text-black/60 font-poppins text-sm md:text-lg md:m-4 m-2 md:ml-6  h-60 w-[40%]">
