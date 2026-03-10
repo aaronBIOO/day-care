@@ -68,7 +68,7 @@ export default function Content() {
   };
 
   return (
-    <section id="programs" className="hidden md:block bg-[#FAF9F6] py-24 px-6 overflow-hidden relative">
+    <section id="programs" className=" bg-[#FAF9F6] py-24 px-6 overflow-hidden relative">
       <motion.div
         className="container mx-auto relative"
         initial="hidden"
@@ -86,13 +86,13 @@ export default function Content() {
           </motion.p>
           <motion.h2
             variants={itemVariants}
-            className="text-4xl md:text-4xl font-poppins text-black/80 max-w-3xl mx-auto leading-tight"
+            className="text-2xl md:text-4xl font-poppins text-black/80 max-w-3xl mx-auto leading-tight"
           >
             Curated paths for every <br /> stage of growth
           </motion.h2>
           <motion.p
             variants={itemVariants}
-            className="text-md font-poppins text-slate-600 max-w-xl mx-auto"
+            className="text-sm md:text-md font-poppins text-slate-600 max-w-xl mx-auto"
           >
             Discover a variety of programs tailored to nurture your child&apos;s
             curiosity and development through play and learning.
@@ -110,7 +110,7 @@ export default function Content() {
         />
 
         {/** Programs section */}
-        <div className="relative mt-20 mx-auto px-5 w-[75%]  min-h-[400px]">
+        <div className="relative mt-20 mx-auto px-5 md:w-[75%] w-[90%]  min-h-[400px]">
           <motion.div
             variants={doodleVariants}
             custom={{ delay: 2, opacity: 0.6 }}
@@ -153,12 +153,12 @@ export default function Content() {
                   <div className="flex flex-col gap-1">
                     <motion.h3
                       layoutId={`program-title-${index}`}
-                      className="text-lg font-poppins font-medium text-black/80 leading-tight"
+                      className="text-md md:text-lg font-poppins font-medium text-black/80 leading-tight"
                     >
                       {program.title}
                     </motion.h3>
                     <p className="text-black/80 text-[12px] md:text-sm
-                  leading-relaxed font-poppins line-clamp-2 md:line-clamp-3 w-[75%]">
+                  leading-relaxed font-poppins line-clamp-2 md:line-clamp-3 md:w-[75%]">
                       {program.description}
                     </p>
 
@@ -210,20 +210,21 @@ export default function Content() {
         >
           <button
             onClick={() => setIsEnrollOpen(true)}
-            className="px-6 py-3 bg-[#f8bbd0] text-black/80 rounded-full font-poppins cursor-pointer
-            shadow-[0_8px_30px_rgb(0,0,0,0.09)] font-regular hover:bg-[#f48fb1] transition-colors"
+            className="md:px-6 md:py-3 px-4 py-4 w-30 md:w-auto bg-[#f8bbd0] text-black/80 rounded-full font-poppins hover:bg-[#f48fb1] 
+                font-regular transition-colors cursor-pointer md:text-base text-sm shadow-[0_8px_30px_rgb(0,0,0,0.1)]"
           >
             Enroll Now
           </button>
         </motion.div>
       </motion.div>
 
+      
       {/* A Video Peek section */}
-      <div className="flex flex-cols-2 h-140 bg-[#FDF5E6] rounded-[30px] 
+      <div className="flex flex-cols-2 h-110 md:h-140 bg-[#FDF5E6] rounded-[30px] 
         shadow-[0_8px_30px_rgb(0,0,0,0.09)] items-center justify-center mb-20 md:w-220 xl:w-250 mx-auto
       ">
-        <div className="text-black/60 font-poppins text-lg m-4 ml-6 h-60 w-[40%]">
-          <p className="text-amber-800 text-2xl">
+        <div className="text-black/60 font-poppins text-sm md:text-lg md:m-4 m-2 md:ml-6  h-60 w-[40%]">
+          <p className="text-amber-800 text-xl md:text-2xl">
             A Peek
           </p>
 
@@ -232,12 +233,12 @@ export default function Content() {
             joyful environment
           </p>
 
-          <p className="mt-3">
+          <p className="hidden md:block mt-3">
             From engaging activities to warm interactions with our teachers, every
             moment is designed to help your child feel confident and cared for
           </p>
         </div>
-        <div className="ml-4 m-10 h-120 w-[50%] relative group">
+        <div className="md:ml-4 ml-2 md:m-10 md:h-120 h-80 w-[50%] relative group">
           <video
             src="/vids/daycare-2.mp4"
             autoPlay
@@ -251,9 +252,9 @@ export default function Content() {
           />
           <button
             onClick={() => setIsVideoPeekOpen(true)}
-            className="absolute bottom-6 left-1/2 -translate-x-1/2 px-6 py-2 bg-white 
+            className="absolute bottom-6 left-1/2 -translate-x-1/2 px-6 py-2 bg-white w-40 md:w-auto
             text-black/80 rounded-full shadow-lg font-poppins font-regular hover:bg-slate-50 
-            transition-all scale-95 group-hover:scale-100 cursor-pointer"
+            transition-all scale-95 group-hover:scale-100 cursor-pointer text-sm md:text-base"
           >
             Take a peek
           </button>
@@ -264,21 +265,21 @@ export default function Content() {
 
       {/* A Button to book a tour */}
       <div className="flex flex-col items-center justify-center mb-20">
-        <div className="text-2xl text-black/80 font-poppins text-center mb-5">
+        <div className="text-lg md:text-2xl text-black/80 font-poppins text-center mb-5">
           Want to see it in person?
         </div>
        <div className="flex flex-wrap gap-4">
         <button
           onClick={() => setIsEnrollOpen(true)}
-          className="px-6 py-3 bg-[#f8bbd0] text-black/80 rounded-full font-poppins cursor-pointer
-          shadow-[0_8px_30px_rgb(0,0,0,0.09)] font-regular hover:bg-[#f48fb1] transition-colors"
+          className="md:px-6 md:py-3 px-4 py-4 w-30 md:w-auto bg-[#f8bbd0] text-black/80 rounded-full font-poppins hover:bg-[#f48fb1] 
+            font-regular transition-colors cursor-pointer md:text-base text-sm shadow-[0_8px_30px_rgb(0,0,0,0.1)]"
         >
           Enroll Now
         </button>
          <button
           onClick={() => setIsBookTourOpen(true)}
-          className="px-6 py-3 bg-white text-black/80 rounded-full font-poppins cursor-pointer
-          shadow-[0_8px_30px_rgb(0,0,0,0.09)] font-regular hover:bg-[#f48fb1] transition-colors"
+          className="md:px-6 md:py-3 px-4 py-4 w-30 md:w-auto bg-white text-black/80 rounded-full font-poppins hover:bg-[#f48fb1] 
+            font-regular transition-colors cursor-pointer md:text-base text-sm shadow-[0_8px_30px_rgb(0,0,0,0.05)]"
         >
           Book a Tour
         </button>

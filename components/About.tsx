@@ -95,7 +95,7 @@ export default function About() {
               <button
                 onClick={() => setIsLearnMoreOpen(true)}
                 className="md:px-6 md:py-3 px-4 py-4 w-30 md:w-auto bg-white text-black/80 rounded-full font-poppins hover:bg-[#f48fb1] 
-                font-regular transition-colors cursor-pointer md:text-base text-sm shadow-[0_8px_30px_rgb(0,0,0,0.04)]"
+                font-regular transition-colors cursor-pointer md:text-base text-sm shadow-[0_8px_30px_rgb(0,0,0,0.05)]"
               >
                 Learn More
               </button>
