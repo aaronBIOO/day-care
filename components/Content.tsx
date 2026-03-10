@@ -168,13 +168,13 @@ export default function Content() {
                         onClick={() => setExpandedIndex(index)}
                         className="flex items-center gap-2 group/btn"
                       >
-                        <span className="text-sm font-regular font-poppins text-black/60 hover:border-b-2 cursor-pointer
+                        <span className="text-sm font-regular font-poppins md:text-black/60 text-violet-800 hover:border-b-2 cursor-pointer
                       hover:border-amber-800 pb-0.5 group-hover/btn:opacity-60 transition-opacity hover:text-amber-800
                     ">
                           Learn More
                         </span>
                         <ChevronRight
-                          className="w-4 h-4 group-hover/btn:text-amber-800 text-black/70
+                          className="w-4 h-4 group-hover/btn:text-amber-800 md:text-black/70 text-violet-800
                       group-hover/btn:translate-x-1 transition-transform " />
                       </button>
                     </div>
@@ -220,10 +220,10 @@ export default function Content() {
 
       
       {/* A Video Peek section */}
-      <div className="flex flex-cols-2 w-full h-110 md:h-140 bg-[#FDF5E6] rounded-[30px] 
+      <div className="flex flex-col md:flex-row w-full h-auto py-12 md:py-0 md:h-140 bg-[#FDF5E6] rounded-[30px] 
         shadow-[0_8px_30px_rgb(0,0,0,0.09)] items-center justify-center mb-20 md:w-220 xl:w-250 mx-auto
       ">
-        <div className="text-black/60 font-poppins text-sm md:text-lg md:m-4 m-2 md:ml-6  h-60 w-[40%]">
+        <div className="text-black/60 font-poppins text-sm md:text-lg md:m-4 m-2 md:ml-6 h-auto md:h-60 w-[90%] md:w-[40%]">
           <p className="text-amber-800 text-xl md:text-2xl">
             A Peek
           </p>
@@ -233,12 +233,12 @@ export default function Content() {
             joyful environment
           </p>
 
-          <p className="hidden md:block mt-3">
+          <p className="mt-3">
             From engaging activities to warm interactions with our teachers, every
             moment is designed to help your child feel confident and cared for
           </p>
         </div>
-        <div className="md:ml-4 ml-2 md:m-10 md:h-120 h-80 w-[50%] relative group">
+        <div className="md:ml-4 ml-2 mt-4 md:mt-auto md:m-10 md:h-120 h-80 w-[90%] md:w-[50%] relative group">
           <video
             src="/vids/daycare-2.mp4"
             autoPlay
@@ -307,8 +307,8 @@ export default function Content() {
         </div>
 
         {/* videos & images */}
-        <div className="flex flex-cols mx-10 gap-5 items-center justify-center">
-          <div className="relative w-[28%] h-100 ">
+        <div className="flex flex-col md:flex-row mx-auto gap-8 items-center justify-center">
+          <div className="relative w-[80%] md:w-[28%] h-80 md:h-100 ">
             <video
               src="/vids/daycare-3.mp4"
               autoPlay
@@ -319,7 +319,7 @@ export default function Content() {
               preload="auto"
             />
           </div>
-          <div className="relative w-[28%] h-100">
+          <div className="relative w-[80%] md:w-[28%] h-80 md:h-100">
             <Image
               src="/images/kids-teacher-6.jpg"
               alt="Happy kids"
@@ -327,7 +327,7 @@ export default function Content() {
               className="object-cover rounded-[30px] shadow-[0_8px_30px_rgb(0,0,0,0.1)]"
             />
           </div>
-          <div className="relative w-[28%] h-100">
+          <div className="relative w-[80%] md:w-[28%] h-80 md:h-100">
             <Image
               src="/images/kids-teacher-5.jpg"
               alt="Happy kids"
