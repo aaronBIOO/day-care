@@ -31,7 +31,7 @@ export default function Footer() {
   };
 
   return (
-    <footer className="hidden md:block bg-[#FDF5E6] py-20 border-t border-amber-900/10">
+    <footer className="bg-[#FDF5E6] py-20 border-t border-amber-900/10">
       <motion.div
         className="container mx-auto px-6"
         initial="hidden"
@@ -41,8 +41,8 @@ export default function Footer() {
       >
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8">
           {/* Column 1: Brand */}
-          <motion.div variants={itemVariants} className="space-y-6">
-            <div className="flex items-center gap-3">
+          <motion.div variants={itemVariants} className="space-y-6 flex flex-col items-center md:items-start text-center md:text-left">
+            <div className="flex items-center gap-3 justify-center md:justify-start">
               <div className="relative w-8 h-8">
                 <Image
                   src="/favicon.ico"
@@ -74,7 +74,7 @@ export default function Footer() {
           </motion.div>
 
           {/* Column 2: Links */}
-          <motion.div variants={itemVariants} className="space-y-6 ml-4">
+          <motion.div variants={itemVariants} className="space-y-6 md:ml-4 flex flex-col items-center md:items-start text-center md:text-left">
             <h4 className="font-poppins font-bold text-amber-900 uppercase tracking-widest text-xs">
               Quick Links
             </h4>
@@ -93,28 +93,28 @@ export default function Footer() {
           </motion.div>
 
           {/* Column 3: Contact */}
-          <motion.div variants={itemVariants} className="space-y-6 mr-8">
+          <motion.div variants={itemVariants} className="space-y-6 md:mr-8 flex flex-col items-center md:items-start text-center md:text-left">
             <h4 className="font-poppins font-bold text-amber-900 uppercase tracking-widest text-xs">
               Contact Us
             </h4>
-            <ul className="space-y-4 font-poppins text-sm text-black/70">
-              <li className="flex items-start gap-3">
+            <ul className="space-y-4 font-poppins text-sm text-black/70 flex flex-col items-center md:items-start">
+              <li className="flex items-start gap-3 justify-center md:justify-start">
                 <Phone className="w-4 h-4 text-amber-800 mt-0.5 shrink-0" />
                 <span>+1 (555) 123-4567</span>
               </li>
-              <li className="flex items-start gap-3">
+              <li className="flex items-start gap-3 justify-center md:justify-start">
                 <Mail className="w-4 h-4 text-amber-800 mt-0.5 shrink-0" />
                 <span>hello@daycare.com</span>
               </li>
-              <li className="flex items-start gap-3">
+              <li className="flex items-start gap-3 justify-center md:justify-start">
                 <MapPin className="w-4 h-4 text-amber-800 mt-0.5 shrink-0" />
                 <span>123 Sunshine Lane, Kidsville</span>
               </li>
             </ul>
           </motion.div>
 
-          {/* Column 4: CTA */}
-          <motion.div variants={itemVariants} className="space-y-6">
+          {/* Column 4: Community */}
+          <motion.div variants={itemVariants} className="space-y-6 flex flex-col items-center md:items-start text-center md:text-left">
             <h4 className="font-poppins font-bold text-amber-900 uppercase tracking-widest text-xs">
               Our Community
             </h4>
@@ -131,7 +131,7 @@ export default function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="mt-20 pt-8 border-t border-amber-900/5 flex flex-col md:flex-row justify-between items-center gap-4">
+        <div className="mt-20 pt-8 border-t border-amber-900/5 flex flex-col md:flex-row justify-between items-center gap-4 text-center md:text-left">
           <p className="text-black/40 font-poppins text-xs">
             © 2026 DayCare. All rights reserved.
           </p>
