@@ -34,7 +34,7 @@ export default function About() {
   };
 
   return (
-    <section id="about" className="hidden md:flex bg-[#FDF5E6] py-24 min-h-[700px]  items-center overflow-hidden">
+    <section id="about" className="flex bg-[#FDF5E6] py-24 min-h-[700px]  items-center overflow-hidden">
       <motion.div
         className="container mx-auto px-6"
         initial="hidden"
@@ -61,7 +61,7 @@ export default function About() {
               transition={{ delay: 0.4, type: "spring", stiffness: 100 }}
             >
               <CurlyDoodle
-                className="absolute -bottom-12 -right-12 xl:w-48 xl:h-48 md:w-36 md:h-36 text-slate-900"
+                className="absolute -bottom-12 -right-12 xl:w-48 xl:h-48 md:w-36 md:h-36 w-32 h-32 text-slate-900"
                 color="#92400E"
               />
             </motion.div>
@@ -84,16 +84,18 @@ export default function About() {
               </motion.h2>
             </div>
 
-            <motion.div variants={itemVariants} className="flex flex-wrap gap-4 pt-4">
+            <motion.div variants={itemVariants} className="flex flex-wrap gap-4 pt-4 md:justify-none justify-center">
               <button
                 onClick={() => setIsContactOpen(true)}
-                className="px-6 py-3 bg-[#f8bbd0] text-black/80 font-poppins rounded-full shadow-[0_8px_30px_rgb(0,0,0,0.09)] font-regular hover:bg-[#f48fb1] transition-colors cursor-pointer"
+                className="md:px-6 md:py-3 bg-[#f8bbd0] text-black/80 font-poppins text-sm px-4 py-3 
+                rounded-full shadow-[0_8px_30px_rgb(0,0,0,0.09)] font-regular hover:bg-[#f48fb1] transition-colors cursor-pointer md:text-base"
               >
                 Get In Touch
               </button>
               <button
                 onClick={() => setIsLearnMoreOpen(true)}
-                className="px-6 py-3 bg-white text-black/80 rounded-full font-poppins shadow-[0_8px_30px_rgb(0,0,0,0.09)] font-regular hover:bg-slate-50 transition-colors cursor-pointer"
+                className="md:px-6 md:py-3 px-4 py-3 bg-white text-black/80 rounded-full font-poppins hover:bg-[#f48fb1] 
+                font-regular transition-colors cursor-pointer md:text-base text-sm shadow-[0_8px_30px_rgb(0,0,0,0.09)]"
               >
                 Learn More
               </button>
