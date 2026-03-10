@@ -62,8 +62,8 @@ export default function StackedGallery() {
 
   return (
     <div className="relative w-full px-4 min-h-[100px] flex items-center justify-center bg-[#FAF9F6]">
-      <div className="flex mx-auto">
-        <div className="flex flex-col lg:flex-row items-center justify-center xl:gap-8 mx-auto">
+      <div className="flex mx-auto py-10">
+        <div className="flex flex-col lg:flex-row items-center justify-center gap-20 lg:gap-8 mx-auto">
           {galleryData.map((stack, sIdx) => {
             const isExpanded = expandedStack === sIdx;
             const isOtherExpanded = expandedStack !== null && !isExpanded;
@@ -132,7 +132,7 @@ export default function StackedGallery() {
                     /* Stacked View (Default) */
                     <motion.div
                       key="stacked"
-                      className="relative md:w-38 md:h-40 group items-center justify-center mx-auto"
+                      className="relative w-44 h-44 md:w-38 md:h-40 group items-center justify-center mx-auto"
                       whileHover={{ scale: 1.05 }}
                     >
                       {stack.images.map((img, iIdx) => {
