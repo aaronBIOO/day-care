@@ -48,7 +48,7 @@ export default function Hero() {
         <div className="lg:max-w-4xl relative md:max-w-2xl">
           <motion.div variants={itemVariants} className="relative">
             <OrganicBlob className="absolute -top-50 -left-20 w-50 h-50" color="#D836E0" />
-            <p className="lg:text-4xl md:text-3xl text-2xl mt-4 font-medium text-black/80 tracking-tight leading-[0.8]">
+            <p className="lg:text-4xl md:text-3xl text-2xl mt-6 md:mt-4 font-medium text-black/80 tracking-tight leading-[0.8] mb-15 md:mb-0">
               <span>a safe</span>
               <br />
               <span className="lg:text-6xl md:text-5xl text-3xl mt-2">loving place</span>
@@ -56,14 +56,14 @@ export default function Hero() {
           </motion.div>
 
           <motion.div variants={doodleVariants}
-            className="absolute md:top-20 left-0 pointer-events-none md:-left-20
+            className="absolute top-130 left-60 md:top-20 pointer-events-none md:-left-20
           ">
             <HandDrawnArrow className="w-30 h-20 md:w-60 md:h-35 xl:w-80 xl:h-40" color="#15803D" />
           </motion.div>
 
           <motion.div variants={doodleVariants}
             className="absolute md:top-20 pointer-events-none
-             lg:right-70 md:right-55 top-10 right-10
+             lg:right-70 md:right-55 top-25 -right-4
           ">
             <ConnectedBubbles className="w-40 md:w-70 md:h-45 lg:w-80 lg:h-50" color="#a78bfa" />
           </motion.div>
@@ -111,7 +111,7 @@ export default function Hero() {
                 className="object-cover"
               />
             </div>
-            <div className="absolute -bottom-10 -left-10 w-30 h-8 md:w-40 md:h-16 bg-[#a78bfa] rounded-full rotate-45" />
+            <div className="absolute -bottom-10 -left-10 w-30 h-10 md:w-40 md:h-16 bg-[#a78bfa] rounded-full rotate-45" />
           </motion.div>
 
           <motion.p variants={itemVariants} className="text-2xl md:text-3xl text-black/80 font-medium whitespace-nowrap text-shadow-lg leading-[0.9] md:leading-none">
