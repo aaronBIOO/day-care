@@ -55,7 +55,7 @@ export default function MobileNavbar({ activeSection, setActiveSection }: Mobile
           {/* Menu Button */}
           <button
             onClick={toggleMenu}
-            className="flex items-center gap-3 group outline-none"
+            className="flex items-center gap-3 group outline-none cursor-pointer"
             aria-label={isOpen ? "Close menu" : "Open menu"}
           >
             <div className="relative w-10 h-10 rounded-full border border-black/10 flex items-center justify-center transition-all duration-300 group-hover:border-violet-800/40 bg-white/10 group-active:scale-95">
@@ -105,10 +105,10 @@ export default function MobileNavbar({ activeSection, setActiveSection }: Mobile
                 >
                   <Link
                     href={link.href}
-                    className={`font-poppins text-5xl font-bold transition-all duration-300 relative group
+                    className={`font-poppins text-4xl font-bold transition-all duration-300 relative group
                       ${activeSection.toLowerCase().includes(link.name)
                         ? "text-violet-800"
-                        : "text-black/80 hover:text-violet-800"
+                        : "text-black/80 hover:text-black/50"
                       }`}
                     onClick={() => handleLinkClick(link.name)}
                   >
