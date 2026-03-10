@@ -41,7 +41,7 @@ export default function MobileNavbar({ activeSection, setActiveSection }: Mobile
   return (
     <>
       <nav className="md:hidden fixed top-6 left-0 right-0 z-50 flex justify-center px-4">
-        <div className="w-full max-w-lg bg-white/20 backdrop-blur-sm px-6 py-4 
+        <div className="w-full max-w-lg bg-white/25 backdrop-blur-sm px-6 py-4 
           flex items-center justify-between shadow-[0_8px_30px_rgb(0,0,0,0.05)] rounded-full border border-white/20">
           {/* Logo */}
           <Link
