@@ -36,7 +36,7 @@ export default function Hero() {
   };
 
   return (
-    <section id="home" className="hidden md:flex min-h-screen md:pt-40 pt-20 pb-20 overflow-hidden bg-[#f8d057]">
+    <section id="home" className="md:flex min-h-screen md:pt-40 pt-20 pb-20 overflow-hidden bg-[#f8d057]">
       <motion.div
         variants={containerVariants}
         initial="hidden"
@@ -48,24 +48,24 @@ export default function Hero() {
         <div className="lg:max-w-4xl relative md:max-w-2xl">
           <motion.div variants={itemVariants} className="relative">
             <OrganicBlob className="absolute -top-50 -left-20 w-50 h-50" color="#D836E0" />
-            <p className="lg:text-4xl md:text-3xl text-2xl font-medium text-black/80 tracking-tight leading-[0.8]">
+            <p className="lg:text-4xl md:text-3xl text-2xl mt-4 font-medium text-black/80 tracking-tight leading-[0.8]">
               <span>a safe</span>
               <br />
-              <span className="lg:text-6xl md:text-5xl text-4xl mt-2">loving place</span>
+              <span className="lg:text-6xl md:text-5xl text-3xl mt-2">loving place</span>
             </p>
           </motion.div>
 
           <motion.div variants={doodleVariants}
-            className="absolute top-20 left-0 pointer-events-none md:-left-20
+            className="absolute md:top-20 left-0 pointer-events-none md:-left-20
           ">
-            <HandDrawnArrow className="md:w-60 md:h-35 xl:w-80 xl:h-40" color="#15803D" />
+            <HandDrawnArrow className="w-30 h-20 md:w-60 md:h-35 xl:w-80 xl:h-40" color="#15803D" />
           </motion.div>
 
           <motion.div variants={doodleVariants}
-            className="absolute top-20 right-40 pointer-events-none
-             lg:right-70 md:right-55
+            className="absolute md:top-20 pointer-events-none
+             lg:right-70 md:right-55 top-10 right-10
           ">
-            <ConnectedBubbles className="md:w-70 md:h-45 lg:w-80 lg:h-50" color="#a78bfa" />
+            <ConnectedBubbles className="w-40 md:w-70 md:h-45 lg:w-80 lg:h-50" color="#a78bfa" />
           </motion.div>
 
           {/* Image overlapping 'love' */}
@@ -75,7 +75,7 @@ export default function Hero() {
             absolute xl:-top-10 xl:-right-80 xl:w-[550px] xl:h-[250px]
             lg:-top-3 lg:-right-20 lg:w-[400px] lg:h-[200px]  
             md:-top-3 md:-right-20 md:w-[400px] md:h-[200px] 
-            w-[300px] h-[150px] shadow-3xl rounded-sm overflow-hidden shadow-2xl border-4 border-white"
+            w-[300px] h-[200px] shadow-3xl right-4 mt-4 rounded-sm overflow-hidden shadow-2xl border-4 border-white"
           >
             <Image
               src="/images/kid-smile-2.jpg"
@@ -88,7 +88,7 @@ export default function Hero() {
           <motion.div
             variants={doodleVariants}
             className="absolute xl:top-10 xl:right-50 lg:w-12 lg:h-12 bg-green-700 rounded-full
-             md:-top-20 md:right-1 md:z-20
+             md:-top-20 md:right-1 md:z-20 w-10 h-10 mt-3 md:left-none 
             "
           />
 
@@ -101,9 +101,9 @@ export default function Hero() {
         <div className="mt-10 flex flex-col md:flex-row items-center gap-12 relative pb-10">
           <motion.div
             variants={itemVariants}
-            className="relative w-[500px] h-[230px] shrink-0 md:w-[400px] md:h-[200px]"
+            className="relative z-20 w-[415px] h-[300px] shrink-0 md:w-[400px] md:h-[200px]"
           >
-            <div className="absolute inset-0 -rotate-2 shadow-2xl rounded-sm overflow-hidden border-4 border-white">
+            <div className="absolute inset-0 top-35 right-30 md:left-none md:top-none md:inset-0 -rotate-2 shadow-2xl rounded-sm overflow-hidden border-4 border-white">
               <Image
                 src="/images/teach-illus-2.jpg"
                 alt="Learning"
@@ -111,15 +111,15 @@ export default function Hero() {
                 className="object-cover"
               />
             </div>
-            <div className="absolute -bottom-10 -left-10 w-24 h-24 md:w-40 md:h-16 bg-[#a78bfa] rounded-full rotate-45" />
+            <div className="absolute -bottom-10 -left-10 w-30 h-8 md:w-40 md:h-16 bg-[#a78bfa] rounded-full rotate-45" />
           </motion.div>
 
-          <motion.p variants={itemVariants} className="text-4xl text-black/80 font-medium whitespace-nowrap text-shadow-lg">
+          <motion.p variants={itemVariants} className="text-2xl md:text-3xl text-black/80 font-medium whitespace-nowrap text-shadow-lg leading-[0.9] md:leading-none">
             for your child <br /> to grow
           </motion.p>
 
           {/* Stacking images */}
-          <div className="flex flex-col gap-4 -translate-y-4">
+          <div className="flex md:flex-col gap-4 -translate-y-4">
             <motion.div
               variants={itemVariants}
               className="relative w-24 h-24 rounded-2xl overflow-hidden border-4 border-white shadow-xl rotate-3 md:right-8 lg:right-0"
@@ -142,14 +142,27 @@ export default function Hero() {
             </motion.div>
           </div>
 
-          <motion.div variants={doodleVariants} className="pointer-events-none">
-            <LeafShape className="w-48 h-48" color="#F24DDB" />
+          <motion.div variants={doodleVariants} className="hidden md:block pointer-events-none">
+            <LeafShape className="md:w-24 md:h-24 w-12 h-12 xl:w-48 xl:h-48" color="#F24DDB" />
           </motion.div>
 
-          <motion.div variants={doodleVariants} className="flex-row gap-2 pointer-events-none">
-            <StarDoodle className="w-15 h-15" color="#fff" />
+          <motion.div variants={doodleVariants} className="hidden md:flex md:flex-col flex-row gap-2 pointer-events-none">
+            <StarDoodle className="md:w-15 md:h-15 w-10 h-10" color="#fff" />
+            <StarDoodle className="md:w-10 md:h-10 w-7 h-7" color="#fff" />
+            <StarDoodle className="md:w-7 md:h-7 w-5 h-5" color="#fff" />
+          </motion.div>
+        </div>
+        
+        {/* mobile doodles */}
+        <div className="flex flex-row md:hidden h-22 gap-4 w-full">
+          <motion.div variants={doodleVariants} className="pointer-events-none">
+            <LeafShape className="w-20 h-20" color="#F24DDB" />
+          </motion.div>
+
+          <motion.div variants={doodleVariants} className="flex flex-row gap-2 pointer-events-none">
             <StarDoodle className="w-10 h-10" color="#fff" />
             <StarDoodle className="w-7 h-7" color="#fff" />
+            <StarDoodle className="w-5 h-5" color="#fff" />
           </motion.div>
         </div>
       </motion.div>
