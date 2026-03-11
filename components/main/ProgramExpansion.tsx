@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
-import { X } from "lucide-react";
+import { X, ArrowLeft } from "lucide-react";
 
 export interface Program {
   title: string;
@@ -26,33 +26,40 @@ export default function ProgramExpansion({ programs, expandedIndex, onClose }: P
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           onClick={onClose}
-          className="absolute inset-0 flex items-center justify-center py-5 md:py-10"
+          className="fixed inset-0 z-110 flex items-center justify-center p-0 md:p-10 bg-white/30 backdrop-blur-xl"
         >
+          {/* Back Button (Mobile Only) */}
+          <button
+            onClick={onClose}
+            className="md:hidden absolute top-6 left-6 p-3 bg-black/20 hover:bg-black/70 
+            rounded-full transition-colors z-120 flex items-center shadow-lg"
+          >
+            <ArrowLeft className="w-4 h-4 text-white" />
+          </button>
           {/* Expanded Card */}
           <motion.div
-            initial={{ scale: 0.9, opacity: 0, y: 20 }}
+            initial={{ scale: 0.95, opacity: 0, y: 20 }}
             animate={{ scale: 1, opacity: 1, y: 0 }}
-            exit={{ scale: 0.9, opacity: 0, y: 20 }}
+            exit={{ scale: 0.95, opacity: 0, y: 20 }}
             transition={{ type: "spring", damping: 25, stiffness: 200 }}
             onClick={(e) => e.stopPropagation()}
-            className="relative bg-white/95 backdrop-blur-3xl p-6 md:p-12 rounded-[40px] 
-            shadow-[0_32px_64px_-12px_rgba(0,0,0,0.14)] w-full max-w-3xl mx-4 z-10 flex flex-col 
-            md:flex-row gap-4 md:gap-10 border border-white/40"
+            className="relative bg-white md:bg-white/95 md:backdrop-blur-3xl p-0 md:p-12 rounded-none md:rounded-[40px] 
+            shadow-[0_32px_64px_-12px_rgba(0,0,0,0.14)] w-full h-full md:h-auto md:max-w-3xl md:mx-4 z-10 flex flex-col 
+            md:flex-row gap-0 md:gap-10 border-none md:border md:border-white/40 overflow-y-auto md:overflow-hidden"
           >
-            {/* Close button */}
+            {/* Close button (Desktop Only) */}
             <button
               onClick={onClose}
-              className="absolute top-8 right-5 p-3 bg-black/5 hover:bg-black/10 rounded-full 
+              className="hidden md:block absolute top-8 right-5 p-3 bg-black/5 hover:bg-black/10 rounded-full 
               transition-all hover:rotate-90 text-slate-500 hover:text-slate-800 cursor-pointer"
             >
               <X className="w-6 h-6" />
             </button>
 
-            {/* Image side */}
             <motion.div
               layoutId={`program-image-${expandedIndex}`}
-              className="relative w-full md:w-[45%] aspect-video md:aspect-auto md:h-[300px] 
-              rounded-[35px] overflow-hidden shadow-lg border-4 border-white"
+              className="relative w-full md:w-[45%] h-64 md:h-[300px]
+              rounded-none md:rounded-[35px] overflow-hidden shadow-none md:shadow-lg border-none md:border-4 md:border-white shrink-0"
             >
               <Image
                 src={programs[expandedIndex].image}
@@ -63,7 +70,7 @@ export default function ProgramExpansion({ programs, expandedIndex, onClose }: P
             </motion.div>
 
             {/* Content side */}
-            <div className="w-full md:w-[60%] flex flex-col justify-center">
+            <div className="w-full md:w-[60%] flex flex-col justify-center p-8 md:p-0">
               <motion.p
                 initial={{ opacity: 0, x: 20 }}
                 animate={{ opacity: 1, x: 0 }}
