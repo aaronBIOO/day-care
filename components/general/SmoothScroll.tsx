@@ -12,7 +12,7 @@ export default function SmoothScroll({ children }: SmoothScrollProps) {
     <ReactLenis
       root
       options={{
-        lerp: 0.001, // Lower value = smoother/slower scroll
+        lerp: 0.1, // Lower value = smoother/slower scroll
         duration: 1.0,
         smoothWheel: true,
       }}

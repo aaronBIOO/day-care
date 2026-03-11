@@ -69,8 +69,8 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
                   type="text"
                   required
                   placeholder="Chris Pratt"
-                  className="px-4 py-3 bg-slate-50 border-none rounded-[15px] focus:ring-2
-                   focus:ring-amber-200 outline-none transition-all font-poppins text-sm ring-amber-800/20 ring-1"
+                  className="px-4 py-3 bg-slate-50 border-none rounded-[15px] md:focus:ring-2
+                   md:focus:ring-amber-200 focus:outline-none outline-none transition-all font-poppins text-base md:text-sm ring-amber-800/20 ring-1"
                 />
               </div>
               <div className="flex flex-col gap-2">
@@ -81,8 +81,8 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
                   type="email"
                   required
                   placeholder="chris@example.com"
-                  className="px-4 py-3 bg-slate-50 border-none rounded-[15px] focus:ring-2 ring-amber-800/20 ring-1
-                    focus:ring-amber-200 outline-none transition-all font-poppins text-sm"
+                  className="px-4 py-3 bg-slate-50 border-none rounded-[15px] md:focus:ring-2 ring-amber-800/20 ring-1
+                    md:focus:ring-amber-200 focus:outline-none outline-none transition-all font-poppins text-base md:text-sm"
                 />
               </div>
               <div className="flex flex-col gap-2">
@@ -93,8 +93,8 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
                   rows={2.5}
                   required
                   placeholder="How can we help you?"
-                  className="px-6 py-4 bg-slate-50 border-none rounded-3xl focus:ring-2 shadow-[0px_3px_8px_rgba(0,0,0,0.03)]
-                  focus:ring-amber-200 outline-none transition-all font-poppins resize-none text-sm ring-amber-800/20 ring-1"
+                  className="px-6 py-4 bg-slate-50 border-none rounded-3xl md:focus:ring-2 shadow-[0px_3px_8px_rgba(0,0,0,0.03)]
+                  md:focus:ring-amber-200 focus:outline-none outline-none transition-all font-poppins resize-none text-base md:text-sm ring-amber-800/20 ring-1"
                 />
               </div>
 

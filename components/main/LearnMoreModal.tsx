@@ -215,7 +215,7 @@ export default function LearnMoreModal({ isOpen, onClose }: LearnMoreModalProps)
                     onClick={prevStep}
                     className="flex-1 py-4 bg-slate-100 text-black/60 rounded-full 
                     text-base hover:bg-slate-200 transition-all flex items-center font-poppins
-                    justify-center gap-2 active:scale-[0.98]"
+                    justify-center gap-2 active:scale-[0.98] outline-none border-none"
                   >
                     <ChevronLeft className="w-5 h-5" />
                     Back
@@ -225,7 +225,7 @@ export default function LearnMoreModal({ isOpen, onClose }: LearnMoreModalProps)
                   onClick={nextStep}
                   className="flex-2 py-4 bg-[#f8bbd0] text-black/80 rounded-full 
                   text-base hover:bg-[#f48fb1] transition-all flex items-center font-poppins
-                  justify-center gap-2 active:scale-[0.98] shadow-lg font-medium"
+                  justify-center gap-2 active:scale-[0.98] shadow-lg font-medium outline-none border-none"
                 >
                   {step === cards.length - 1 ? "Finish" : "Next"}
                   <ChevronRight className="w-5 h-5" />
