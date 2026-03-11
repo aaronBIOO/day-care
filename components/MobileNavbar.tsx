@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { StarDoodle, LeafShape, HandDrawnArrow, SlantedLinesDoodle } from "@/components/general/Doodles";
 
 const navLinks = [
   { name: "home", href: "#home" },
@@ -93,9 +94,27 @@ export default function MobileNavbar({ activeSection, setActiveSection }: Mobile
               stiffness: 150,
               mass: 1
             }}
-            className="fixed inset-0 z-40 bg-[#FDF5E6] flex flex-col items-center justify-center"
+            className="fixed inset-0 z-40 bg-[#FDF5E6] flex flex-col items-center justify-center p-10 overflow-hidden"
           >
-            <div className="flex flex-col items-center space-y-10">
+            {/* Background Doodles */}
+            <LeafShape 
+              color="#fbbf24" 
+              className="absolute -top-10 -left-10 w-40 h-40 opacity-30 rotate-12" 
+            />
+            <StarDoodle 
+              color="#f472b6" 
+              className="absolute top-20 -right-10 w-32 h-32 opacity-20 -rotate-12" 
+            />
+            <HandDrawnArrow 
+              color="#8b5cf6" 
+              className="absolute bottom-10 -left-10 w-52 h-35 opacity-20 rotate-180" 
+            />
+            <SlantedLinesDoodle 
+              color="#fb923c" 
+              className="absolute bottom-20 -right-5 w-24 h-16 opacity-30 rotate-45" 
+            />
+
+            <div className="flex flex-col items-center space-y-10 relative z-10">
               {navLinks.map((link, index) => (
                 <motion.div
                   key={link.name}
