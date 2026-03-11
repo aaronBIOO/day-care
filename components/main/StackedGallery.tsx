@@ -197,7 +197,7 @@ export default function StackedGallery() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-100 bg-white backdrop-blur-lg flex items-center justify-center p-4 md:p-12"
+            className="fixed inset-0 z-100 bg-white backdrop-blur-lg flex items-center justify-center md:p-12"
             onClick={() => setSelectedIndex(null)}
           >
             {/* Navigation buttons inside Lightbox */}
@@ -231,8 +231,8 @@ export default function StackedGallery() {
               className="absolute top-6 left-2 md:top-8 md:left-10 p-3 bg-black/20 md:bg-black/5 hover:bg-black/70 md:hover:bg-black/10 
                 rounded-full transition-colors z-120 group flex items-center gap-2 shadow-lg md:shadow-none"
             >
-              <ArrowLeft className="w-4 h-4 md:w-6 md:h-6 text-white md:text-black/50 group-hover:text-black transition-colors" />
-              <span className="hidden md:inline text-black/50 group-hover:text-black/80 font-poppins text-sm font-medium pr-2">
+              <ArrowLeft className="w-4 h-4 md:w-6 md:h-6 text-white md:text-black/50 group-hover:text-white transition-colors" />
+              <span className="hidden md:inline text-black/50 group-hover:text-white font-poppins text-sm font-medium pr-2">
                 Back
               </span>
             </motion.button>
@@ -244,7 +244,7 @@ export default function StackedGallery() {
               exit={{ opacity: 0, x: 20 }}
               onClick={(e) => { e.stopPropagation(); setExpandedStack(null); setSelectedIndex(null); }}
               className="hidden md:block absolute top-8 right-10 p-3 bg-black/5 hover:bg-black/10 
-                rounded-full transition-colors z-120"
+                rounded-full transition-colors z-120 hover:text-white"
             >
               <X className="w-6 h-6 text-black/50" />
             </motion.button>
