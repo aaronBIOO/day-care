@@ -80,17 +80,17 @@ export default function EnrollModal({ isOpen, onClose }: EnrollModalProps) {
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           className="fixed inset-0 z-110 flex items-center justify-center bg-white/30 
-          backdrop-blur-xl p-4 md:p-6 overscroll-contain"
+          backdrop-blur-xl p-0 md:p-6 overscroll-contain"
         >
           {/* Main Close Button */}
           <button
             onClick={onClose}
-            className="absolute top-4 left-8 p-3 px-4 bg-black/10 hover:bg-black/15 
+            className="absolute top-6 left-2 md:top-4 md:left-8 p-3 md:px-4 bg-black/20 hover:bg-black/70 
               rounded-full transition-colors z-120 group flex items-center 
-              shadow-[0px_5px_10px_rgba(0,0,0,0.05)]"
+              shadow-lg"
           >
-            <ArrowLeft className="w-4 h-4 text-black/50 group-hover:text-black transition-colors" />
-            <span className="text-black/50 group-hover:text-black/80 font-poppins text-sm font-medium ml-2">
+            <ArrowLeft className="w-4 h-4 text-white md:text-black/50 group-hover:text-white transition-colors" />
+            <span className="hidden md:inline text-black/50 group-hover:text-black/80 font-poppins text-sm font-medium ml-2">
               Back
             </span>
           </button>
@@ -100,8 +100,8 @@ export default function EnrollModal({ isOpen, onClose }: EnrollModalProps) {
             animate={{ scale: 1, opacity: 1, y: 0 }}
             exit={{ scale: 0.95, opacity: 0, y: 20 }}
             transition={{ type: "spring", damping: 25, stiffness: 200 }}
-            className="relative w-full max-w-xl bg-white/80 rounded-[40px] shadow-2xl 
-            overflow-hidden p-8 md:p-12 md:pt-10 md:w-120 mx-auto"
+            className="relative w-full h-full md:h-auto max-w-xl bg-white md:bg-white/80 rounded-none md:rounded-[40px] shadow-2xl 
+            overflow-y-auto md:overflow-hidden p-8 pt-24 md:p-12 md:pt-10 md:w-120 mx-auto"
           >
             <div className="text-center mb-8">
               <h2 className="text-lg font-semibold text-amber-800 font-poppins mb-2">
@@ -142,8 +142,8 @@ export default function EnrollModal({ isOpen, onClose }: EnrollModalProps) {
                         type="text"
                         required
                         placeholder="John Doe"
-                        className="px-6 py-4 bg-slate-50 border-none rounded-[20px] focus:ring-2
-                        focus:ring-amber-200 outline-none transition-all font-poppins text-sm 
+                        className="px-6 py-4 bg-slate-50 border-none rounded-[20px] md:focus:ring-2
+                        md:focus:ring-amber-200 focus:outline-none outline-none transition-all font-poppins text-base md:text-sm 
                         ring-amber-800/20 ring-1"
                       />
                     </div>
@@ -155,8 +155,8 @@ export default function EnrollModal({ isOpen, onClose }: EnrollModalProps) {
                         type="email"
                         required
                         placeholder="john@example.com"
-                        className="px-6 py-4 bg-slate-50 border-none rounded-[20px] focus:ring-2
-                        focus:ring-amber-200 outline-none transition-all font-poppins text-sm 
+                        className="px-6 py-4 bg-slate-50 border-none rounded-[20px] md:focus:ring-2
+                        md:focus:ring-amber-200 focus:outline-none outline-none transition-all font-poppins text-base md:text-sm 
                         ring-amber-800/20 ring-1"
                       />
                     </div>
@@ -168,14 +168,14 @@ export default function EnrollModal({ isOpen, onClose }: EnrollModalProps) {
                         type="tel"
                         required
                         placeholder="(555) 000-0000"
-                        className="px-6 py-4 bg-slate-50 border-none rounded-[20px] focus:ring-2
-                        focus:ring-amber-200 outline-none transition-all font-poppins text-sm 
+                        className="px-6 py-4 bg-slate-50 border-none rounded-[20px] md:focus:ring-2
+                        md:focus:ring-amber-200 focus:outline-none outline-none transition-all font-poppins text-base md:text-sm 
                         ring-amber-800/20 ring-1"
                       />
                     </div>
                     <button
                       onClick={nextStep}
-                      className="mt-4 w-full py-4 bg-[#f8bbd0] text-black/80 rounded-full 
+                      className="md:mt-4 mt-40 w-full py-4 bg-[#f8bbd0] text-black/80 rounded-full 
                       text-base hover:bg-[#f48fb1] transition-all flex items-center font-poppins
                       justify-center gap-3 active:scale-[0.98] shadow-lg font-regular"
                     >
@@ -207,8 +207,8 @@ export default function EnrollModal({ isOpen, onClose }: EnrollModalProps) {
                         type="text"
                         required
                         placeholder="Jane Doe"
-                        className="px-6 py-4 bg-slate-50 border-none rounded-[20px] focus:ring-2
-                        focus:ring-amber-200 outline-none transition-all font-poppins text-sm 
+                        className="px-6 py-4 bg-slate-50 border-none rounded-[20px] md:focus:ring-2
+                        md:focus:ring-amber-200 focus:outline-none outline-none transition-all font-poppins text-base md:text-sm 
                         ring-amber-800/20 ring-1"
                       />
                     </div>
@@ -219,8 +219,8 @@ export default function EnrollModal({ isOpen, onClose }: EnrollModalProps) {
                       <input
                         type="date"
                         required
-                        className="px-6 py-4 bg-slate-50 border-none rounded-[20px] focus:ring-2 
-                        focus:ring-amber-200 outline-none transition-all font-poppins text-sm 
+                        className="px-6 py-4 bg-slate-50 border-none rounded-[20px] md:focus:ring-2 
+                        md:focus:ring-amber-200 focus:outline-none outline-none transition-all font-poppins text-base md:text-sm 
                         ring-amber-800/20 ring-1 h-14"
                       />
                     </div>
@@ -231,12 +231,12 @@ export default function EnrollModal({ isOpen, onClose }: EnrollModalProps) {
                       <input
                         type="date"
                         required
-                        className="px-6 py-4 bg-slate-50 border-none rounded-[20px] focus:ring-2
-                        focus:ring-amber-200 outline-none transition-all font-poppins text-sm 
+                        className="px-6 py-4 bg-slate-50 border-none rounded-[20px] md:focus:ring-2
+                        md:focus:ring-amber-200 focus:outline-none outline-none transition-all font-poppins text-base md:text-sm 
                         ring-amber-800/20 ring-1 h-14"
                       />
                     </div>
-                    <div className="flex gap-4 mt-4">
+                    <div className="flex gap-4 md:mt-4 mt-40">
                       <button
                         onClick={prevStep}
                         className="flex-1 py-4 bg-slate-100 text-black/60 rounded-full 
@@ -280,12 +280,12 @@ export default function EnrollModal({ isOpen, onClose }: EnrollModalProps) {
                       <textarea
                         rows={5}
                         placeholder="Anything we should know about your child?"
-                        className="px-6 py-4 bg-slate-50 border-none rounded-[25px] focus:ring-2 
-                        shadow-[0px_3px_8px_rgba(0,0,0,0.03)] font-poppins resize-none text-sm ring-amber-800/20 
-                        focus:ring-amber-200 outline-none transition-all ring-1"
+                        className="px-6 py-4 bg-slate-50 border-none rounded-[25px] md:focus:ring-2 
+                        shadow-[0px_3px_8px_rgba(0,0,0,0.03)] font-poppins resize-none text-base md:text-sm ring-amber-800/20 
+                        md:focus:ring-amber-200 focus:outline-none outline-none transition-all ring-1"
                       />
                     </div>
-                    <div className="flex gap-4 mt-4">
+                    <div className="flex gap-4 md:mt-4 mt-60">
                       <button
                         onClick={prevStep}
                         className="flex-1 py-4 bg-slate-100 text-black/60 rounded-full 

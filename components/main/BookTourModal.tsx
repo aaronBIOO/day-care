@@ -2,7 +2,7 @@
 
 import { useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { X, Phone, Send, Calendar } from "lucide-react";
+import { X, Phone, Send, Calendar, ArrowLeft } from "lucide-react";
 
 interface BookTourModalProps {
   isOpen: boolean;
@@ -32,15 +32,24 @@ export default function BookTourModal({ isOpen, onClose }: BookTourModalProps) {
   return (
     <AnimatePresence>
       {isOpen && (
-        <div className="fixed inset-0 z-120 flex items-center justify-center p-4">
+        <div className="fixed inset-0 z-120 flex items-center justify-center p-0 md:p-4">
           {/* Backdrop */}
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             onClick={onClose}
-            className="absolute inset-0 bg-black/20 backdrop-blur-md"
+            className="absolute inset-0 bg-white/30 backdrop-blur-xl"
           />
+
+          {/* Back Button (Mobile) */}
+          <button
+            onClick={onClose}
+            className="md:hidden absolute top-6 left-2 p-3 bg-black/20 hover:bg-black/70 
+              rounded-full transition-colors z-120 group flex items-center shadow-lg"
+          >
+            <ArrowLeft className="w-4 h-4 text-white" />
+          </button>
 
           {/* Modal Card */}
           <motion.div
@@ -48,13 +57,13 @@ export default function BookTourModal({ isOpen, onClose }: BookTourModalProps) {
             animate={{ scale: 1, opacity: 1, y: 0 }}
             exit={{ scale: 0.95, opacity: 0, y: 20 }}
             transition={{ type: "spring", damping: 25, stiffness: 200 }}
-            className="relative bg-white/95 backdrop-blur-xl w-full max-w-md rounded-[40px] shadow-2xl overflow-hidden border border-white/40"
+            className="relative bg-white md:bg-white/95 md:backdrop-blur-xl w-full h-full md:h-auto md:max-w-md rounded-none md:rounded-[40px] shadow-2xl overflow-y-auto md:overflow-hidden border-none md:border md:border-white/40 pt-20 md:pt-0"
           >
             {/* Header / Call Section */}
             <div className="bg-amber-50/50 p-8 pt-4 pb-4 text-center border-b border-amber-100/50">
               <button
                 onClick={onClose}
-                className="absolute top-6 right-6 p-2 bg-black/5 hover:bg-black/10 
+                className="hidden md:block absolute top-6 right-6 p-2 bg-black/5 hover:bg-black/10 
                 rounded-full transition-all text-slate-400 hover:text-slate-600 cursor-pointer"
               >
                 <X className="w-4 h-4" />
@@ -89,42 +98,42 @@ export default function BookTourModal({ isOpen, onClose }: BookTourModalProps) {
                 message us and we'll schedule it for you
               </p>
 
-              <form onSubmit={handleSubmit} className="space-y-4">
+              <form onSubmit={handleSubmit} className="space-y-4 ">
                 <div>
-                  <input
+                   <input
                     type="text"
                     required
                     placeholder="Your Name"
                     className="w-full px-5 py-3 bg-slate-50 border border-slate-100 rounded-2xl 
-                    focus:ring-2 focus:ring-amber-200 outline-none transition-all font-poppins text-sm ring-amber-800/20 ring-1"
+                    md:focus:ring-2 md:focus:ring-amber-200 focus:outline-none outline-none transition-all font-poppins text-base md:text-sm ring-amber-800/20 ring-1"
                   />
                 </div>
                 <div>
-                  <input
+                   <input
                     type="email"
                     required
                     placeholder="Email Address"
                     className="w-full px-5 py-3 bg-slate-50 border border-slate-100 rounded-2xl 
-                    focus:ring-2 focus:ring-amber-200 outline-none transition-all font-poppins text-sm ring-amber-800/20 ring-1"
+                    md:focus:ring-2 md:focus:ring-amber-200 focus:outline-none outline-none transition-all font-poppins text-base md:text-sm ring-amber-800/20 ring-1"
                   />
                 </div>
                 <div>
-                  <textarea
+                   <textarea
                     rows={3}
                     required
                     placeholder="Preferred date or special requests..."
                     className="w-full px-5 py-3 bg-slate-50 ring-amber-800/20 ring-1 rounded-2xl 
-                    focus:ring-2 focus:ring-amber-200 outline-none transition-all font-poppins text-sm resize-none"
+                    md:focus:ring-2 md:focus:ring-amber-200 focus:outline-none outline-none transition-all font-poppins text-base md:text-sm resize-none"
                   />
                 </div>
 
                 <button
                   type="submit"
-                  className="w-full py-4 bg-[#f8bbd0] text-black/80 rounded-2xl font-poppins font-regular 
+                  className="w-full py-4 bg-[#f8bbd0] text-black/80 rounded-2xl font-poppins font-regular md:mt-0 mt-35
                   hover:bg-[#f48fb1] transition-all flex items-center justify-center gap-2 shadow-lg active:scale-[0.98]"
                 >
                   <Send className="w-4 h-4 text-black/70" />
-                  Request Tour
+                  Book Tour
                 </button>
               </form>
             </div>
