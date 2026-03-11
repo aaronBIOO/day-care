@@ -119,7 +119,7 @@ export default function LearnMoreModal({ isOpen, onClose }: LearnMoreModalProps)
             className="absolute top-6 left-6 md:top-4 md:left-8 p-3 md:px-4 bg-black/20 hover:bg-black/70 
               rounded-full transition-colors z-120 group flex items-center shadow-lg"
           >
-            <ArrowLeft className="w-4 h-4 text-black group-hover:text-amber-800 transition-colors" />
+            <ArrowLeft className="w-4 h-4 text-white md:text-black group-hover:text-amber-800 transition-colors" />
             <span className="hidden md:inline text-black/80 font-poppins text-sm font-medium ml-2">
               Back
             </span>
@@ -209,7 +209,7 @@ export default function LearnMoreModal({ isOpen, onClose }: LearnMoreModalProps)
               </div>
 
               {/* Navigation Buttons */}
-              <div className="mt-2 mb-10 md:mb-0 md:mt-12 flex gap-4">
+              <div className="mt-2 mb-6 md:mb-0 md:mt-12 flex gap-4">
                 {step > 0 && (
                   <button
                     onClick={prevStep}
