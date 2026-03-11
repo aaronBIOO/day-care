@@ -45,7 +45,7 @@ export default function LearnMoreModal({ isOpen, onClose }: LearnMoreModalProps)
       stepTitle: "01. The People",
       title: "Our Caring Team",
       headline: "Experienced. Compassionate. Dedicated.",
-      content: "Our team is made up of trained early childhood educators who are passionate about helping children grow with confidence. Every staff member is carefully selected for their experience, patience, and commitment to creating a warm, supportive environment.\n\nWe believe strong relationships are the foundation of early learning.",
+      content: "Our team is made up of trained early childhood educators who are passionate about helping children grow with confidence. Every staff member is carefully selected for their experience, patience, and commitment to creating a warm, supportive environment.",
       image: "/images/team-image-2.jpg",
       icon: <Heart className="w-5 h-5 text-pink-500" />,
       color: "bg-pink-50"
@@ -111,16 +111,16 @@ export default function LearnMoreModal({ isOpen, onClose }: LearnMoreModalProps)
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           className="fixed inset-0 z-110 flex items-center justify-center bg-white/40 
-          backdrop-blur-xl p-4 md:p-6 overscroll-contain"
+          backdrop-blur-xl p-0 md:p-6 overscroll-contain"
         >
           {/* Back to Site Button */}
           <button
             onClick={onClose}
-            className="absolute top-4 left-8 p-3 px-4 bg-black/10 hover:bg-black/15 
-              rounded-full transition-colors z-120 group flex items-center shadow-[0_5px_10px_rgba(0,0,0,0.05)]"
+            className="absolute top-6 left-6 md:top-4 md:left-8 p-3 md:px-4 bg-black/20 hover:bg-black/70 
+              rounded-full transition-colors z-120 group flex items-center shadow-lg"
           >
-            <ArrowLeft className="w-4 h-4 text-black/50 group-hover:text-black transition-colors" />
-            <span className="text-black/50 group-hover:text-black/80 font-poppins text-sm font-medium ml-2">
+            <ArrowLeft className="w-4 h-4 text-black group-hover:text-amber-800 transition-colors" />
+            <span className="hidden md:inline text-black/80 font-poppins text-sm font-medium ml-2">
               Back
             </span>
           </button>
@@ -130,11 +130,11 @@ export default function LearnMoreModal({ isOpen, onClose }: LearnMoreModalProps)
             animate={{ scale: 1, opacity: 1, y: 0 }}
             exit={{ scale: 0.95, opacity: 0, y: 30 }}
             transition={{ type: "spring", damping: 25, stiffness: 180 }}
-            className="relative w-full max-w-3xl bg-white/90 rounded-[40px] shadow-2xl 
-            overflow-hidden flex flex-col md:flex-row h-150 "
+            className="relative w-full h-full md:max-w-3xl bg-white md:bg-white/90 rounded-none md:rounded-[40px] shadow-2xl 
+            overflow-y-auto flex flex-col md:flex-row md:h-150"
           >
             {/* Left Side: Image */}
-            <div className="relative w-full md:w-[45%] h-full overflow-hidden bg-slate-100">
+            <div className="relative w-full md:w-[45%] h-56 md:h-full overflow-hidden bg-slate-100 shrink-0">
               <AnimatePresence initial={false} custom={direction}>
                 <motion.div
                   key={step}
@@ -158,7 +158,7 @@ export default function LearnMoreModal({ isOpen, onClose }: LearnMoreModalProps)
             </div>
 
             {/* Right Side: Content (Slides) */}
-            <div className="relative w-full md:w-[55%] h-full flex flex-col p-8 md:p-12">
+            <div className="relative w-full md:w-[55%] flex-1 md:h-full flex flex-col p-8 md:p-12">
               {/* Progress Indicator */}
               <div className="flex justify-between items-center mb-10">
                 <span className="text-xs font-bold text-amber-800 uppercase tracking-widest font-poppins">
@@ -175,7 +175,7 @@ export default function LearnMoreModal({ isOpen, onClose }: LearnMoreModalProps)
                 </div>
               </div>
 
-              <div className="flex-1 overflow-hidden relative">
+              <div className="flex-1 relative min-h-[450px] md:min-h-0">
                 <AnimatePresence initial={false} custom={direction} mode="wait">
                   <motion.div
                     key={step}
@@ -185,7 +185,7 @@ export default function LearnMoreModal({ isOpen, onClose }: LearnMoreModalProps)
                     animate="center"
                     exit="exit"
                     transition={{ type: "spring", damping: 25, stiffness: 180 }}
-                    className="absolute inset-0 flex flex-col pt-2"
+                    className="md:absolute md:inset-0 flex flex-col pt-2"
                   >
                     <div className="flex items-center gap-3 mb-4">
                       <h2 className="text-md font-semibold text-black/60 font-poppins uppercase tracking-wider">
@@ -209,7 +209,7 @@ export default function LearnMoreModal({ isOpen, onClose }: LearnMoreModalProps)
               </div>
 
               {/* Navigation Buttons */}
-              <div className="mt-8 flex gap-4">
+              <div className="mt-12 md:mt-12 flex gap-4">
                 {step > 0 && (
                   <button
                     onClick={prevStep}

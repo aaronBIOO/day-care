@@ -37,20 +37,20 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
         animate={{ scale: 1, opacity: 1, y: 0 }}
         exit={{ scale: 0.95, opacity: 0, y: 20 }}
         transition={{ type: "spring", damping: 25, stiffness: 200 }}
-        className="fixed inset-0 z-110 flex items-center justify-center bg-white/30 backdrop-blur-xl p-4 md:p-6"
+        className="fixed inset-0 z-110 flex items-center justify-center bg-white/30 backdrop-blur-xl p-0 md:p-6"
       >
         {/* Back Button */}
         <button
           onClick={onClose}
-          className="absolute top-4 left-8 p-3 px-4 bg-black/20 hover:bg-black/15 
-            rounded-full transition-colors z-10 group flex items-center shadow-[0px_5px_10px_rgba(0,0,0,0.05)"
+          className="absolute top-6 left-6 md:top-4 md:left-8 p-3 md:px-4 bg-black/20 hover:bg-black/15 
+            rounded-full transition-colors z-10 group flex items-center shadow-[0px_5px_10px_rgba(0,0,0,0.05)]"
         >
-          <ArrowLeft className="w-4 h-4 text-black/50 group-hover:text-black transition-colors" />
-          <span className="text-black/50 group-hover:text-black/80 font-poppins text-sm font-medium ml-2">
+          <ArrowLeft className="w-4 h-4 text-black/50 group-hover:text-amber-800 transition-colors" />
+          <span className="hidden md:inline text-black/50 group-hover:text-black/70 font-poppins text-sm font-medium ml-2">
             Back
           </span>
         </button>
-        <div className="relative w-120 h-150 bg-white/70 rounded-[40px] shadow-2xl overflow-hidden p-8 md:p-10 md:pt-5">
+        <div className="relative w-full h-full md:w-120 md:h-150 bg-white md:bg-white/70 rounded-none md:rounded-[40px] shadow-2xl overflow-y-auto p-8 pt-24 md:p-10 md:pt-5">
 
           <div className="mt-2 text-center">
             <h2 className="text-lg semi-bold text-amber-800 font-poppins">
@@ -101,7 +101,7 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
               <div>
                 <button
                   type="submit"
-                  className="w-[35%] py-3 bg-[#f8bbd0] text-black/80 rounded-full 
+                  className="w-[60%] md:w-[35%] py-5 md:py-3 bg-[#f8bbd0] text-black/80 rounded-full mt-30 md:mt-auto
                   text-sm hover:bg-[#f48fb1] transition-all flex items-center font-poppins
                   justify-center gap-3 active:scale-[0.98] shadow-lg font-regular mx-auto cursor-pointer"
                 >
