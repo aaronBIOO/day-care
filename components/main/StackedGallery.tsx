@@ -206,8 +206,10 @@ export default function StackedGallery() {
                 justify-center transition-all outline-none cursor-pointer z-110 group"
               onClick={(e) => { e.stopPropagation(); navigate(-1); }}
             >
-              <ChevronLeft className="w-8 h-8 md:w-16 md:h-16 text-black/50 
-                group-hover:text-black/80 group-hover:scale-125 transition-all" />
+              <div className="bg-white/80 md:bg-transparent p-3 md:p-0 rounded-full flex items-center justify-center shadow-lg md:shadow-none">
+                <ChevronLeft className="w-6 h-6 md:w-16 md:h-16 text-black md:text-black/50 
+                  group-hover:text-black/80 group-hover:scale-125 transition-all" />
+              </div>
             </button>
 
             <button
@@ -215,8 +217,10 @@ export default function StackedGallery() {
                 justify-center transition-all outline-none cursor-pointer z-110 group"
               onClick={(e) => { e.stopPropagation(); navigate(1); }}
             >
-              <ChevronRight className="w-8 h-8 md:w-16 md:h-16 text-black/50 
-                group-hover:text-black/80 group-hover:scale-125 transition-all" />
+              <div className="bg-white/80 md:bg-transparent p-3 md:p-0 rounded-full flex items-center justify-center shadow-lg md:shadow-none">
+                <ChevronRight className="w-6 h-6 md:w-16 md:h-16 text-black md:text-black/50 
+                  group-hover:text-black/80 group-hover:scale-125 transition-all" />
+              </div>
             </button>
 
             <motion.button
@@ -224,22 +228,22 @@ export default function StackedGallery() {
               animate={{ opacity: 1, x: 0 }}
               exit={{ opacity: 0, x: -20 }}
               onClick={(e) => { e.stopPropagation(); setSelectedIndex(null); }}
-              className="absolute top-8 left-10 p-3 bg-black/5 hover:bg-black/10 
-                rounded-full transition-colors z-120 group flex items-center gap-2"
+              className="absolute top-6 left-2 md:top-8 md:left-10 p-3 bg-black/20 md:bg-black/5 hover:bg-black/70 md:hover:bg-black/10 
+                rounded-full transition-colors z-120 group flex items-center gap-2 shadow-lg md:shadow-none"
             >
-              <ArrowLeft className="w-6 h-6 text-black/50 group-hover:text-black transition-colors" />
-              <span className="text-black/50 group-hover:text-black/80 font-poppins text-sm font-medium pr-2">
+              <ArrowLeft className="w-4 h-4 md:w-6 md:h-6 text-white md:text-black/50 group-hover:text-black transition-colors" />
+              <span className="hidden md:inline text-black/50 group-hover:text-black/80 font-poppins text-sm font-medium pr-2">
                 Back
               </span>
             </motion.button>
 
-            {/* Top Right Close Button (Returns to Main View) */}
+            {/* Top Right Close Button (Returns to Main View) - Hidden on Mobile */}
             <motion.button
               initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}
               exit={{ opacity: 0, x: 20 }}
               onClick={(e) => { e.stopPropagation(); setExpandedStack(null); setSelectedIndex(null); }}
-              className="absolute top-8 right-10 p-3 bg-black/5 hover:bg-black/10 
+              className="hidden md:block absolute top-8 right-10 p-3 bg-black/5 hover:bg-black/10 
                 rounded-full transition-colors z-120"
             >
               <X className="w-6 h-6 text-black/50" />
