@@ -143,7 +143,7 @@ export default function VideoPeek({ isOpen, onClose }: VideoPeekProps) {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: 20 }}
               transition={{ duration: 0.5 }}
-              className="text-3xl md:text-2xl font-poppins text-black/70 max-w-3xl mx-auto leading-tight text-center mb-2">
+              className="text-lg md:text-2xl font-poppins text-black/70 max-w-3xl mx-auto leading-tight text-center mb-2">
               Curated paths for every <br /> stage of growth
             </motion.div>
 
