@@ -20,15 +20,9 @@ export default function VideoPeek({ isOpen, onClose }: VideoPeekProps) {
   const scrollContainerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    if (isOpen) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "auto";
+    if (!isOpen) {
       setView("thumbnails");
     }
-    return () => {
-      document.body.style.overflow = "auto";
-    };
   }, [isOpen]);
 
   const handleThumbnailClick = (index: number) => {
@@ -91,39 +85,23 @@ export default function VideoPeek({ isOpen, onClose }: VideoPeekProps) {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
-        className="fixed inset-0 z-200 flex items-center justify-center bg-white/80 backdrop-blur-xl p-4 md:p-10"
+        className="fixed inset-0 z-200 flex flex-col items-center justify-center bg-white md:bg-white/80 md:backdrop-blur-xl p-0 md:p-10 overflow-hidden"
       >
         {/* Navigation Buttons */}
-        <AnimatePresence>
-          {view === "thumbnails" ? (
-            <motion.button
-              initial={{ opacity: 0, x: -20 }}
-              animate={{ opacity: 1, x: 0 }}
-              exit={{ opacity: 0, x: -20 }}
-              onClick={onClose}
-              className="absolute top-8 left-10 p-3 bg-black/5 hover:bg-black/10 
-               rounded-full transition-colors z-110 group flex items-center gap-2 shadow-[0_5px_10px_rgba(0,0,0,0.03)]"
-            >
-              <ArrowLeft className="w-6 h-6 text-black/50 group-hover:text-black transition-colors" />
-              <span className="text-black/50 group-hover:text-black/80 font-poppins text-sm font-medium pr-2">
-                Back
-              </span>
-            </motion.button>
-          ) : (
-            <motion.button
-              initial={{ opacity: 0, x: 20 }}
-              animate={{ opacity: 1, x: 0 }}
-              exit={{ opacity: 0, x: 20 }}
-              onClick={handleBackToThumbnails}
-              className="absolute top-8 right-20 p-3 bg-black/5 hover:bg-black/10 rounded-full transition-colors z-210"
-            >
-              <X className="w-6 h-6 text-black/50" />
-            </motion.button>
-          )}
-        </AnimatePresence>
+        <button
+          onClick={view === "thumbnails" ? onClose : handleBackToThumbnails}
+          className="fixed top-6 left-2 p-3 bg-black/20 hover:bg-black/70 
+            rounded-full transition-colors z-210 group flex items-center shadow-lg"
+        >
+          <ArrowLeft className="w-4 h-4 text-white" />
+        </button>
 
         {view === "thumbnails" ? (
-          <div className="relative w-[90%] h-90 items-center justify-center">
+          <div
+            className="relative w-full md:w-[90%] h-full md:h-90 flex flex-col items-center justify-start md:justify-center"
+            style={{ overflowY: 'auto', WebkitOverflowScrolling: 'touch' }}
+          >
+            <div className="w-full flex flex-col items-center pt-24 md:pt-0 pb-10">
             {/* Gallery Navigation */}
             <button
               onClick={() => scrollThumbnails("left")}
@@ -143,7 +121,7 @@ export default function VideoPeek({ isOpen, onClose }: VideoPeekProps) {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: 20 }}
               transition={{ duration: 0.5 }}
-              className="text-lg md:text-2xl font-poppins text-black/70 max-w-3xl mx-auto leading-tight text-center mb-2">
+              className="text-lg md:text-2xl font-poppins text-black/70 max-w-3xl mx-auto leading-tight text-center mb-10 md:mb-2">
               Curated paths for every <br /> stage of growth
             </motion.div>
 
@@ -161,7 +139,7 @@ export default function VideoPeek({ isOpen, onClose }: VideoPeekProps) {
                   }
                 }
               }}
-              className="flex gap-4 overflow-x-auto pb-8 pt-8 scrollbar-hide snap-x mx-auto items-center justify-center"
+              className="flex flex-col md:flex-row gap-8 md:gap-4 pb-20 pt-4 md:pt-8 w-full md:w-auto px-8 md:px-0 scrollbar-hide snap-y md:snap-x items-center justify-start md:justify-center"
             >
               {videos.map((src, idx) => (
                 <motion.div
@@ -176,8 +154,8 @@ export default function VideoPeek({ isOpen, onClose }: VideoPeekProps) {
                     }
                   }}
                   whileHover={{ scale: 1.05 }}
-                  className="relative shrink-0 w-64 h-80 md:w-40 md:h-[250px] 
-                    rounded-[25px] overflow-hidden cursor-pointer shadow-xl snap-center"
+                  className="relative shrink-0 w-full h-80 md:w-40 md:h-[250px] 
+                    rounded-[35px] md:rounded-[25px] overflow-hidden cursor-pointer shadow-xl snap-center"
                   onClick={() => handleThumbnailClick(idx)}
                 >
                   <video
@@ -195,6 +173,7 @@ export default function VideoPeek({ isOpen, onClose }: VideoPeekProps) {
                 </motion.div>
               ))}
             </motion.div>
+            </div>
           </div>
         ) : (
           <div className="relative w-full h-full max-w-5xl flex items-center justify-center">
@@ -216,7 +195,7 @@ export default function VideoPeek({ isOpen, onClose }: VideoPeekProps) {
 
             <motion.div
               layoutId="video-container"
-              className="relative w-[60%] aspect-video bg-black rounded-[40px] 
+              className="relative w-full md:w-[60%] aspect-9/16 md:aspect-video bg-black rounded-none md:rounded-[40px] 
                 overflow-hidden shadow-2xl cursor-pointer border-none group"
               onClick={togglePlay}
             >
