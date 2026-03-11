@@ -175,7 +175,7 @@ export default function LearnMoreModal({ isOpen, onClose }: LearnMoreModalProps)
                 </div>
               </div>
 
-              <div className="flex-1 relative min-h-[450px] md:min-h-0">
+              <div className="flex-1 relative min-h-[200px] md:min-h-0">
                 <AnimatePresence initial={false} custom={direction} mode="wait">
                   <motion.div
                     key={step}
@@ -209,7 +209,7 @@ export default function LearnMoreModal({ isOpen, onClose }: LearnMoreModalProps)
               </div>
 
               {/* Navigation Buttons */}
-              <div className="mt-12 md:mt-12 flex gap-4">
+              <div className="mt-2 mb-10 md:mb-0 md:mt-12 flex gap-4">
                 {step > 0 && (
                   <button
                     onClick={prevStep}
