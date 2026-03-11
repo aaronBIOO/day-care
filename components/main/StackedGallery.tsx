@@ -255,7 +255,7 @@ export default function StackedGallery() {
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.8, y: -20 }}
               transition={{ type: "spring", damping: 25, stiffness: 200 }}
-              className="relative w-full h-full max-h-[60vh] flex items-center justify-center p-8 group"
+              className="relative w-full h-full max-h-[60vh] flex items-center justify-center md:p-8 group"
               onClick={(e) => e.stopPropagation()}
             >
               <Image
@@ -267,7 +267,7 @@ export default function StackedGallery() {
               />
 
               {/* Pagination Dots (Inside Image Container, at the bottom) */}
-              <div className="absolute bottom-5 left-1/2 -translate-x-1/2 flex gap-3 px-4 
+              <div className="hidden absolute bottom-5 left-1/2 -translate-x-1/2 md:flex gap-3 px-4 
                 py-2 bg-white/10 backdrop-blur-xl rounded-full border border-white/20 z-120">
                 {galleryData[expandedStack].images.map((_, idx) => (
                   <button
