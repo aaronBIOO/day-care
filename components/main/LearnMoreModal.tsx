@@ -116,7 +116,7 @@ export default function LearnMoreModal({ isOpen, onClose }: LearnMoreModalProps)
           {/* Back to Site Button */}
           <button
             onClick={onClose}
-            className="absolute top-6 left-6 md:top-4 md:left-8 p-3 md:px-4 bg-black/20 hover:bg-black/70 
+            className="absolute top-6 left-2 md:top-4 md:left-8 p-3 md:px-4 bg-black/20 hover:bg-black/70 
               rounded-full transition-colors z-120 group flex items-center shadow-lg"
           >
             <ArrowLeft className="w-4 h-4 text-white md:text-black group-hover:text-amber-800 transition-colors" />
