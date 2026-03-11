@@ -111,7 +111,7 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
               </div>
             </form>
 
-            <div className="mt-4 pt-2 border-t border-slate-100 flex flex-col items-center gap-2">
+            <div className="mt-4 pt-2 md:border-t border-slate-100 flex flex-col items-center gap-2">
               <p className="text-black/60 font-poppins">
                 Or call us directly at
               </p>
