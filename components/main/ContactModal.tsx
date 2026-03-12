@@ -119,7 +119,7 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
                     hover:text-amber-900 transition-colors mb-4"
                 >
                   <Phone className="w-4 h-4" />
-                  +1 (555) 123-4567
+                  +1 (978) 427-0302
                 </a>
 
                 {/* Document Cards */}

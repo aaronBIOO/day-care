@@ -120,7 +120,7 @@ export default function EnrollModal({ isOpen, onClose }: EnrollModalProps) {
                       hover:text-amber-900 transition-colors mb-10 md:mb-4 text-sm font-medium"
                   >
                     <Phone className="w-4 h-4" />
-                    +1 (555) 123-4567
+                    +1 (978) 427-0302
                   </a>
 
                   {/* Document Cards */}
