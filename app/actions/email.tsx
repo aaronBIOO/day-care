@@ -18,7 +18,7 @@ export async function sendOwnerEmail(formData: FormData) {
 
   try {
     const { data, error } = await resend.emails.send({
-      from: 'Daycare Website',
+      from: 'Daycare Website <onboarding@resend.dev>',
       to: [ownerEmail],
       subject: `[${formType}] New Message from ${name}`,
       react: (

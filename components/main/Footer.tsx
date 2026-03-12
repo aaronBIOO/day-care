@@ -51,8 +51,9 @@ export default function Footer() {
                   className="object-contain"
                 />
               </div>
-              <Link href="/" className="font-playfair text-2xl text-violet-800 leading-none">
-                DayCare
+              <Link href="/" className="font-playfair flex flex-col text-violet-800 leading-none">
+                <span className="text-[11px] font-poppins uppercase tracking-widest text-violet-600/80 leading-none">Helena Street</span>
+                <span className="text-md -mt-none leading-none">DayCare, <span className="text-xs">LLC</span></span>
               </Link>
             </div>
             <p className="text-black/60 font-poppins text-sm leading-relaxed max-w-xs">

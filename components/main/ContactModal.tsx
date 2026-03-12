@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ArrowLeft, Send, Phone, CheckCircle2 } from "lucide-react";
+import { ArrowLeft, Send, Phone, ChevronRight, FileText, Download, ExternalLink } from "lucide-react";
 import { sendOwnerEmail } from "@/app/actions/email";
 
 interface ContactModalProps {
@@ -10,9 +10,22 @@ interface ContactModalProps {
   onClose: () => void;
 }
 
+const documents = [
+  {
+    title: "Parent Handbook",
+    description: "Everything you need to know about our daycare policies and procedures.",
+    file: "/files/parent_handbook.pdf",
+  },
+  {
+    title: "Child Care Enrollment Form",
+    description: "Complete this form to begin the enrollment process for your child.",
+    file: "/files/child_care_enrollment.pdf",
+  },
+];
+
 export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
+  const [step, setStep] = useState<1 | 2>(1);
   const [isPending, setIsPending] = useState(false);
-  const [isSuccess, setIsSuccess] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
@@ -26,27 +39,31 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
     };
   }, [isOpen]);
 
+  // Reset state when modal closes
+  useEffect(() => {
+    if (!isOpen) {
+      setTimeout(() => {
+        setStep(1);
+        setError(null);
+      }, 500);
+    }
+  }, [isOpen]);
+
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsPending(true);
     setError(null);
 
     const formData = new FormData(e.currentTarget);
-    
+
     try {
       const result = await sendOwnerEmail(formData);
       if (result.success) {
-        setIsSuccess(true);
-        setTimeout(() => {
-          onClose();
-          setTimeout(() => {
-            setIsSuccess(false);
-          }, 500);
-        }, 3000);
+        onClose();
       } else {
-        setError(result.error || "Failed to send email. Please try again.");
+        setError(result.error || "Failed to send. Please try again.");
       }
-    } catch (err: any) {
+    } catch {
       setError("An unexpected error occurred. Please try again later.");
     } finally {
       setIsPending(false);
@@ -65,48 +82,124 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
         className="fixed inset-0 z-110 flex items-center justify-center bg-white/30 backdrop-blur-xl p-0 md:p-6"
       >
         {/* Back Button */}
-        {!isSuccess && (
-          <button
-            onClick={onClose}
-            className="absolute top-6 left-6 md:top-4 md:left-8 p-3 md:px-4 bg-black/20 hover:bg-black/15 
-              rounded-full transition-colors z-10 group flex items-center shadow-[0px_5px_10px_rgba(0,0,0,0.05)]"
-          >
-            <ArrowLeft className="w-4 h-4 text-black/50 group-hover:text-amber-800 transition-colors" />
-            <span className="hidden md:inline text-black/50 group-hover:text-black/70 font-poppins text-sm font-medium ml-2">
-              Back
-            </span>
-          </button>
-        )}
+        <button
+          onClick={step === 2 ? () => setStep(1) : onClose}
+          className="absolute top-6 left-6 md:top-4 md:left-8 p-3 md:px-4 bg-black/20 hover:bg-black/10 cursor-pointer
+            rounded-full transition-colors z-10 group flex items-center shadow-[0px_5px_10px_rgba(0,0,0,0.05)]"
+        >
+          <ArrowLeft className="w-4 h-4 text-black/50 group-hover:text-black transition-colors" />
+          <span className="hidden md:inline text-black/50 group-hover:text-black/70 font-poppins text-sm font-medium ml-2">
+            Back
+          </span>
+        </button>
 
-        <div className="relative w-full h-full md:w-120 md:h-150 bg-white md:bg-white/70 rounded-none md:rounded-[40px] shadow-2xl overflow-y-auto p-8 pt-24 md:p-10 md:pt-5">
-          <div className="mt-2 text-center h-full flex flex-col justify-center">
-            {isSuccess ? (
-              <motion.div 
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={{ opacity: 1, scale: 1 }}
-                className="flex flex-col items-center gap-4 py-20"
+        <div className="relative w-full h-full md:w-120 md:h-auto md:max-h-[90vh] bg-white md:bg-white/70 rounded-none md:rounded-[40px] shadow-2xl overflow-y-auto p-4 pt-24 md:p-10 md:pt-6">
+          <AnimatePresence mode="wait">
+            {/* ─── STEP 1: Documents + Call ─── */}
+            {step === 1 && (
+              <motion.div
+                key="step1"
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                exit={{ opacity: 0, x: -20 }}
+                transition={{ duration: 0.25 }}
+                className="text-center flex flex-col"
               >
-                <div className="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center">
-                  <CheckCircle2 className="w-10 h-10 text-green-600" />
-                </div>
-                <h2 className="text-2xl font-poppins font-semibold text-amber-900">Message Sent!</h2>
-                <p className="text-black/70 font-poppins text-center max-w-xs">
-                  Thank you for reaching out. We've received your message and will get back to you within 24 hours.
-                </p>
-              </motion.div>
-            ) : (
-              <>
-                <h2 className="text-lg semi-bold text-amber-800 font-poppins">
+                <h2 className="text-md font-semibold text-amber-800 font-poppins">
                   Get In Touch With Us
                 </h2>
-                <p className="text-[13px] text-black/70 font-poppins max-w-sm mx-auto mb-10">
-                  We'd love to answer your questions. Fill out the form below and we'll get back to you within 24 hours
+                <p className="text-[12px] text-black/70 font-poppins max-w-xs mx-auto mt-1 mb-4">
+                  Read the files below, or schedule a call and let&apos;s discuss it.
                 </p>
 
-                <form onSubmit={handleSubmit} className="grid grid-cols-1 gap-5 text-left">
+                {/* Call link */}
+                <a
+                  href="tel:+15551234567"
+                  className="flex items-center justify-center gap-2 text-amber-800 font-poppins text-sm font-medium 
+                    hover:text-amber-900 transition-colors mb-4"
+                >
+                  <Phone className="w-4 h-4" />
+                  +1 (555) 123-4567
+                </a>
+
+                {/* Document Cards */}
+                <div className="flex flex-col gap-4">
+                  {documents.map((doc) => (
+                    <div
+                      key={doc.title}
+                      className="bg-white/80 rounded-2xl p-5 text-left border border-black/5 
+                        shadow-[0px_4px_12px_rgba(0,0,0,0.04)] hover:shadow-xm transition-shadow"
+                    >
+                      <div className="flex items-start gap-3">
+                        <div className="w-10 h-10 bg-amber-50 rounded-xl flex items-center justify-center shrink-0 mt-0.5">
+                          <FileText className="w-5 h-5 text-amber-800" />
+                        </div>
+                        <div className="flex-1 min-w-0">
+                          <h3 className="text-sm font-semibold text-black/70 font-poppins">{doc.title}</h3>
+                          <p className="text-xs text-black/50 font-poppins mt-0.5">{doc.description}</p>
+                        </div>
+                      </div>
+
+                      <div className="flex gap-3 mt-4">
+                        <a
+                          href={doc.file}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex-1 flex items-center justify-center gap-2 py-2.5 px-4 rounded-full
+                            bg-slate-50 text-black/70 text-xs font-poppins font-medium 
+                            hover:bg-slate-100 transition-colors border border-black/5"
+                        >
+                          <ExternalLink className="w-3.5 h-3.5" />
+                          View in Browser
+                        </a>
+                        <a
+                          href={doc.file}
+                          download
+                          className="flex-1 flex items-center justify-center gap-2 py-2.5 px-4 rounded-full
+                            bg-amber-50 text-amber-800 text-xs font-poppins font-medium 
+                            hover:bg-amber-100 transition-colors border border-amber-200/60"
+                        >
+                          <Download className="w-3.5 h-3.5" />
+                          Download
+                        </a>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+
+                {/* Send us a message button */}
+                <button
+                  onClick={() => setStep(2)}
+                  className="mt-20 md:mt-6 w-[60%] md:w-[60%] py-3 md:py-4 bg-[#f8bbd0] text-black/80 rounded-full
+                    text-sm hover:bg-[#f48fb1] transition-all font-poppins font-regular mx-auto cursor-pointer
+                    active:scale-[0.98] shadow-lg flex items-center justify-center gap-2"
+                >
+                  Send us a message
+                  <ChevronRight className="w-4 h-4 text-black/60" />
+                </button>
+              </motion.div>
+            )}
+
+            {/* ─── STEP 2: Form ─── */}
+            {step === 2 && (
+              <motion.div
+                key="step2"
+                initial={{ opacity: 0, x: 20 }}
+                animate={{ opacity: 1, x: 0 }}
+                exit={{ opacity: 0, x: 20 }}
+                transition={{ duration: 0.25 }}
+                className="text-center flex flex-col"
+              >
+                <h2 className="text-lg font-semibold text-amber-800 font-poppins mb-6">
+                  Send Us a Message
+                </h2>
+               
+
+                {/* Form */}
+                <form onSubmit={handleSubmit} className="grid grid-cols-1 gap-4 text-left">
                   <input type="hidden" name="formType" value="Getting in Touch" />
-                  <div className="flex flex-col gap-2">
-                    <label 
+                  <div className="flex flex-col gap-1.5">
+                    <label
                       htmlFor="parent-name"
                       className="text-sm font-medium text-black/60 ml-4 font-poppins"
                     >
@@ -116,15 +209,14 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
                       id="parent-name"
                       name="name"
                       type="text"
-                      required
                       autoComplete="name"
                       placeholder="Chris Pratt"
                       className="px-4 py-3 bg-slate-50 border-none rounded-[15px] md:focus:ring-2
                        md:focus:ring-amber-200 focus:outline-none outline-none transition-all font-poppins text-base md:text-sm ring-amber-800/20 ring-1"
                     />
                   </div>
-                  <div className="flex flex-col gap-2">
-                    <label 
+                  <div className="flex flex-col gap-1.5">
+                    <label
                       htmlFor="email-address"
                       className="text-sm font-medium text-black/60 ml-4 font-poppins"
                     >
@@ -134,15 +226,14 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
                       id="email-address"
                       name="email"
                       type="email"
-                      required
                       autoComplete="email"
                       placeholder="chris@example.com"
                       className="px-4 py-3 bg-slate-50 border-none rounded-[15px] md:focus:ring-2 ring-amber-800/20 ring-1
                         md:focus:ring-amber-200 focus:outline-none outline-none transition-all font-poppins text-base md:text-sm"
                     />
                   </div>
-                  <div className="flex flex-col gap-2">
-                    <label 
+                  <div className="flex flex-col gap-1.5">
+                    <label
                       htmlFor="contact-message"
                       className="text-sm font-medium text-black/60 ml-4 font-poppins"
                     >
@@ -151,8 +242,7 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
                     <textarea
                       id="contact-message"
                       name="message"
-                      rows={2.5}
-                      required
+                      rows={3}
                       placeholder="How can we help you?"
                       className="px-6 py-4 bg-slate-50 border-none rounded-3xl md:focus:ring-2 shadow-[0px_3px_8px_rgba(0,0,0,0.03)]
                       md:focus:ring-amber-200 focus:outline-none outline-none transition-all font-poppins resize-none text-base md:text-sm ring-amber-800/20 ring-1"
@@ -163,37 +253,23 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
                     <p className="text-red-500 text-xs ml-4 font-poppins">{error}</p>
                   )}
 
-                  <div>
+                  <div className="mt-4">
                     <button
                       type="submit"
-                      disabled={isPending}
-                      className={`w-[60%] md:w-[35%] py-5 md:py-3 bg-[#f8bbd0] text-black/80 rounded-full mt-30 md:mt-auto
-                      text-sm hover:bg-[#f48fb1] transition-all flex items-center font-poppins
-                      justify-center gap-3 active:scale-[0.98] shadow-lg font-regular mx-auto cursor-pointer
-                      ${isPending ? 'opacity-70 cursor-not-allowed' : ''}`}
+                      disabled
+                      className="w-[60%] md:w-[40%] py-4 md:py-3 bg-[#f8bbd0] text-black/80 rounded-full
+                      text-sm transition-all flex items-center font-poppins
+                      justify-center gap-2 shadow-lg font-medium mx-auto
+                      opacity-70 cursor-not-allowed"
                     >
-                      {isPending ? (
-                        <div className="w-5 h-5 border-2 border-black/20 border-t-black/60 rounded-full animate-spin" />
-                      ) : (
-                        <Send className="w-4 h-4 text-black/60" />
-                      )}
-                      {isPending ? "Sending..." : "Submit"}
+                      <Send className="w-4 h-4 text-black/60" />
+                      Submit
                     </button>
                   </div>
                 </form>
-
-                <div className="mt-4 pt-2 md:border-t border-slate-100 flex flex-col items-center gap-2">
-                  <p className="text-black/60 font-poppins">
-                    Or call us directly at
-                  </p>
-                  <div className="w-full font-poppins rounded-full flex items-center justify-center group-hover:bg-amber-200 transition-colors">
-                    <Phone className="w-5 h-5 mr-2 text-amber-800" />
-                    <p className="text-amber-800 text-sm">+1 (555) 123-4567</p>
-                  </div>
-                </div>
-              </>
+              </motion.div>
             )}
-          </div>
+          </AnimatePresence>
         </div>
       </motion.div>
     </AnimatePresence>

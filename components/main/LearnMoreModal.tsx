@@ -116,10 +116,10 @@ export default function LearnMoreModal({ isOpen, onClose }: LearnMoreModalProps)
           {/* Back to Site Button */}
           <button
             onClick={onClose}
-            className="absolute top-6 left-2 md:top-4 md:left-8 p-3 md:px-4 bg-black/20 hover:bg-black/70 
-              rounded-full transition-colors z-120 group flex items-center shadow-lg"
+            className="absolute top-6 left-2 md:top-4 md:left-8 p-3 md:px-4 bg-black/20 hover:bg-black/10 
+              rounded-full transition-colors z-120 group flex items-center shadow-lg cursor-pointer"
           >
-            <ArrowLeft className="w-4 h-4 text-white md:text-black group-hover:text-amber-800 transition-colors" />
+            <ArrowLeft className="w-4 h-4 text-white md:text-black group-hover:text-black transition-colors" />
             <span className="hidden md:inline text-black/80 font-poppins text-sm font-medium ml-2">
               Back
             </span>
@@ -161,7 +161,7 @@ export default function LearnMoreModal({ isOpen, onClose }: LearnMoreModalProps)
             <div className="relative w-full md:w-[55%] flex-1 md:h-full flex flex-col p-8 md:p-12">
               {/* Progress Indicator */}
               <div className="flex justify-between items-center mb-10">
-                <span className="text-xs font-bold text-amber-800 uppercase tracking-widest font-poppins">
+                <span className="text-xs font-bold text-black/70 uppercase tracking-widest font-poppins">
                   {cards[step].stepTitle}
                 </span>
                 <div className="flex gap-2">
@@ -187,12 +187,6 @@ export default function LearnMoreModal({ isOpen, onClose }: LearnMoreModalProps)
                     transition={{ type: "spring", damping: 25, stiffness: 180 }}
                     className="md:absolute md:inset-0 flex flex-col pt-2"
                   >
-                    <div className="flex items-center gap-3 mb-4">
-                      <h2 className="text-md font-semibold text-black/60 font-poppins uppercase tracking-wider">
-                        {cards[step].title}
-                      </h2>
-                    </div>
-
                     <h3 className="text-lg md:text-2xl font-regular text-amber-800/80 font-poppins mb-4 leading-8 pl-4 border-l-3 border-l-amber-800/80">
                       {cards[step].headline}
                     </h3>
@@ -215,7 +209,7 @@ export default function LearnMoreModal({ isOpen, onClose }: LearnMoreModalProps)
                     onClick={prevStep}
                     className="flex-1 py-4 bg-slate-100 text-black/60 rounded-full 
                     text-base hover:bg-slate-200 transition-all flex items-center font-poppins
-                    justify-center gap-2 active:scale-[0.98] outline-none border-none"
+                    justify-center gap-2 active:scale-[0.98] outline-none border-none cursor-pointer"
                   >
                     <ChevronLeft className="w-5 h-5" />
                     Back
@@ -224,7 +218,7 @@ export default function LearnMoreModal({ isOpen, onClose }: LearnMoreModalProps)
                 <button
                   onClick={nextStep}
                   className="flex-2 py-4 bg-[#f8bbd0] text-black/80 rounded-full 
-                  text-base hover:bg-[#f48fb1] transition-all flex items-center font-poppins
+                  text-base hover:bg-[#f48fb1] transition-all flex items-center font-poppins cursor-pointer
                   justify-center gap-2 active:scale-[0.98] shadow-lg font-medium outline-none border-none"
                 >
                   {step === cards.length - 1 ? "Finish" : "Next"}

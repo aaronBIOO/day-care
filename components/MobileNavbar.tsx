@@ -45,13 +45,14 @@ export default function MobileNavbar({ activeSection, setActiveSection }: Mobile
         <div className="w-full max-w-lg bg-white/22 backdrop-blur-sm px-6 py-4 
           flex items-center justify-between shadow-[0_8px_30px_rgb(0,0,0,0.05)] rounded-full border border-white/20">
           {/* Logo */}
-          <Link
-            href="/"
-            className="font-playfair text-2xl text-violet-800 leading-none"
+          <Link 
+            href="/" 
             onClick={() => setIsOpen(false)}
-          >
-            DayCare 
+            className="font-playfair text-violet-800 flex flex-col items-start group">
+            <span className="text-[11px] font-poppins uppercase tracking-widest text-violet-600/80 leading-none">Helena Street</span>
+            <span className="text-lg -mt-none leading-none">DayCare <span className="text-xs font-regular">, LLC</span></span>
           </Link>
+
 
           {/* Menu Button */}
           <button

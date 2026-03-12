@@ -55,8 +55,9 @@ export default function Navbar() {
         items-center justify-between shadow-[0_8px_30px_rgb(0,0,0,0.05)] rounded-full border border-white/20">
         {/* Logo */}
         <div className="">
-          <Link href="/" className="font-playfair text-3xl text-violet-800 leading-none">
-            DayCare
+          <Link href="/" className="font-playfair text-violet-800 flex flex-col items-start group">
+            <span className="text-[11px] font-poppins uppercase tracking-widest text-violet-600/80 leading-none">Helena Street</span>
+            <span className="text-lg -mt-none leading-none">DayCare</span>
           </Link>
         </div>
 
@@ -86,8 +87,8 @@ export default function Navbar() {
         {/* Get In Touch */}
         <div className="">
           <button
-            className="text-base font-medium text-black/70 pb-1 hover:opacity-70 
-            transition-opacity font-poppins cursor-pointer"
+            className="text-base font-medium text-black/70 hover:opacity-70 text-center
+            transition-opacity font-poppins cursor-pointer border rounded-full px-4 py-2 border-black/20"
             onClick={() => setIsContactOpen(true)}
           >
             Get In Touch
