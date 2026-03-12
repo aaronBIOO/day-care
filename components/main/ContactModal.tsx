@@ -84,7 +84,7 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
         {/* Back Button */}
         <button
           onClick={step === 2 ? () => setStep(1) : onClose}
-          className="absolute top-6 left-6 md:top-4 md:left-8 p-3 md:px-4 bg-black/20 hover:bg-black/10 cursor-pointer
+          className="absolute top-6 left-4 md:top-4 md:left-8 p-3 md:px-4 bg-black/20 hover:bg-black/10 cursor-pointer
             rounded-full transition-colors z-10 group flex items-center shadow-[0px_5px_10px_rgba(0,0,0,0.05)]"
         >
           <ArrowLeft className="w-4 h-4 text-black/50 group-hover:text-black transition-colors" />

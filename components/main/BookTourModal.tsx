@@ -45,7 +45,7 @@ export default function BookTourModal({ isOpen, onClose }: BookTourModalProps) {
           {/* Back Button (Mobile) */}
           <button
             onClick={onClose}
-            className="md:hidden absolute top-6 left-2 p-3 bg-black/20 hover:bg-black/70 
+            className="md:hidden absolute top-6 left-4 p-3 bg-black/20 hover:bg-black/70 
               rounded-full transition-colors z-120 group flex items-center shadow-lg"
           >
             <ArrowLeft className="w-4 h-4 text-white" />

@@ -77,7 +77,7 @@ export default function EnrollModal({ isOpen, onClose }: EnrollModalProps) {
           {/* Main Close Button / Back Button */}
           <button
             onClick={step === 2 ? () => setStep(1) : onClose}
-            className="absolute top-6 left-2 md:top-4 md:left-8 p-3 md:px-4 bg-black/20 hover:bg-black/10 cursor-pointer
+            className="absolute top-6 left-4 md:top-4 md:left-8 p-3 md:px-4 bg-black/20 hover:bg-black/10 cursor-pointer
               rounded-full transition-colors z-120 group flex items-center 
               shadow-lg"
           >
