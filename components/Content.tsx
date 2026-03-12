@@ -106,7 +106,7 @@ export default function Content() {
           whileInView="visible"
           viewport={{ once: false, amount: 0.2 }}
           className="absolute top-100 -right-10 h-20 w-20 md:right-5 md:w-36 md:h-12 
-          xl:w-40 xl:h-16 bg-[#a78bfa] rounded-full z-0 rotate-45"
+          xl:w-40 xl:h-16 bg-[#a78bfa] rounded-full z-0 rotate-45 opacity-30"
         />
 
         {/** Programs section */}
@@ -117,7 +117,7 @@ export default function Content() {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: false, amount: 0.2 }}
-            className="absolute -left-16 md:-left-30 w-20 h-20 opacity-60 z-10"
+            className="absolute -left-16 md:-left-30 w-20 h-20 opacity-20 z-10"
           >
             <SlantedLinesDoodle className="w-20 h-20" color="#92400E" />
           </motion.div>
