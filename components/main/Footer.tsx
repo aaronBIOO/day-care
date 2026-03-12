@@ -53,7 +53,7 @@ export default function Footer() {
               </div>
               <Link href="/" className="font-playfair flex flex-col text-violet-800 leading-none">
                 <span className="text-[11px] font-poppins uppercase tracking-widest text-violet-600/80 leading-none">Helena Street</span>
-                <span className="text-md -mt-none leading-none">DayCare, <span className="text-xs">LLC</span></span>
+                <span className="text-md -mt-none leading-none">Child Care, <span className="text-xs">LLC</span></span>
               </Link>
             </div>
             <p className="text-black/60 font-poppins text-sm leading-relaxed max-w-xs">
@@ -101,7 +101,7 @@ export default function Footer() {
             <ul className="space-y-4 font-poppins text-sm text-black/70 flex flex-col items-center md:items-start">
               <li className="flex items-start gap-3 justify-center md:justify-start">
                 <Phone className="w-4 h-4 text-amber-800 mt-0.5 shrink-0" />
-                <span>+1 (555) 123-4567</span>
+                <span>+1 (978) 427-0302</span>
               </li>
               <li className="flex items-start gap-3 justify-center md:justify-start">
                 <Mail className="w-4 h-4 text-amber-800 mt-0.5 shrink-0" />
@@ -109,7 +109,7 @@ export default function Footer() {
               </li>
               <li className="flex items-start gap-3 justify-center md:justify-start">
                 <MapPin className="w-4 h-4 text-amber-800 mt-0.5 shrink-0" />
-                <span>123 Sunshine Lane, Kidsville</span>
+                <span>Leominster, MA 01453</span>
               </li>
             </ul>
           </motion.div>

@@ -2,8 +2,9 @@
 
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ArrowLeft, ChevronRight, ChevronLeft, Heart, ShieldCheck, GraduationCap } from "lucide-react";
+import { ArrowLeft, ChevronRight, ChevronLeft } from "lucide-react";
 import Image from "next/image";
+import { aboutData as cards } from "../Data";
 
 interface LearnMoreModalProps {
   isOpen: boolean;
@@ -40,35 +41,6 @@ export default function LearnMoreModal({ isOpen, onClose }: LearnMoreModalProps)
     }
   }, [isOpen]);
 
-  const cards = [
-    {
-      stepTitle: "01. The People",
-      title: "Our Caring Team",
-      headline: "Experienced. Compassionate. Dedicated.",
-      content: "Our team is made up of trained early childhood educators who are passionate about helping children grow with confidence. Every staff member is carefully selected for their experience, patience, and commitment to creating a warm, supportive environment.",
-      image: "/images/team-image-2.jpg",
-      icon: <Heart className="w-5 h-5 text-pink-500" />,
-      color: "bg-pink-50"
-    },
-    {
-      stepTitle: "02. Licensing & Qualifications",
-      title: "Licensed & Qualified",
-      headline: "Fully Licensed and Professionally Trained",
-      content: "We are fully licensed and meet all local childcare regulations. Our caregivers are CPR and First Aid certified, and all staff members undergo background checks before joining our team.\n\nWe stay up to date with ongoing training to ensure we provide the highest standard of early childhood care.",
-      image: "/images/kids-learning.jpg",
-      icon: <GraduationCap className="w-5 h-5 text-amber-500" />,
-      color: "bg-amber-50"
-    },
-    {
-      stepTitle: "03. Safety & Care Standards",
-      title: "Safety & Daily Care Standards",
-      headline: "Your Child’s Safety Comes First",
-      content: "Your child’s well-being is our top priority. We maintain secure check-in and check-out procedures, clean and sanitized classrooms, and age-appropriate learning materials.\n\nWe follow structured daily routines that provide both stability and fun, helping children feel safe, engaged.",
-      image: "/images/place-1.jpg",
-      icon: <ShieldCheck className="w-5 h-5 text-green-500" />,
-      color: "bg-green-50"
-    }
-  ];
 
   const nextStep = () => {
     if (step < cards.length - 1) {

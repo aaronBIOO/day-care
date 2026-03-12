@@ -100,7 +100,6 @@ export default function ProgramExpansion({ programs, expandedIndex, onClose }: P
                 className="text-black/80 font-poppins md:text-md leading-relaxed mb-10"
               >
                 {programs[expandedIndex].description}
-                {" Our program provides a comprehensive foundation for growth, fostering creativity, social interaction, and early learning in a safe environment tailored to your child's specific developmental needs."}
               </motion.p>
             </div>
           </motion.div>
