@@ -106,7 +106,7 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
                 className="text-center flex flex-col"
               >
                 <h2 className="text-md font-semibold text-amber-800 font-poppins">
-                  Get In Touch With Us
+                  Get In Touch
                 </h2>
                 <p className="text-[12px] text-black/70 font-poppins max-w-xs mx-auto mt-1 mb-4">
                   Read the files below, or schedule a call and let&apos;s discuss it.
@@ -170,7 +170,7 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
                 {/* Send us a message button */}
                 <button
                   onClick={() => setStep(2)}
-                  className="mt-20 md:mt-6 w-[60%] md:w-[60%] py-4 bg-[#f8bbd0] text-black/80 rounded-full
+                  className="mt-45 md:mt-6 w-[60%] md:w-[60%] py-4 bg-[#f8bbd0] text-black/80 rounded-full
                     text-sm hover:bg-[#f48fb1] transition-all font-poppins font-regular mx-auto cursor-pointer
                     active:scale-[0.98] shadow-lg flex items-center justify-center gap-2"
                 >
@@ -253,7 +253,7 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
                     <p className="text-red-500 text-xs ml-4 font-poppins">{error}</p>
                   )}
 
-                  <div className="mt-4">
+                  <div className="mt-50 md:mt-4">
                     <button
                       type="submit"
                       disabled
