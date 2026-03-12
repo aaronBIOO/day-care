@@ -47,8 +47,7 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
         setError(result.error || "Failed to send email. Please try again.");
       }
     } catch (err: any) {
-      console.error("Client Action Error:", err);
-      setError(`An unexpected error occurred: ${err.message || "Please try again later."}`);
+      setError("An unexpected error occurred. Please try again later.");
     } finally {
       setIsPending(false);
     }
@@ -105,38 +104,52 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
                 </p>
 
                 <form onSubmit={handleSubmit} className="grid grid-cols-1 gap-5 text-left">
-                  <input type="hidden" name="formType" value="Contact Modal" />
+                  <input type="hidden" name="formType" value="Getting in Touch" />
                   <div className="flex flex-col gap-2">
-                    <label className="text-sm font-medium text-black/60 ml-4 font-poppins">
+                    <label 
+                      htmlFor="parent-name"
+                      className="text-sm font-medium text-black/60 ml-4 font-poppins"
+                    >
                       Parent / Guardian Name
                     </label>
                     <input
+                      id="parent-name"
                       name="name"
                       type="text"
                       required
+                      autoComplete="name"
                       placeholder="Chris Pratt"
                       className="px-4 py-3 bg-slate-50 border-none rounded-[15px] md:focus:ring-2
                        md:focus:ring-amber-200 focus:outline-none outline-none transition-all font-poppins text-base md:text-sm ring-amber-800/20 ring-1"
                     />
                   </div>
                   <div className="flex flex-col gap-2">
-                    <label className="text-sm font-medium text-black/60 ml-4 font-poppins">
+                    <label 
+                      htmlFor="email-address"
+                      className="text-sm font-medium text-black/60 ml-4 font-poppins"
+                    >
                       Email Address
                     </label>
                     <input
+                      id="email-address"
                       name="email"
                       type="email"
                       required
+                      autoComplete="email"
                       placeholder="chris@example.com"
                       className="px-4 py-3 bg-slate-50 border-none rounded-[15px] md:focus:ring-2 ring-amber-800/20 ring-1
                         md:focus:ring-amber-200 focus:outline-none outline-none transition-all font-poppins text-base md:text-sm"
                     />
                   </div>
                   <div className="flex flex-col gap-2">
-                    <label className="text-sm font-medium text-black/60 ml-4 font-poppins">
+                    <label 
+                      htmlFor="contact-message"
+                      className="text-sm font-medium text-black/60 ml-4 font-poppins"
+                    >
                       Message
                     </label>
                     <textarea
+                      id="contact-message"
                       name="message"
                       rows={2.5}
                       required

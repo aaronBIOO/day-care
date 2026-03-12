@@ -13,7 +13,7 @@ export const OwnerContactEmail: React.FC<Readonly<OwnerContactEmailProps>> = ({
   message,
   formType,
 }) => (
-  <div style={{ fontFamily: 'sans-serif', padding: '20px', color: '#333' }}>
+  <div style={{ fontFamily: 'Poppins, sans-serif', padding: '20px', color: '#333' }}>
     <h2 style={{ color: '#000', borderBottom: '1px solid #eee', paddingBottom: '10px' }}>
       New Form Submission: {formType}
     </h2>
