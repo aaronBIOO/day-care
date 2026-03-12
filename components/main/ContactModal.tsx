@@ -39,7 +39,6 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
         setIsSuccess(true);
         setTimeout(() => {
           onClose();
-          // Reset states after closing animation would be ideal, but simple reset here
           setTimeout(() => {
             setIsSuccess(false);
           }, 500);
@@ -47,8 +46,9 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
       } else {
         setError(result.error || "Failed to send email. Please try again.");
       }
-    } catch (err) {
-      setError("An unexpected error occurred. Please try again later.");
+    } catch (err: any) {
+      console.error("Client Action Error:", err);
+      setError(`An unexpected error occurred: ${err.message || "Please try again later."}`);
     } finally {
       setIsPending(false);
     }
