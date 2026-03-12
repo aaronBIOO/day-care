@@ -5,6 +5,7 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import ContactModal from "./main/ContactModal";
 import MobileNavbar from "./MobileNavbar";
+import EnrollModal from "./main/EnrollModal";
 
 const navLinks = [
   { name: "Home", href: "#home" },
@@ -16,6 +17,7 @@ const navLinks = [
 export default function Navbar() {
   const [activeSection, setActiveSection] = useState("Home");
   const [isContactOpen, setIsContactOpen] = useState(false);
+  const [isEnrollOpen, setIsEnrollOpen] = useState(false);
 
   useEffect(() => {
     const observerOptions = {
@@ -57,7 +59,7 @@ export default function Navbar() {
         <div className="">
           <Link href="/" className="font-playfair text-violet-800 flex flex-col items-start group">
             <span className="text-[11px] font-poppins uppercase tracking-widest text-violet-600/80 leading-none">Helena Street</span>
-            <span className="text-lg -mt-none leading-none">DayCare</span>
+            <span className="text-lg -mt-none leading-none">DayCare <span className="text-xs">LLC</span></span>
           </Link>
         </div>
 
@@ -96,13 +98,23 @@ export default function Navbar() {
         </div>
       </div>
 
-      <MobileNavbar activeSection={activeSection} setActiveSection={setActiveSection} />
+      <MobileNavbar 
+        activeSection={activeSection} 
+        setActiveSection={setActiveSection} 
+        onEnrollClick={() => setIsEnrollOpen(true)}
+      />
 
       <AnimatePresence>
         {isContactOpen && (
           <ContactModal
             isOpen={isContactOpen}
             onClose={() => setIsContactOpen(false)}
+          />
+        )}
+        {isEnrollOpen && (
+          <EnrollModal
+            isOpen={isEnrollOpen}
+            onClose={() => setIsEnrollOpen(false)}
           />
         )}
       </AnimatePresence>

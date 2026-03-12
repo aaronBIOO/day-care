@@ -15,9 +15,10 @@ const navLinks = [
 interface MobileNavbarProps {
   activeSection: string;
   setActiveSection: (name: string) => void;
+  onEnrollClick: () => void;
 }
 
-export default function MobileNavbar({ activeSection, setActiveSection }: MobileNavbarProps) {
+export default function MobileNavbar({ activeSection, setActiveSection, onEnrollClick }: MobileNavbarProps) {
   const [isOpen, setIsOpen] = useState(false);
 
   // Prevent scroll when menu is open
@@ -143,6 +144,25 @@ export default function MobileNavbar({ activeSection, setActiveSection }: Mobile
                   </Link>
                 </motion.div>
               ))}
+
+              {/* Enroll Now Button */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.5, duration: 0.5 }}
+                className="pt-6"
+              >
+                <button
+                  onClick={() => {
+                    setIsOpen(false);
+                    onEnrollClick();
+                  }}
+                  className="px-10 py-5 border border-black/10 rounded-full text-black/80 
+                  font-poppins font-semibold transition-all text-lg shadow-xs active:scale-95"
+                >
+                  Enroll Now
+                </button>
+              </motion.div>
             </div>
           </motion.div>
         )}

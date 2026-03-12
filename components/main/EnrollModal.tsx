@@ -71,8 +71,8 @@ export default function EnrollModal({ isOpen, onClose }: EnrollModalProps) {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          className="fixed inset-0 z-110 flex items-center justify-center bg-white/30 
-          backdrop-blur-xl p-0 md:p-6 pt-4 overscroll-contain"
+          className="fixed inset-0 z-110 flex items-center justify-center md:bg-white/30 
+            backdrop-blur-xl p-0 md:p-6 overscroll-contain bg-white"
         >
           {/* Main Close Button / Back Button */}
           <button
@@ -92,8 +92,8 @@ export default function EnrollModal({ isOpen, onClose }: EnrollModalProps) {
             animate={{ scale: 1, opacity: 1, y: 0 }}
             exit={{ scale: 0.95, opacity: 0, y: 20 }}
             transition={{ type: "spring", damping: 25, stiffness: 200 }}
-            className="relative w-full h-full md:h-auto max-w-xl bg-white md:bg-white/80 rounded-none md:rounded-[40px] shadow-2xl 
-            overflow-y-auto md:max-h-[90vh] p-4 pt-24 md:p-10 md:pt-6 md:w-120 mx-auto"
+            className="relative w-full h-full md:h-auto max-w-xl bg-white md:bg-white/80 md:rounded-[40px] 
+              overflow-y-auto md:max-h-[90vh] p-4 pt-24 md:p-10 md:pt-6 md:w-120 mx-auto shadow-2xl rounded-none"
           >
             <AnimatePresence mode="wait">
               {/* ─── STEP 1: Info & Documents ─── */}
@@ -116,8 +116,8 @@ export default function EnrollModal({ isOpen, onClose }: EnrollModalProps) {
                   {/* Call link */}
                   <a
                     href="tel:+15551234567"
-                    className="flex items-center justify-center gap-2 text-amber-800 font-poppins text-sm font-medium 
-                      hover:text-amber-900 transition-colors mb-4"
+                    className="flex items-center justify-center gap-2 text-amber-800 font-poppins  
+                      hover:text-amber-900 transition-colors mb-10 md:mb-4 text-sm font-medium"
                   >
                     <Phone className="w-4 h-4" />
                     +1 (555) 123-4567
@@ -171,7 +171,7 @@ export default function EnrollModal({ isOpen, onClose }: EnrollModalProps) {
                   {/* Next button */}
                   <button
                     onClick={() => setStep(2)}
-                    className="mt-12 md:mt-6 w-[60%] md:w-[60%] py-3 md:py-4 bg-[#f8bbd0] text-black/80 rounded-full
+                    className="mt-30 md:mt-6 w-[45%] md:w-[60%] py-4 md:py-4 bg-[#f8bbd0] text-black/80 rounded-full
                       text-sm hover:bg-[#f48fb1] transition-all font-poppins font-regular mx-auto cursor-pointer
                       active:scale-[0.98] shadow-lg flex items-center justify-center gap-2"
                   >
@@ -277,7 +277,7 @@ export default function EnrollModal({ isOpen, onClose }: EnrollModalProps) {
                         name="message"
                         rows={3}
                         placeholder="Additional notes..."
-                        className="px-6 py-4 bg-slate-50 border-none rounded-3xl md:focus:ring-2 shadow-[0px_3px_8px_rgba(0,0,0,0.03)]
+                        className="px-6 py-4 bg-slate-50 border-none rounded-3xl md:focus:ring-2 shadow-[0px_3px_8px_rgba(0,0,0,0.03)] mb-15 md:mb-auto
                         md:focus:ring-amber-200 focus:outline-none outline-none transition-all font-poppins resize-none text-base md:text-sm ring-amber-800/20 ring-1"
                       />
                     </div>
