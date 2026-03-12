@@ -170,7 +170,7 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
                 {/* Send us a message button */}
                 <button
                   onClick={() => setStep(2)}
-                  className="mt-20 md:mt-6 w-[60%] md:w-[60%] py-3 md:py-4 bg-[#f8bbd0] text-black/80 rounded-full
+                  className="mt-20 md:mt-6 w-[60%] md:w-[60%] py-4 bg-[#f8bbd0] text-black/80 rounded-full
                     text-sm hover:bg-[#f48fb1] transition-all font-poppins font-regular mx-auto cursor-pointer
                     active:scale-[0.98] shadow-lg flex items-center justify-center gap-2"
                 >
