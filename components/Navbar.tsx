@@ -59,7 +59,7 @@ export default function Navbar() {
         <div className="">
           <Link href="/" className="font-playfair text-violet-800 flex flex-col items-start group">
             <span className="text-[11px] font-poppins uppercase tracking-widest text-violet-600/80 leading-none">Helena Street</span>
-            <span className="text-lg -mt-none leading-none">DayCare <span className="text-xs">LLC</span></span>
+            <span className="text-lg -mt-none leading-none">Child Care, <span className="text-xs">LLC</span></span>
           </Link>
         </div>
 

@@ -51,7 +51,7 @@ export default function MobileNavbar({ activeSection, setActiveSection, onEnroll
             onClick={() => setIsOpen(false)}
             className="font-playfair text-violet-800 flex flex-col items-start group">
             <span className="text-[11px] font-poppins uppercase tracking-widest text-violet-600/80 leading-none">Helena Street</span>
-            <span className="text-lg -mt-none leading-none">DayCare <span className="text-xs font-regular">, LLC</span></span>
+            <span className="text-lg -mt-none leading-none">Child Care, <span className="text-xs font-regular">LLC</span></span>
           </Link>
 
 
@@ -158,7 +158,7 @@ export default function MobileNavbar({ activeSection, setActiveSection, onEnroll
                     onEnrollClick();
                   }}
                   className="px-10 py-5 border border-black/10 rounded-full text-black/80 
-                  font-poppins font-semibold transition-all text-lg shadow-xs active:scale-95"
+                  font-poppins font-medium transition-all text-md shadow-xs active:scale-95"
                 >
                   Enroll Now
                 </button>
