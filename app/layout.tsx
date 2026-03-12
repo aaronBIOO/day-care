@@ -14,8 +14,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Day Care",
-  description: "Day Care",
+  title: "Child Care",
+  description: "Helena Street Child Care",
 };
 
 export default function RootLayout({
