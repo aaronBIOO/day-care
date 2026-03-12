@@ -14,8 +14,30 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Child Care",
-  description: "Helena Street Child Care",
+  title: "Helena Street Child Care",
+  description: "A warm, licensed family child care program in Leominster, MA. Nurturing every child's growth through play, learning, and personal care.",
+  openGraph: {
+    title: "Helena Street Child Care",
+    description: "A warm, licensed family child care program in Leominster, MA. Nurturing every child's growth through play, learning, and personal care.",
+    url: "https://day-care-alpha.vercel.app",
+    siteName: "Helena Street Child Care",
+    images: [
+      {
+        url: "/open-graph.png",
+        width: 1200,
+        height: 630,
+        alt: "Helena Street Child Care",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Helena Street Child Care",
+    description: "A warm, licensed family child care program in Leominster, MA.",
+    images: ["/open-graph.png"],
+  },
 };
 
 export default function RootLayout({
