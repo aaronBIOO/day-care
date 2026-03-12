@@ -122,14 +122,14 @@ export default function BookTourModal({ isOpen, onClose }: BookTourModalProps) {
                     rows={3}
                     required
                     placeholder="Preferred date or special requests..."
-                    className="w-full px-5 py-3 bg-slate-50 ring-amber-800/20 ring-1 rounded-2xl 
-                    md:focus:ring-2 md:focus:ring-amber-200 focus:outline-none outline-none transition-all font-poppins text-base md:text-sm resize-none"
+                    className="w-full px-5 py-3 bg-slate-50 ring-amber-800/20 ring-1 rounded-2xl md:text-sm resize-none
+                    md:focus:ring-2 md:focus:ring-amber-200 focus:outline-none outline-none transition-all font-poppins text-base"
                   />
                 </div>
 
                 <button
                   type="submit"
-                  className="w-full py-4 bg-[#f8bbd0] text-black/80 rounded-2xl font-poppins font-regular md:mt-0 mt-35
+                  className="w-full py-4 bg-[#f8bbd0] text-black/80 rounded-2xl font-poppins font-regular md:mt-0 mt-20
                   hover:bg-[#f48fb1] transition-all flex items-center justify-center gap-2 shadow-lg active:scale-[0.98]"
                 >
                   <Send className="w-4 h-4 text-black/70" />

@@ -113,14 +113,13 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
                 </p>
 
                 {/* Call link */}
-                <a
-                  href="tel:+15551234567"
+                <div
                   className="flex items-center justify-center gap-2 text-amber-800 font-poppins text-sm font-medium 
                     hover:text-amber-900 transition-colors mb-4"
                 >
                   <Phone className="w-4 h-4" />
                   +1 (978) 427-0302
-                </a>
+                </div>
 
                 {/* Document Cards */}
                 <div className="flex flex-col gap-4">
@@ -170,7 +169,7 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
                 {/* Send us a message button */}
                 <button
                   onClick={() => setStep(2)}
-                  className="mt-45 md:mt-6 w-[60%] md:w-[60%] py-4 bg-[#f8bbd0] text-black/80 rounded-full
+                  className="mt-20 md:mt-6 w-[60%] md:w-[60%] py-4 bg-[#f8bbd0] text-black/80 rounded-full
                     text-sm hover:bg-[#f48fb1] transition-all font-poppins font-regular mx-auto cursor-pointer
                     active:scale-[0.98] shadow-lg flex items-center justify-center gap-2"
                 >
@@ -253,7 +252,7 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
                     <p className="text-red-500 text-xs ml-4 font-poppins">{error}</p>
                   )}
 
-                  <div className="mt-50 md:mt-4">
+                  <div className="mt-20 md:mt-4">
                     <button
                       type="submit"
                       disabled

@@ -171,7 +171,7 @@ export default function EnrollModal({ isOpen, onClose }: EnrollModalProps) {
                   {/* Next button */}
                   <button
                     onClick={() => setStep(2)}
-                    className="mt-30 md:mt-6 w-[45%] md:w-[60%] py-4 md:py-4 bg-[#f8bbd0] text-black/80 rounded-full
+                    className="mt-20 md:mt-6 w-[45%] md:w-[60%] py-4 md:py-4 bg-[#f8bbd0] text-black/80 rounded-full
                       text-sm hover:bg-[#f48fb1] transition-all font-poppins font-regular mx-auto cursor-pointer
                       active:scale-[0.98] shadow-lg flex items-center justify-center gap-2"
                   >
@@ -277,7 +277,7 @@ export default function EnrollModal({ isOpen, onClose }: EnrollModalProps) {
                         name="message"
                         rows={3}
                         placeholder="Additional notes..."
-                        className="px-6 py-4 bg-slate-50 border-none rounded-3xl md:focus:ring-2 shadow-[0px_3px_8px_rgba(0,0,0,0.03)] mb-15 md:mb-auto
+                        className="px-6 py-4 bg-slate-50 border-none rounded-3xl md:focus:ring-2 shadow-[0px_3px_8px_rgba(0,0,0,0.03)] mb-10 md:mb-auto
                         md:focus:ring-amber-200 focus:outline-none outline-none transition-all font-poppins resize-none text-base md:text-sm ring-amber-800/20 ring-1"
                       />
                     </div>
