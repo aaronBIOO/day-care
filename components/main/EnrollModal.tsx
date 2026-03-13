@@ -110,7 +110,7 @@ export default function EnrollModal({ isOpen, onClose }: EnrollModalProps) {
                     Enroll Now
                   </h2>
                   <p className="text-[12px] text-black/70 font-poppins max-w-xs mx-auto mb-4">
-                    To enroll read and fill the forms below to begin the enrollment process or call to discuss.
+                    To enroll, read and fill the forms below to begin the enrollment process or call to discuss.
                   </p>
 
                   {/* Call link */}
@@ -176,7 +176,6 @@ export default function EnrollModal({ isOpen, onClose }: EnrollModalProps) {
                       active:scale-[0.98] shadow-lg flex items-center justify-center gap-2"
                   >
                     Next
-                    <ChevronRight className="w-4 h-4 text-black/60" />
                   </button>
                 </motion.div>
               )}
@@ -195,7 +194,7 @@ export default function EnrollModal({ isOpen, onClose }: EnrollModalProps) {
                     Form completed?
                   </h2>
                   <p className="text-[12px] text-black/70 font-poppins max-w-sm mx-auto mb-4">
-                    Submit the form below and we&apos;ll get back to you
+                    Submit the form and we&apos;ll get back to you
                   </p>
 
                   {/* Form */}
@@ -286,12 +285,11 @@ export default function EnrollModal({ isOpen, onClose }: EnrollModalProps) {
                       <button
                         type="submit"
                         disabled
-                        className="w-[60%] md:w-[40%] py-4 md:py-3 bg-[#f8bbd0] text-black/80 rounded-full
+                        className="w-[45%] md:w-[40%] py-4 md:py-3 bg-[#f8bbd0] text-black/80 rounded-full
                         text-sm transition-all flex items-center font-poppins
                         justify-center gap-2 shadow-lg font-medium mx-auto
                         opacity-70 cursor-not-allowed"
                       >
-                        <Send className="w-4 h-4 text-black/60" />
                         Submit
                       </button>
                     </div>

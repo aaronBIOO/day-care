@@ -94,7 +94,7 @@ export default function BookTourModal({ isOpen, onClose }: BookTourModalProps) {
               <p className="text-center text-sm text-black/80 font-poppins mb-2">
                 OR
               </p>
-              <p className="text-center text-sm text-black/80 font-poppins mb-2">
+              <p className="text-center text-sm text-black/80 font-poppins mb-5">
                 message us and we'll schedule it for you
               </p>
 
