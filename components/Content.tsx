@@ -188,6 +188,7 @@ export default function Content() {
             programs={programs}
             expandedIndex={expandedIndex}
             onClose={() => setExpandedIndex(null)}
+            setExpandedIndex={setExpandedIndex}
           />
         </div>
 

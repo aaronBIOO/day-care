@@ -15,9 +15,10 @@ interface ProgramExpansionProps {
   programs: Program[];
   expandedIndex: number | null;
   onClose: () => void;
+  setExpandedIndex: (index: number | null) => void;
 }
 
-export default function ProgramExpansion({ programs, expandedIndex, onClose }: ProgramExpansionProps) {
+export default function ProgramExpansion({ programs, expandedIndex, onClose, setExpandedIndex }: ProgramExpansionProps) {
   return (
     <AnimatePresence>
       {expandedIndex !== null && (
@@ -101,6 +102,35 @@ export default function ProgramExpansion({ programs, expandedIndex, onClose }: P
               >
                 {programs[expandedIndex].description}
               </motion.p>
+              
+              {/* Navigation Buttons */}
+              <div className="mt-12 md:mb-0 md:mt-5 flex gap-4 w-full">
+                {expandedIndex > 0 && (
+                  <button
+                    onClick={(e) => { e.stopPropagation(); setExpandedIndex(expandedIndex - 1); }}
+                    className="flex-1 py-4 bg-slate-100 text-black/60 rounded-full 
+                    text-base hover:bg-slate-200 transition-all flex items-center font-poppins
+                    justify-center gap-2 active:scale-[0.98] outline-none border-none cursor-pointer"
+                  >
+                    Back
+                  </button>
+                )}
+                <button
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    if (expandedIndex < programs.length - 1) {
+                      setExpandedIndex(expandedIndex + 1);
+                    } else {
+                      onClose();
+                    }
+                  }}
+                  className="flex-2 py-4 bg-[#f8bbd0] text-black/80 rounded-full 
+                  text-base hover:bg-[#f48fb1] transition-all flex items-center font-poppins cursor-pointer
+                  justify-center gap-2 active:scale-[0.98] shadow-lg font-medium outline-none border-none w-full"
+                >
+                  {expandedIndex === programs.length - 1 ? "Finish" : "Next"}
+                </button>
+              </div>
             </div>
           </motion.div>
         </motion.div>
