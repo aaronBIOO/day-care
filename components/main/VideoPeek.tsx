@@ -2,7 +2,7 @@
 
 import { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { X, ChevronLeft, ChevronRight, Play, Pause, ArrowLeft } from "lucide-react";
+import { ChevronLeft, ChevronRight, Play, Pause, ArrowLeft } from "lucide-react";
 import { videos } from "@/components/Data";
 
 interface VideoPeekProps {
@@ -85,7 +85,8 @@ export default function VideoPeek({ isOpen, onClose }: VideoPeekProps) {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
-        className="fixed inset-0 z-200 flex flex-col items-center justify-center bg-white md:bg-white/80 md:backdrop-blur-xl p-0 md:p-10 overflow-hidden"
+        className="fixed inset-0 z-200 flex flex-col items-center justify-center 
+        bg-white md:bg-white/80 md:backdrop-blur-xl p-0 md:p-10 overflow-hidden"
       >
         {/* Navigation Buttons */}
         <button
@@ -98,20 +99,23 @@ export default function VideoPeek({ isOpen, onClose }: VideoPeekProps) {
 
         {view === "thumbnails" ? (
           <div
-            className="relative w-full md:w-[90%] h-full md:h-90 flex flex-col items-center justify-start md:justify-center"
+            className="relative w-full md:w-[90%] h-full md:h-90 flex 
+            flex-col items-center justify-start md:justify-center"
             style={{ overflowY: 'auto', WebkitOverflowScrolling: 'touch' }}
           >
             <div className="w-full flex flex-col items-center pt-24 md:pt-0 pb-10">
             {/* Gallery Navigation */}
             <button
               onClick={() => scrollThumbnails("left")}
-              className="ml-4 absolute left-20 top-1/2 -translate-y-1/2 -translate-x-full hidden md:flex items-center justify-center p-4 hover:scale-110 transition-transform"
+              className="ml-4 absolute left-20 top-1/2 -translate-y-1/2 -translate-x-full hidden 
+              md:flex items-center justify-center p-4 hover:scale-110 transition-transform"
             >
               <ChevronLeft className="w-12 h-12 text-black/40" />
             </button>
             <button
               onClick={() => scrollThumbnails("right")}
-              className="mr-4 absolute right-20 top-1/2 -translate-y-1/2 translate-x-full hidden md:flex items-center justify-center p-4 hover:scale-110 transition-transform"
+              className="mr-4 absolute right-20 top-1/2 -translate-y-1/2 translate-x-full hidden md:flex 
+              items-center justify-center p-4 hover:scale-110 transition-transform"
             >
               <ChevronRight className="w-12 h-12 text-black/40" />
             </button>
@@ -121,7 +125,8 @@ export default function VideoPeek({ isOpen, onClose }: VideoPeekProps) {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: 20 }}
               transition={{ duration: 0.5 }}
-              className="text-lg md:text-2xl font-poppins text-black/70 max-w-3xl mx-auto leading-tight text-center mb-10 md:mb-2">
+              className="text-lg md:text-2xl font-poppins text-black/70 max-w-3xl 
+              mx-auto leading-tight text-center mb-10 md:mb-2">
               Curated paths for every <br /> stage of growth
             </motion.div>
 
@@ -139,7 +144,8 @@ export default function VideoPeek({ isOpen, onClose }: VideoPeekProps) {
                   }
                 }
               }}
-              className="flex flex-col md:flex-row gap-8 md:gap-4 pb-20 pt-4 md:pt-8 w-full md:w-auto px-8 md:px-0 scrollbar-hide snap-y md:snap-x items-center justify-start md:justify-center"
+              className="flex flex-col md:flex-row gap-8 md:gap-4 pb-20 pt-4 md:pt-8 w-full md:w-auto px-8 
+              md:px-0 scrollbar-hide snap-y md:snap-x items-center justify-start md:justify-center"
             >
               {videos.map((src, idx) => (
                 <motion.div
@@ -163,6 +169,7 @@ export default function VideoPeek({ isOpen, onClose }: VideoPeekProps) {
                     className="w-full h-full object-cover"
                     muted
                     playsInline
+                    preload="auto"
                   />
                   <div className="absolute inset-0 bg-black/10 flex items-center justify-center group">
                     <div className="w-16 h-16 bg-white/30 backdrop-blur-md rounded-full flex 
@@ -195,14 +202,15 @@ export default function VideoPeek({ isOpen, onClose }: VideoPeekProps) {
 
             <motion.div
               layoutId="video-container"
-              className="relative w-full md:w-[60%] aspect-9/16 md:aspect-video bg-black rounded-none md:rounded-[40px] 
-                overflow-hidden shadow-2xl cursor-pointer border-none group"
+              className="relative w-full md:w-[60%] aspect-9/16 md:aspect-video bg-black rounded-none  
+                overflow-hidden shadow-2xl cursor-pointer border-none group md:rounded-[40px]"
               onClick={togglePlay}
             >
               <video
                 ref={videoRef}
                 src={videos[currentIndex]}
                 autoPlay
+                preload="auto"
                 className="w-full h-full object-contain"
                 onPlay={() => setIsPlaying(true)}
                 onPause={() => setIsPlaying(false)}
@@ -266,8 +274,8 @@ export default function VideoPeek({ isOpen, onClose }: VideoPeekProps) {
                 <button
                   key={idx}
                   onClick={() => setCurrentIndex(idx)}
-                  className={`w-2 h-2 rounded-full transition-all duration-300 ${currentIndex === idx ? "bg-amber-800 w-6" : "bg-amber-800/20 hover:bg-amber-800/40"
-                    }`}
+                  className={`w-2 h-2 rounded-full transition-all duration-300 
+                    ${currentIndex === idx ? "bg-amber-800 w-6" : "bg-amber-800/20 hover:bg-amber-800/40" }`}
                 />
               ))}
             </div>
