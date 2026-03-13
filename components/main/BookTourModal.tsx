@@ -129,10 +129,9 @@ export default function BookTourModal({ isOpen, onClose }: BookTourModalProps) {
 
                 <button
                   type="submit"
-                  className="w-full py-4 bg-[#f8bbd0] text-black/80 rounded-2xl font-poppins font-regular md:mt-0 mt-20
-                  hover:bg-[#f48fb1] transition-all flex items-center justify-center gap-2 shadow-lg active:scale-[0.98]"
+                  className="w-[60%] md:w-full py-4 bg-[#f8bbd0] text-black/80 rounded-full font-poppins font-regular md:mt-0 mt-20
+                  hover:bg-[#f48fb1] transition-all flex items-center justify-center gap-2 shadow-lg active:scale-[0.98] mx-auto"
                 >
-                  <Send className="w-4 h-4 text-black/70" />
                   Book Tour
                 </button>
               </form>

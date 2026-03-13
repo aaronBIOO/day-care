@@ -124,7 +124,7 @@ export default function ProgramExpansion({ programs, expandedIndex, onClose, set
                       onClose();
                     }
                   }}
-                  className="flex-2 py-4 bg-[#f8bbd0] text-black/80 rounded-full 
+                  className="flex-2 py-4 bg-[#f8bbd0] text-black/70 rounded-full 
                   text-base hover:bg-[#f48fb1] transition-all flex items-center font-poppins cursor-pointer
                   justify-center gap-2 active:scale-[0.98] shadow-lg font-medium outline-none border-none w-full"
                 >
