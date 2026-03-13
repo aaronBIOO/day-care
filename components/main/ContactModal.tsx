@@ -108,8 +108,8 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
                 <h2 className="text-md font-semibold text-amber-800 font-poppins">
                   Get In Touch
                 </h2>
-                <p className="text-[12px] text-black/70 font-poppins max-w-xs mx-auto mt-1 mb-4">
-                  Read the files below, or schedule a call and let&apos;s discuss it.
+                <p className="w-[65%] md:w-auto text-[12px] text-black/70 font-poppins max-w-xs mx-auto mt-1 mb-4">
+                  Read the files below, or schedule a call and let&apos;s discuss
                 </p>
 
                 {/* Call link */}
@@ -173,8 +173,7 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
                     text-sm hover:bg-[#f48fb1] transition-all font-poppins font-regular mx-auto cursor-pointer
                     active:scale-[0.98] shadow-lg flex items-center justify-center gap-2"
                 >
-                  Send us a message
-                  <ChevronRight className="w-4 h-4 text-black/60" />
+                  Message us
                 </button>
               </motion.div>
             )}
@@ -261,7 +260,6 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
                       justify-center gap-2 shadow-lg font-medium mx-auto
                       opacity-70 cursor-not-allowed"
                     >
-                      <Send className="w-4 h-4 text-black/60" />
                       Submit
                     </button>
                   </div>
