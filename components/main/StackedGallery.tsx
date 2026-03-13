@@ -10,8 +10,12 @@ export default function StackedGallery() {
   const [expandedStack, setExpandedStack] = useState<number | null>(null);
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
 
-  const handleStackClick = (index: number) => {
-    if (expandedStack === index) return;
+  const handleStackClick = (index: number, e: React.MouseEvent) => {
+    e.stopPropagation();
+    if (expandedStack === index) {
+      handleClose(e);
+      return;
+    }
     setExpandedStack(index);
   };
 
@@ -61,7 +65,14 @@ export default function StackedGallery() {
   }, [selectedIndex]);
 
   return (
-    <div className="relative w-full px-4 min-h-[100px] flex items-center justify-center bg-[#FAF9F6]">
+    <div 
+      className="relative w-full px-4 min-h-[100px] flex items-center justify-center bg-[#FAF9F6]"
+      onClick={(e) => {
+        if (expandedStack !== null && selectedIndex === null) {
+          handleClose(e);
+        }
+      }}
+    >
       <div className="flex mx-auto py-10">
         <div className="flex flex-col lg:flex-row items-center justify-center gap-20 lg:gap-8 mx-auto">
           {galleryData.map((stack, sIdx) => {
@@ -81,7 +92,7 @@ export default function StackedGallery() {
                 }}
                 className={`relative cursor-pointer transition-all duration-700 
                   ${isExpanded ? "w-full" : "w-64 h-64 lg:w-52 lg:h-52" }`}
-                onClick={() => handleStackClick(sIdx)}
+                onClick={(e) => handleStackClick(sIdx, e)}
               >
                 {/* Horizontal Spread (Expanded) */}
                 <AnimatePresence mode="wait">
@@ -91,41 +102,43 @@ export default function StackedGallery() {
                       initial={{ opacity: 0, y: 20 }}
                       animate={{ opacity: 1, y: 0 }}
                       exit={{ opacity: 0, y: 20 }}
-                      className="flex flex-wrap justify-center gap-5 py-10 relative"
+                      className="flex flex-col items-center w-full py-10 relative"
                     >
                       <motion.button
                         initial={{ opacity: 0, scale: 0.5 }}
                         animate={{ opacity: 1, scale: 1 }}
                         onClick={handleClose}
-                        className="fixed top-0 right-0 p-4 bg-black/30 backdrop-blur-xl 
-                        rounded-full shadow-2xl  hover:scale-110 active:scale-95 transition-all text-slate-800"
+                        className="mb-8 p-4 bg-black/30 backdrop-blur-xl 
+                        rounded-full shadow-2xl hover:scale-110 active:scale-95 transition-all z-50 flex items-center justify-center"
                       >
-                        <X className="w-4 h-4 text-white" />
+                        <X className="w-6 h-6 text-white" />
                       </motion.button>
 
-                      {stack.images.map((img, iIdx) => (
-                        <motion.div
-                          key={iIdx}
-                          layoutId={`stack-${sIdx}-image-${iIdx}`}
-                          className="relative w-42 h-42 md:w-32 md:h-36 rounded-[15px] 
-                          overflow-hidden shadow-2xl group border-4 border-white"
-                          onClick={(e) => handleImageClick(iIdx, e)}
-                        >
-                          <Image
-                            src={img}
-                            alt={`${stack.title} ${iIdx}`}
-                            fill
-                            className="object-cover group-hover:scale-110 transition-transform duration-700"
-                          />
-                          <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 
-                            transition-all duration-500 flex items-center justify-center">
-                            <div className="bg-white/20 backdrop-blur-md p-4 rounded-full opacity-0 
-                              group-hover:opacity-100 scale-50 group-hover:scale-100 transition-all duration-500">
-                              <Maximize2 className="text-white w-4 h-4" />
+                      <div className="flex flex-wrap justify-center gap-5 w-full">
+                        {stack.images.map((img, iIdx) => (
+                          <motion.div
+                            key={iIdx}
+                            layoutId={`stack-${sIdx}-image-${iIdx}`}
+                            className="relative w-42 h-42 md:w-32 md:h-36 rounded-[15px] 
+                            overflow-hidden shadow-2xl group border-4 border-white"
+                            onClick={(e) => handleImageClick(iIdx, e)}
+                          >
+                            <Image
+                              src={img}
+                              alt={`${stack.title} ${iIdx}`}
+                              fill
+                              className="object-cover group-hover:scale-110 transition-transform duration-700"
+                            />
+                            <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 
+                              transition-all duration-500 flex items-center justify-center">
+                              <div className="bg-white/20 backdrop-blur-md p-4 rounded-full opacity-0 
+                                group-hover:opacity-100 scale-50 group-hover:scale-100 transition-all duration-500">
+                                <Maximize2 className="text-white w-4 h-4" />
+                              </div>
                             </div>
-                          </div>
-                        </motion.div>
-                      ))}
+                          </motion.div>
+                        ))}
+                      </div>
                     </motion.div>
                   ) : (
 
