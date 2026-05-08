@@ -3,5 +3,6 @@ This is a daycare website. It outlines what the daycare is all about and some of
 
 ### Stack
 - Next.js
+-tailwindcss v4
 - Supabase database
 - Supabase storage
