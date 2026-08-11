@@ -6,5 +6,9 @@ It outlines what the daycare is all about and some of the programs they offer. I
 
 ### Stack
 - Next.js
+- React
+- Typescript
 - tailwindcss 
 - Supabase database
+- framer motion
+- lucide react for icons
